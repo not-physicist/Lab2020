@@ -34,3 +34,44 @@ Simple discriminator outputs logic signal right after input goes higher than thr
    \caption{${}^{60}\text{Co}$ $\gamma$-specturm~\cite{CoSpec}}%
    \label{fig:CoSpec}
 \end{figure}
+
+\section{Task for preparation}
+\subsection{Which distances to pick?}
+Obviously, the count (rate) should be proportional to the solid angle ignoring the anisotropy of radiation. This assumption should not bring too much influence to the results, as long as the size of detection is accounted for in final analysis as (systematic) error. In~\cite{siegbahn}, true count rate is given by
+\begin{equation}
+   N^t_i (\theta) = M p_i \Omega_i \epsilon_i
+\end{equation}
+with $M$ the number of nuclear integrations per uni time, $p_i$ the probability that this integration is selected, $\Omega_i$ is solid angle in unit $4\pi$, and $\epsilon_i$ the detector efficiency. According to formula of solid angle, it means that
+\begin{equation}
+   N^t_i (\theta) \propto \frac{1}{r_i^2}
+\end{equation}
+
+Follow the same principle, true number of coincidence can be written as~\cite{siegbahn}
+\begin{equation}
+   C^t(\theta) = M p_1 p_2 \Omega_1 \epsilon_1 \Omega_2 \epsilon_2 \epsilon_c K(\theta)
+\end{equation}
+where $\epsilon_c$ is the efficiency of coincidence unit and $K(\theta)$ is the directional correlation function. $K(\theta)$ is basically the "measured" version of $W(\theta)$, i.e.~what we have in the real world. 
+The coincidence rate is then $C^t(\theta)/ N_1^t(\theta)$ thus 
+\begin{equation}
+   \frac{C^t(\theta)}{N_1^t(\theta)} \propto \frac{1}{r_2^2}
+\end{equation}
+
+The angular "asymmetry" is represented as the coefficients $A_{kk}$. With correction factor, we write
+\begin{equation}
+   A_{kk} = \frac{A_{kk}^\text{exp}}{Q_{kk}}
+\end{equation}
+And it can be calculated by~\cite{siegbahn}
+\begin{align}
+   Q_{kk} &= Q_k(1) Q_k(2) \\
+   Q_k(i) &= \frac{J_k(i)}{J_0(i)} \\
+   J_k(i) &= \int_0^{\pi/2} \epsilon_i (E,\alpha) P_k (\cos\alpha) \sin \alpha \dd{\alpha} \\
+   \epsilon(E,\alpha) &= 1 - \exp{- \tau (E) X(\alpha)}
+\end{align}
+with $\tau (E)$ the total absorption coefficient and $X(\alpha)$ the distance traversed in the crystal.
+
+The correction factor will certainly affect the error of angular correlation function, e.g.~for \eqref{math:W010}
+\begin{equation}
+   \delta W(\theta) = \left| \frac{P_2 (\cos\theta)}{Q_{kk}} \right| \delta (A_{22}^\text{exp})
+\end{equation}
+
+According to table in~\cite{siegbahn}, $h=\SI{10}{\cm}$ would provide the most precise measurement, since the $Q_i$'s are closer to $1$. So in the actual experiment, one can try to measure the event rate in a short time period. Then the distance should be chosen, so that enough data will be taken in the given time but still have maximal precision.
