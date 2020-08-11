@@ -75,3 +75,32 @@ The correction factor will certainly affect the error of angular correlation fun
 \end{equation}
 
 According to table in~\cite{siegbahn}, $h=\SI{10}{\cm}$ would provide the most precise measurement, since the $Q_i$'s are closer to $1$. So in the actual experiment, one can try to measure the event rate in a short time period. Then the distance should be chosen, so that enough data will be taken in the given time but still have maximal precision.
+
+\subsection{Which angles to pick?}
+The angular correlation function is given in the form of~\cite{descr}
+\begin{equation}
+   f(\theta) = A(1 + B \cos^2\theta + C \cos^4 \theta)
+\end{equation}
+It can be rewritten with $\alpha= B + C$ and $\beta = B-C$,
+\begin{equation}
+   f(\theta) = A \left( 1 + \frac{\alpha + \beta}{ 2} \cos^2\theta + \frac{\alpha-\beta}{2} \cos^4 \theta \right)
+\end{equation}
+
+Predicted values for $A_{22}$ and $A_{44}$ without mixing are given in~\cite{siegbahn}. Then the predicted correlation function is
+\begin{align}
+   W(\theta) &= 1 - \frac{A_{22}}{2} + \frac{3}{8} A_{44} + \left( \frac{3}{2} A_{22} - \frac{15}{4} A_{44} \right) \cos^2 \theta + \frac{35}{8} A_{44} \cos^4 \theta \\
+   &= 0.952412 + 0.118875 \cos^2 \theta + 0.039813 \cos^4 \theta
+\end{align}
+Need to "scale" it, so that $0.9524$ gets absorbed in $A$. Then we have
+\begin{equation}
+   B=0.124815, C=0.041802
+\end{equation}
+
+Plot correlation with these two coefficients with slight variation, we have figure.~\ref{fig:alpha-beta}
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.8\linewidth]{alpha-beta.pdf}
+   \caption{Correlation with different $\alpha$ and $\beta$}%
+   \label{fig:alpha-beta}
+\end{figure}
+From it, it is clear that to determine $\alpha$, we need in principle only one point ($\theta=0$ or $\theta=\pi$). But determination of $\beta$  requires small increments in angle between $0$ and $\pi/2$.
