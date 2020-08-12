@@ -1,0 +1,11 @@
+#sca calibration after lowering amp of right detector
+# 4s, 40 window size
+# in the end, window 720-960
+700, 6746, 6480
+740, 8071, 9468
+780, 24460, 22839
+820, 6277, 4662
+860, 8574, 13021
+900, 18397, 13313
+940, 2734, 1194
+980, 529, 464
