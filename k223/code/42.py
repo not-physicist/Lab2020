@@ -9,12 +9,14 @@ A44 = 0.0091
 Ap = 1 - A22/2 + 3/8*A44
 Bp = 3/2 * A22 - 15/4 * A44
 Cp = 35/8 *A44
-print("A = %f, B=%f, C=%f" % (Ap, Bp, Cp))
+print("A' = %f, B'=%f, C'=%f" % (Ap, Bp, Cp))
 
 
 B = Bp/Ap
 C = Cp/Ap
-print("scaled: B'=%f, C'=%f" % (B, C))
+print("scaled: B=%f, C=%f" % (B, C))
+print("other definition: B=%f, C=%f" % (1/8, 1/24))
+
 alpha = B + C
 beta = B- C
 print("alpa=%f, beta=%f" % (alpha, beta))

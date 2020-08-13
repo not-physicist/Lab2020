@@ -80,6 +80,7 @@ According to table in~\cite{siegbahn}, $h=\SI{10}{\cm}$ would provide the most p
 The angular correlation function is given in the form of~\cite{descr}
 \begin{equation}
    f(\theta) = A(1 + B \cos^2\theta + C \cos^4 \theta)
+   \label{math:fTheta}
 \end{equation}
 It can be rewritten with $\alpha= B + C$ and $\beta = B-C$,
 \begin{equation}
@@ -88,8 +89,10 @@ It can be rewritten with $\alpha= B + C$ and $\beta = B-C$,
 
 Predicted values for $A_{22}$ and $A_{44}$ without mixing are given in~\cite{siegbahn}. Then the predicted correlation function is
 \begin{align}
+   \begin{split}
    W(\theta) &= 1 - \frac{A_{22}}{2} + \frac{3}{8} A_{44} + \left( \frac{3}{2} A_{22} - \frac{15}{4} A_{44} \right) \cos^2 \theta + \frac{35}{8} A_{44} \cos^4 \theta \\
    &= 0.952412 + 0.118875 \cos^2 \theta + 0.039813 \cos^4 \theta
+   \end{split}\label{math:pred}
 \end{align}
 Need to "scale" it, so that $0.9524$ gets absorbed in $A$. Then we have
 \begin{equation}
