@@ -1,5 +1,6 @@
 # Lab2020
 
+_IMPORTANT_: please pull to update before any changes!
 
 ## Fold structure
 
