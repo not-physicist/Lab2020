@@ -1,11 +1,14 @@
 \section{Theory}
-\paragraph{Anisotropy} of photon distribution would not be present, if there is thermal equilibrium among states. But equilibrium is not achieved in cascaded \gag, since the state of firstly emitted (firstly detected) photon constraints the angular momentum distribution of intermediate state because of angular momentum conservation\cite{descr}. 
+% \paragraph{Anisotropy} of photon distribution would not be present, if there is thermal equilibrium among states. But equilibrium is not achieved in cascaded \gag, since the state of firstly emitted (firstly detected) photon constraints the angular momentum distribution of intermediate state because of angular momentum conservation\cite{descr}.
 
 \paragraph{Angular correlation} of gamma rays of multipole moments $L_{1,2}$ from \gag cascade $I_i \rightarrow I \rightarrow I_f$ is defined as
 \begin{equation}
    W(\theta) = 1 + \sum_{k=2, \; \text{even}}^{k_\text{max}} A_{kk} P_k (\cos \theta)
 \end{equation}
-with $A_{kk}$ (known given the information of nucleus) coefficients, $P_k (\cos \theta)$ the Legendre polynomials, and $k_\text{max} = \text{min}(2I, 2L_1, 2L_2)$\cite{siegbahn}.
+with $A_{kk}$ (known given the information of nucleus) coefficients, $P_k (\cos \theta)$ the Legendre polynomials, and $k_\text{max} = \text{min}(2I, 2L_1, 2L_2)$\cite{siegbahn}. Alternatively, equivalent definition is sometimes used~\cite{deutsch}
+\begin{equation}
+   W(\theta) = 1 + \sum_{1}^{l} a_i \cos^{2i} \theta
+\end{equation}
 
 \paragraph{Coefficient $A_{kk}$} is determined, generally with mixed multipole components $L'_n$ and $L_n$ ($n=1,2$), by
 \begin{align}
@@ -17,14 +20,10 @@ with $A_{kk}$ (known given the information of nucleus) coefficients, $P_k (\cos 
 \end{align}
 with round brackets being $3j$-symbols and curly brackets $6j$-symbols\cite{siegbahn}. Their value can be easily found tabulated, e.g. in \cite{STEVENSON2002853} and \cite{369j}. $\delta_{n}(\gamma)$ quantifies the mixing of two multipole moments and should be determined by some other methods. If we assume $L'_n = L_n + 1$ (this is reasonable because of selection rules), then there are $7$ quantum numbers to nail down the coefficients: $I_i, I, I_f, \delta_{1,2}, L_{1,2}$\cite{siegbahn}.
 
-\paragraph{Example} with $0 \rightarrow 1 \rightarrow 0$ \gag cascade. Since the first and last states are of spin $0$, the multipolarities of emitted photon must be $1$ (whether it is electrical or magnetic depends on the parity of the quantum states). Thus $k_\text{max} = 2$.
+\paragraph{Example} with $0 \rightarrow 1 \rightarrow 0$ \gag cascade. Since the first and last states are of spin $0$, the multipolarities of emitted photon must be $1$, thus dipole-dipole radiation. According to~\cite{deutsch}
 \begin{equation}
-   W(\theta) = 1 + A_{22} P_2(\cos \theta)
+   W(\theta) = 1 + \cos^{2}(\theta)
    \label{math:W010}
-\end{equation}
-Since the photon can only have these multipole moments, there is no mixing, i.e.~$L=L'$. The angular correlation coefficient can be calculated, it is given in~\cite{siegbahn}
-\begin{equation}
-   W(\theta) = 1 + 0.1020 \cdot \frac{1}{2} \left( 3 \cos^2 \theta - 1 \right) = 0.949 + 0.153 \cos^2 \theta
 \end{equation}
 
 Plot of this angular correlation can be found in figure \ref{W010}.

@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def W(theta):
-    return 0.949 + 0.153*np.cos(theta)**2
+    return 1 + 1*np.cos(theta)**2
 
 thetaArray = np.linspace(0,np.pi, 100)
 WArray = W(thetaArray)
