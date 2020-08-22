@@ -1,7 +1,10 @@
 \section{Experimental procedure}
 \subsection{Adjusting the gain of the Amplifier}
 First, we adjusted the gain of both amplifiers  ($A_{1}$ and  $A_{2}$) during the set up of the experiment.We visualized the signal with the help of Oscilloscope. Following figure shows the amplified signal from the Amplifier1.
-\begin{figure}[ht]
+
+
+
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\linewidth]{./figs/amplified.jpg}
 	\caption{Amplified Signal Output from the Detector.}%
@@ -10,6 +13,20 @@ First, we adjusted the gain of both amplifiers  ($A_{1}$ and  $A_{2}$) during th
 
 \subsection{Adjusting of the CFD}
 CFD has a threshold-discriminator which help to filter out zero crossing that belongs to electronic noise and not to a true scintillation signal. So, we have adjusted this threshold of CFD to detect only true signals not the background noise signals. In that step, We connected the negative outputs of the both CFDs to the counters and measured the count rates with and without source installed.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./figs/cfd.pdf}
+	\caption{CFD count rate with inserting source. Here threshold limit is [150-400] and in the end threshold to 30. }%
+	\label{fig:angAsymm}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./figs/cfd2.pdf}
+	\caption{CFD count rate without inserting source. Here threshold limit is [150-400] and in the end threshold to 30.}%
+	\label{fig:angAsymm}
+\end{figure}
 
 \subsection{Setting up the Fast Coincidence}
 In this step, we visualized the coincidence of incoming signals from two CFDs with th help of oscilloscope and then determined the proper delay.For that, we connected the negative outputs of both CFDs to the oscilloscope and triggered on the first channel signals.Then, on the second channel, true coincidence appeared. Then, we inserted the fixed delay in between CFD1 and FC and a variable delay in between CFD2 and FC. After that, we picked the resolving time for FC as 25 ns.
@@ -37,5 +54,11 @@ In this step, we performed the energy calibration and recorded the energy spectr
 \subsection{Main Measurement}
 After adjusting all the involving apparatus in the experiment, we stated to perform th main measurement of the experiment. we used two detectors: on of them is fixed and another is movable. We inserted both detectors 5cm apart from the source. Then we measured the count rates for different angles between these two detectors.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./figs/detectors.jpg}
+	\caption{Set up of two detectors where one is fixed and another one is movable to rotate at a fixed radial distance from the fixed detector.}%
+	\label{fig:angAsymm}
+\end{figure}
 
 
