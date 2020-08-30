@@ -3,49 +3,72 @@ In this experiment, we set up two detectors with equidistant from the source (5c
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.8\linewidth]{./figs/CirCuit.png}
+	\includegraphics[width=0.7\linewidth]{./figs/CirCuit.png}
 	\caption{Set up of fast and slow coincidence circuit~\cite{descr}.}%
 	\label{fig:CCuit}
 \end{figure}
 \subsection{Adjusting the gain of the Amplifier}
-First, we adjusted the gain of both amplifiers  ($A_{1}$ and  $A_{2}$) during the set up of the experiment. The amplifiers output is linear up to $V_{max}=9$ V. We visualized the signal, with the help of Oscilloscope, and set the amplification of amplifiers  to obtain a signal with maximum around 9 V. Here we took gain of the amplifier as much as possible because larger signals are easier to process. We had been keeping in mind that the upper limit of the gain is used in the set up which is given by the signal range of the electronics. Figure ~\ref{fig:Amplified} shows the amplified signal from the Amplifier1.
+First, we adjusted the gain of both amplifiers  ($A_{1}$ and  $A_{2}$) during the set up of the experiment. The amplifiers output is linear up to $V_{max}=9$ V. We visualized the signal, with the help of Oscilloscope, and set the amplification of amplifiers  to obtain a signal with maximum around 9 V. Here we took gain of the amplifier as much as possible because larger signals are easier to process. We had been keeping in mind that the upper limit of the gain is used in the set up which is given by the signal range of the electronics. Figure~\ref{fig:Amplified} shows the amplified signal from the Amplifier1.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.8\linewidth]{./figs/Amplifier.jpg}
+	\includegraphics[width=0.6\linewidth]{./figs/Amplifier.jpg}
 	\caption{Amplified Signal Output from the Detector. we set the amplification of amplifiers to obtain a signal with maximum at around 9 V.}%
 	\label{fig:Amplified}
 \end{figure}
 \newpage
 \subsection{Adjusting of the CFD}
-CFD has a threshold-discriminator which help to filter out zero crossing that belongs to electronic noise and not to a true scintillation signal ~\cite{descer}. Performing a threshold scan allows to search out the right compromise. For that, CFD has restriction upon the minimum and maximum signals and it can manage two signals of same amplitude with different risetimes.  So, we have adjusted this threshold of CFD to detect only true signals not the background noise signals. In that step, We connected the negative outputs of the both CFDs to the counters and measured the count rates with and without source installed. Also, We connected a delay $ D_{3} $ between CFD2 and the Fast Coincidence(FC) to correct the delay within the resolving time. To appropriate gate duration, we calculated $\Delta N \approx \sqrt{N}$. Figure ~\ref{fig:Cfd1} and ~\ref{fig:Cfd2}, respectively, shows the CDF count rate with and without inserting source.
-
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{./figs/cfd.pdf}
 	\caption{CFD count rate with inserting source. Here threshold limit is [150-400]. }%
 	\label{fig:Cfd1}
 \end{figure}
-
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{./figs/cfd2.pdf}
 	\caption{CFD count rate without inserting source. Here threshold limit is [150-400].}%
 	\label{fig:Cfd2}
 \end{figure}
+CFD has a threshold-discriminator which help to filter out zero crossing that belongs to electronic noise and not to a true scintillation signal ~\cite{descr}. Performing a threshold scan allows to search out the right compromise. For that, CFD has restriction upon the minimum and maximum signals and it can manage two signals of same amplitude with different risetimes.  So, we have adjusted this threshold of CFD to detect only true signals not the background noise signals. In that step, We connected the negative outputs of the both CFDs to the counters and measured the count rates with and without source installed. Also, We connected a delay $ D_{3} $ between CFD2 and the Fast Coincidence(FC) to correct the delay within the resolving time. To appropriate gate duration, we calculated $\Delta N \approx \sqrt{N}$. Figure ~\ref{fig:Cfd1} and ~\ref{fig:Cfd2}, respectively, shows the CDF count rate with and without inserting source.
 
 \subsection{Setting up the Fast Coincidence}
-In this step, we visualized the coincidence of incoming signals from two CFDs with the help of oscilloscope and then determined the proper delay. For that, we connected the negative outputs of both CFDs to the oscilloscope and triggered on the first channel signals. Then, on the second channel, true coincidence pulses are  appeared. The random time appearing events are uncorrelated. we Inserted a fixed delay into the fast branches and a variable delay into the other one set up with resolving time, so real coincidence restricted. For that, we inserted the fixed delay in between CFD1 and FC and a variable delay in between CFD2 and FC as shown in figure ~\ref{fig:CCuit}. Then, we Connected the outputs of the CFDs to the fast coincidence unit to measure the count rate for different delay settings of the variable delay unit and we picked the resolving time 25 ns. A  gate and delay $ G^{2}-D^{2} $connected between FC and UC, where both slow and fast signal inputs are connected. In this step, we adjusted the slow signal circuit for matching the pulses height and fast signal circuit for timing of the pulses.
+Here we want to make sure that true coincidences arrive at same time (within resolving time of coincidence unit, to be precise). First, we connected both CFDs to the oscilloscope and triggered on the first channel signals. Then, on the second channel, true coincidence pulses are concentrated in small region. The random events are not the events we are looking for. 
 
+We inserted a fixed delay into one of the fast branches and a variable delay into the other one, so that we can see the full prompt curve. Then, the CFDs are connected to the fast coincidence unit and the count rates are measured for different (variable) delay with resolving time \SI{25}{\nano\s}. 
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.6\linewidth]{prompt.pdf}
+   \caption{Prompt curve}%
+   \label{fig:prompt}
+\end{figure}
+Indeed, the prompt curve looks like a box with smeared egdges as stated in~\cite{descr}. Data points are fitted wit function
+\begin{equation}
+   f(t) = A_0 + A_1 \left( \frac{1}{2} + \erf \left(\frac{t-t_0}{\sigma} \right) \cdot \erf \left(\frac{t_1 - t}{\sigma} \right) \right)
+\end{equation}
+This is reasonable considering that signals are gaussian. Data and fit curve can be found in figure~\ref{fig:prompt}.
+
+These parameters each represent something physical of the experiment: $A_0$ random coincidence since with extreme low/high delay the true coincidences don't safisfy the conincidence criteria, $A_1$ related to source intensity and detector efficient, $t_i$ resolution of corresponding detector, $\sigma$ resolving time of coincidence unit. Thus the width of the plateau depends on $\sigma$. This can be easily understood as if we turn up the resolving time, then there will more events considered as coincidences. The slopes are related to detector (time) resolutions, since it smears the CFD's logic output timing. Parameter from fitting values are
+\begin{align*}
+   t_0 &= \num{24.151 +- 0.151} \\
+   t_1 &=  \num{61.949 +- 0.152} \\
+   A_0 &= \num{205.436 +- 3.823} \\
+   A_1 &= \num{323.007 +- 3.580} \\
+   \sigma &= \num{6.612 +- 0.242}
+\end{align*}
+Correlations of parameters are quite small, since the off-diagonal entries of covariance matrix are at least one magnitude lower. Thus correlations are neglected here.
+
+Shape of the prompt curve will change to basically flat (constant count rate) if the resolving time is chosen too short or too long, then either no signals will be picked up or every pair of inputs will be counted as coincidence.
 
 \subsection{Setting up the Slow Coincidence}
 
-Here, one hand,  we connected the output from the fast coincidence unit to a gate and delay ($ D^{2}-G^{2} $) generator module to adjust the timing. Other hand, the delay of both SCAs can be adjusted. Then, the output from ($ D^{2}-G^{2} $) inserted to the first channel and positive output from SCA1 and SCA2 on after another to the second channel of the oscilloscope. We need to align the leading edges of the signal which are align the timing of these three input signals with the help of oscilloscope. Afterward, we adjusted the delays in both SCAs and ($ D^{2}-G^{2} $). In figure ~\ref{fig:slow} we can see the peaks from SCAs are inside the peak of the FC unit.
+Here, one hand,  we connected the output from the fast coincidence unit to a gate and delay ($ D^{2}-G^{2} $) generator module to adjust the timing. Other hand, the delay of both SCAs can be adjusted. Then, the output from ($ D^{2}-G^{2} $) inserted to the first channel and positive output from SCA1 and SCA2 on after another to the second channel of the oscilloscope. We need to align the leading edges of the signal which are align the timing of these three input signals with the help of oscilloscope. Afterward, we adjusted the delays in both SCAs and ($ D^{2}-G^{2} $). In figure~\ref{fig:slow} we can see the peaks from SCAs are inside the peak of the FC unit.
 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.8\linewidth]{./figs/slow.png}
+	\includegraphics[width=0.6\linewidth]{./figs/slow.png}
 	\caption{The timing alignment of signals from FC and two SCAs.}%
 	\label{fig:slow}
 \end{figure}

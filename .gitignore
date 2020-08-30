@@ -1,0 +1,8 @@
+# auxiliary file of latex
+*.log 
+*.aux
+*.bbf
+*.bcf
+*.out
+*.synctex.gz
+*.fdb_latexmk
