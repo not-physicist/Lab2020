@@ -13,8 +13,10 @@ Rcount = data[3]
 
 # figure 1
 plt.figure(num=k, figsize=(10, 5))
-plt.errorbar(Lth, Lcount, label="left", yerr=np.sqrt(Lcount))
-plt.errorbar(Rth, Rcount, label="right", yerr=np.sqrt(Rcount))
+plt.errorbar(Lth, Lcount, label="left", yerr=np.sqrt(Lcount),
+             fmt="s--", color="black", capsize=2)
+plt.errorbar(Rth, Rcount, label="right", yerr=np.sqrt(Rcount),
+             fmt="^--", color="black", capsize=2)
 
 plt.yscale('log')
 plt.xlabel("threshold")
@@ -33,8 +35,10 @@ Rcount = data[3]
 
 # figure2
 plt.figure(num=k, figsize=(10, 5))
-plt.errorbar(Lth, Lcount, label="left", yerr=np.sqrt(Lcount))
-plt.errorbar(Rth, Rcount, label="right", yerr=np.sqrt(Rcount))
+plt.errorbar(Lth, Lcount, label="left", yerr=np.sqrt(Lcount),
+             fmt="s--", color="black", capsize=2)
+plt.errorbar(Rth, Rcount, label="right", yerr=np.sqrt(Rcount),
+             fmt="^--", color="black", capsize=2)
 
 plt.yscale('log')
 plt.xlabel("threshold")

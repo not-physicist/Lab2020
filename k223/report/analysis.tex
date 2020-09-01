@@ -1,8 +1,5 @@
-\section{Analysis}
-Firstly the data needs to be corrected because of random coincidences and misalignment of the setup. Random coincidence rate $\dot{R}$ is simply subtracted from the coincidence rate. In calculation of error of count rate, error of random coincidence is considered as well.
-\begin{equation}
-   \dot{R} = \SI{2.218 +- 0.061}{\per\s}
-\end{equation}
+\section{Analysis}\label{sec:analysis}
+Firstly the data needs to be corrected because of random coincidences and misalignment of the setup. Random coincidence rate $\dot{R}$ in~\ref{math:random} is simply subtracted from the coincidence rate. In calculation of error of count rate, error of random coincidence is considered as well.
 
 It is thought to be acceptable to just use one random coincidence rate for all angles, since it has no angular dependence. Effects of misalignment on random coincidence need to be considered. That is why the data get correction for misalignment after this step.
 
@@ -19,7 +16,7 @@ Coincidence rates are normalized against the raw count rate with $\kappa$, in or
    \dot{C}_\text{true} = \kappa \cdot ( \dot{C}_\text{measured} - \dot{R})
 \end{equation}
 
-During experiment, the setup and its environment might (inevitably) change, i.e.~temperature. Measurements at $180$° are repeated multiple times. Some variations are seen. This introduces (one source of) systematic error and will be included in the further analysis.
+During experiment, the setup and its environment might (inevitably) change, i.e.~temperature. Measurements at $180$° are repeated multiple times. Some variations have been seen. This introduces (one source of) systematic error and will be included in the further analysis.
 \begin{equation}
    \Delta \dot{C}_\text{sys} = \num{0.564}
 \end{equation}
@@ -133,4 +130,4 @@ Fitting of angular correlation could also help us to exclude other cascades. Fro
    \caption{Parameters using alternative fit function. Errors are just the diagonal entries of covariance matrix.}
    \label{tab:ABC}
 \end{table}
-Comparing this $B$ to values give in~\cite{deutsch}, the closest (positive) value is of $210$ and $220$ cascades with $B=3/7\approx\num{0.43}$. Although $Q$ correction is not included, we know for sure $Q \sim 1$, and measured value is no way near \num{0.43} (more than dozens of $\sigma$s away). Some negative values are numerically closer to measured value. But from the plot, coefficient $B$ is obviously positive. We can say for sure, measured angular correlation does not correspond to any other cascade listed in~\cite{deutsch}.
+Comparing this $B$ to values give in~\cite{deutsch}, the closest (positive) value is of $210$ and $220$ cascades with $B=3/7\approx\num{0.43}$. Although $Q$ correction is not included, we know for sure $Q \sim 1$, and measured value is no way near \num{0.43} (more than dozens of $\sigma$s away). Some negative values are numerically closer to measured value. But from the plot, coefficient $B$ is obviously positive. We can say for sure, measured angular correlation does not correspond to any other cascades listed in~\cite{deutsch}.

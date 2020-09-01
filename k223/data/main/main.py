@@ -296,4 +296,13 @@ plt.savefig("../../report/figs/angAsymm.pdf", bbox_inches="tight")
 plt.close(k)
 k += 1
 
-
+# prediction of random coincidence rate
+resT = 25e-9
+C1 = np.mean(LcountRate)
+sigmaC1 = np.std(LcountRate)
+C2 = np.mean(RcountRate)
+sigmaC2 = np.std(RcountRate)
+print("Count rates: %f +- %f, %f +- %f" % (C1, sigmaC1, C2, sigmaC2))
+Rdot = C1 * C2 * resT
+sigmaRdot = np.sqrt((C2 * sigmaC1) ** 2 + (C1 * sigmaC2)**2) * resT
+print("Predicted random coincidence rate: %f +- %f" % (Rdot, sigmaRdot))

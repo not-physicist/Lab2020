@@ -1,8 +1,8 @@
-\section{Experimental setups}
+\section{Experimental setups}\label{sec:setup}
 
 \subsection{Key components}
 \paragraph{Scintillation detector}
-is used to detect ionizing radiation in general. Here we have gamma radiation. The purpose of scintillator is to lower photon energy via photoelectric effect, Compton scattering, and pair production~\cite{wermes}. It is then connected to photomultiplier tube (PMT) to generate signals.
+detects ionizing radiation in general. Here only gamma radiation is relevant. The purpose of scintillator is to lower photon energy via photoelectric effect, Compton scattering, and pair production~\cite{wermes}. It is then connected to photomultiplier tube (PMT) to generate signals.
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.7\linewidth]{Scintillator.png}
@@ -44,7 +44,7 @@ When applied to PMT, the height of pulse corresponds to energy of radiation. If 
    \label{fig:CoSpec}
 \end{figure}
 
-\section{Task for preparation}
+\section{Task for preparation}\label{sec:task}
 \subsection{Which distances to pick?}
 Obviously, the count (rate) should be proportional to the solid angle ignoring the anisotropy of radiation. This assumption should not bring too much influence to the results, as long as the size of detection is accounted for in final analysis as (systematic) error. In~\cite{siegbahn}, true count rate is given by
 \begin{equation}
@@ -80,7 +80,7 @@ with $\tau (E)$ the total absorption coefficient and $X(\alpha)$ the distance tr
 
 The correction factor will certainly affect the error of angular correlation function, multiplicatively to be specific.
 
-According to table in~\cite{siegbahn}, $h=\SI{10}{\cm}$ would provide the most precise measurement, since the $Q_i$'s are closer to $1$. So in the actual experiment, one can try to measure the event rate in a short time period. Then the distance should be chosen, so that enough data will be taken in the given time but still have maximal precision.
+According to table in~\cite{siegbahn}, $h=\SI{10}{\cm}$ would provide the most precise measurement, since the $Q_i$'s are closer to $1$. So in the actual experiment, one can try to measure the event rate in a short time period. Then the distance should be so chosen that enough data will be taken in the given time but still have maximal precision.
 
 \subsection{Which angles to pick?}
 The angular correlation function is given in the form of~\cite{descr}
