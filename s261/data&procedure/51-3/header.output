@@ -1,0 +1,110 @@
+====> file image008067.fits (main) <====
+SIMPLE  =                    T / Fits standard
+BITPIX  =                   16 / Bits per pixel
+NAXIS   =                    2 / Number of axes
+NAXIS1  =                 2148 / Axis length
+NAXIS2  =                 1088 / Axis length
+EXTEND  =                    T / File may contain extensions
+BSCALE  =           1.000000E0 / REAL = TAPE*BSCALE + BZERO
+BZERO   =           3.276800E4 /
+ORIGIN  = 'NOAO-IRAF FITS Image Kernel July 2003' / FITS file originator
+DATE    = '2007-04-16T18:30:22' / Date FITS file was generated
+IRAF-TLM= '20:30:22 (16/04/2007)' / Time of last modification
+OBJECT  = 'SDSS1650+4251'      / Name of the object observed
+COMMENT   FITS (Flexible Image Transport System) format is defined in 'Astronomy
+COMMENT   and Astrophysics', volume 376, page 359; bibcode: 2001A&A...376..359H
+SEQUENCE= 'full_p4s'           / CCU sequence name
+COMMENT total chip, bin 1x1, speed 4
+SEQU_NR =                    1 / CCU sequence nr
+LOADLIST=                    0 / CCU loadlist nr
+CDS_GAIN=                    3 / CDS  gain setting
+CDS_INT =                    5 / CDS  integrator capacity setting
+DETECTOR= 'CCD42_20AIMO_BN'    / detector type
+ORIGSEC = '[1:2148,1:1088]'    / original size of full format frame
+CCDSEC  = '[1:2148,1:1088]'    / orientation to full format frame
+DATASEC = '[1:2148,1:1088]'    / image portion of frame
+BIASSEC = '[1:50,1:1088]'      / overscan portion of frame
+TRIMSEC = '[51:2098,1:1088]'   / region to be extracted after proc
+CCDSUM  = '1 1     '           / on chip summation (x,y)
+CTYPE1  = 'RA---TAN'
+CRPIX1  =                1181. / x pixel corresponding to RA in CRVAL1
+CRVAL1  =     252.680999999897 / right ascension in degree
+CTYPE2  = 'DEC--TAN'
+CRPIX2  =                 450. / y pixel corresponding to DEC in CRVAL2
+CRVAL2  =      42.873611111139 / declination in degree
+RADECSYS= 'FK5     '
+CD1_2   =            0.0002025 / \frac{\partial RA}{\partial y}
+CD2_1   =            0.0002025 / \frac{\partial DEC}{\partial x}
+BUNIT   = 'ADU     '
+BLANK   =               -32768 / -32768 hardcoded
+TELESCOP= '1 m mit Fokalreduktor' /
+PNT_MODL= 'CassFocRed'         / pointing model
+COMMENT Cassegrain + Focal Reducer
+INSTRUME= 'Enzian  '           /
+OBSERVER= 'Lampens '           /
+EQUINOX =                2000. / equnox for ra/dec
+EXPTIME =                 300. / exposure time in sec
+OTIME   =                 300. / shutter open time in sec
+IMGTYPE = 'OBJECT  '
+FILTERS = 'R       '           /
+CCDPICNO=                 8067 / serial number of the fitsfile
+RO_CHAN =                    1 / number of CCU readout channels
+PIC_NAME= 'image008067.fits'   / original data basename
+COMMENT ../fitsoutput/image008067.fits
+CCU_VER =                  4.1 / CCU PROM program Ver.Rev
+CCU_DB  = 'enzian  '           / CCU data base
+COMMENT ../database/enzian
+CAM_FOC =                1200. / camera focus
+TEL_FOC =               35796. / telescope focus
+DAQ_VERS= 'Ver 0.11 OTK SUB'   / acquisition programm version
+MJD-OBS =        54199.1205717 / MJD when shutter opened
+AIRMASS =        1.01037031645 / Air Mass when shutter opened
+DATE-OBS= '2007-04-09T02:53:37' / UTC when shutter opened
+LST     = '04:58:35'           / local siderial time when shutter opened
+TIME-OBS= '2007-04-09T02:53:37' / UTC when shutter opened
+CCD_TEMP=               -100.2 / Detector Temperature when shutter opened
+MJD-CLOS=        54199.1240437 / MJD when shutter closed
+DATE-CLO= '2007-04-09T02:58:37' / UTC when shutter closed
+LST_CLOS= '05:03:36'           / local siderial time when shutter closed
+CCD_T_CL=                -100. / Detector Temperature when shutter closed
+AIRSTOP =        1.00948106206 / Air Mass, when shutter was closed
+T_DARKO = '28T06:42:12'        / Donnie Darko time
+DATAMD5 = 'f684902190bedbdf800a830334947ac6' / data MD5 signature
+WCSDIM  =                    2
+LTV1    =                   1.
+LTM1_1  =                   1.
+LTM2_2  =                   1.
+WAT0_001= 'system=image'
+WAT1_001= 'wtype=tan axtype=ra'
+WAT2_001= 'wtype=tan axtype=dec'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END
+

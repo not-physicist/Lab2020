@@ -1,0 +1,84 @@
+====> file image008067_1.fits (main) <====
+SIMPLE  =                    T / Fits format
+BITPIX  =                   16 / Bits per pixel
+NAXIS   =                    2 / File dimension
+NAXIS1  =                 1088 / Size in x
+NAXIS2  =                 2148 / Size in y
+BSCALE  =             1.000000 / pixel scale factor
+BZERO   =         32768.000000 / pixel offset
+CTYPE1  = 'RA---TAN          ' / WCS coordinate type
+CTYPE2  = 'DEC--TAN          ' / WCS coordinate type
+CRPIX1  =               450.00 / WCS Coordinate reference pixel
+CRPIX2  =               968.00 / WCS Coordinate reference pixel
+CD1_1   = -4.93889e-05
+CD2_2   = 4.93889e-05
+CD2_1   = 0.0
+CD1_2   = 0.0
+CRVAL1  =           252.681000 / WCS Ref. value (RA in decimal degrees)
+CRVAL2  =            42.873611 / WCS Ref. value (DEC in decimal degrees)
+RADECSYS= 'FK5               ' / Coordinate system for equinox (FK4/FK5/GAPPT)
+FILTER  = 'R                 ' / Name of filter
+OBJECT  = 'SDSS1650+4251     ' / observed target
+AIRMASS =             1.010370 / (average) Airmass during observation
+EXPTIME =               300.00 / effective exposure time
+EQUINOX =              2000.00 / Equinox of coordinates
+IMAGEID =                    1 / Chip Number
+GABODSID=                 3020 / Obs. date in days since 31/12/1998
+ZP      =            -1.000000 / photometric zeropoint
+COEFF   =             1.000000 / photometric extiction coefficient
+DUMMY1  =                    0 / Dummy for adding new FITS cards later
+DATE-OBS= 2007-04-09T02:53:37
+OBSERVER= Lampens
+IMGTYPE = OBJECT
+PIC_NAME= image008067.fits
+SEQUENCE= full_p4s
+TEL_FOC =
+CAM_FOC = 1200.
+CCD_TEMP= -100.2
+MJD-OBS = 54199.1205717
+DUMMY11 =                    0 / Dummy for adding new FITS cards later
+DUMMY12 =                    0 / Dummy for adding new FITS cards later
+DUMMY13 =                    0 / Dummy for adding new FITS cards later
+DUMMY14 =                    0 / Dummy for adding new FITS cards later
+DUMMY15 =                    0 / Dummy for adding new FITS cards later
+DUMMY16 =                    0 / Dummy for adding new FITS cards later
+DUMMY17 =                    0 / Dummy for adding new FITS cards later
+DUMMY18 =                    0 / Dummy for adding new FITS cards later
+DUMMY19 =                    0 / Dummy for adding new FITS cards later
+DUMMY20 =                    0 / Dummy for adding new FITS cards later
+DUMMY21 =                    0 / Dummy for adding new FITS cards later
+DUMMY22 =                    0 / Dummy for adding new FITS cards later
+DUMMY23 =                    0 / Dummy for adding new FITS cards later
+DUMMY24 =                    0 / Dummy for adding new FITS cards later
+DUMMY25 =                    0 / Dummy for adding new FITS cards later
+DUMMY26 =                    0 / Dummy for adding new FITS cards later
+DUMMY27 =                    0 / Dummy for adding new FITS cards later
+DUMMY28 =                    0 / Dummy for adding new FITS cards later
+DUMMY29 =                    0 / Dummy for adding new FITS cards later
+DUMMY30 =                    0 / Dummy for adding new FITS cards later
+DUMMY31 =                    0 / Dummy for adding new FITS cards later
+DUMMY32 =                    0 / Dummy for adding new FITS cards later
+DUMMY33 =                    0 / Dummy for adding new FITS cards later
+DUMMY34 =                    0 / Dummy for adding new FITS cards later
+DUMMY35 =                    0 / Dummy for adding new FITS cards later
+DUMMY36 =                    0 / Dummy for adding new FITS cards later
+DUMMY37 =                    0 / Dummy for adding new FITS cards later
+DUMMY38 =                    0 / Dummy for adding new FITS cards later
+DUMMY39 =                    0 / Dummy for adding new FITS cards later
+DUMMY40 =                    0 / Dummy for adding new FITS cards later
+DUMMY41 =                    0 / Dummy for adding new FITS cards later
+DUMMY42 =                    0 / Dummy for adding new FITS cards later
+DUMMY43 =                    0 / Dummy for adding new FITS cards later
+DUMMY44 =                    0 / Dummy for adding new FITS cards later
+DUMMY45 =                    0 / Dummy for adding new FITS cards later
+DUMMY46 =                    0 / Dummy for adding new FITS cards later
+DUMMY47 =                    0 / Dummy for adding new FITS cards later
+DUMMY48 =                    0 / Dummy for adding new FITS cards later
+DUMMY49 =                    0 / Dummy for adding new FITS cards later
+DUMMY50 =                    0 / Dummy for adding new FITS cards later
+HISTORY
+HISTORY mefsplit: THELI Pipeline Version: 1.9.5
+HISTORY mefsplit: called at 2020-09-07T12:06:09
+HISTORY mefsplit: Split extension 1 from image008067.fits
+HISTORY mefsplit: Save extension 1 as chip 1
+END

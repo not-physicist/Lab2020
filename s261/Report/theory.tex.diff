@@ -1,0 +1,109 @@
+3c3
+< A spatially homogeneous and isotropic Universe can be described as FLRW metric. Solving Einstein's field equations with FLRW metric gives expansion of the Universe~\cite{TEU}. Hubble parameter $H(t)=\dot{a}(t)/a(t)$ evolves according to~\cite{manual}
+---
+> The general expression for a spatially homogeneous and isotropic universe can be written as \cite{manual}
+5c5,6
+<    H^2(t) = H_0^2 \left[ \Omega_\text{rad} a^{-4}(t) + \Omega_\text{mat}a^{-3}(t) + \Omega_\text{curv}a^{-2} (t) + \Omega_\Lambda \right]
+---
+> ds^{2}= c^{2}dt^{2}-a^{2}(t)[dw^{2}+f^{2}_{K}(w)(d\theta + sin^{2}\theta d\psi ^{2})]
+> \label{GExpression}
+8c9,27
+< Because of expansion of the Universe, light emitted in the past gets redshifted over time. The redshift of a source is given by,
+---
+> \noindent
+> Where, \text{t} is cosmic time and \text{a(t)}  is the cosmic scale factor which describe the isotropic expansion.
+> Finally, the \text{K} denotes the space-time curvature is given by,
+> 
+> \begin{equation}
+> f_{K}(w)=\left\{
+> \begin{array}{cc}
+> \frac{1}{\sqrt{K}}sin(\sqrt{K}w) & K>o\\
+>    w & K=0\\
+> \frac{1}{\sqrt{-K}sinh(\sqrt{-K}w)}  &  K<0
+> \end{array}
+> \right\}
+> \end{equation}
+> 
+> \noindent
+> Where, \text{K}= 0 represents a flat geometry.
+> 
+> \noindent
+> The redshift of a source is given by,
+10c29
+<    z=\frac{\lambda_\text{obj}-\lambda_\text{em}}{\lambda_\text{em}}
+---
+> z=\frac{\lambda_{obj}-\lambda_{em}}{\lambda_{em}}
+14,15c33,34
+< Where, $\lambda_\text{obs}$ and $\lambda_\text{em}$ are, respectively, the wavelengths at time of observation and emission.
+< Redshift is directly related to the scale factor by,
+---
+> Where, $\lambda_{obs}$ and $\lambda_{em}$ are, respectively, the wavelengths at time of observation and emission.
+> Equation \ref{math:z} is directly related to the scale factor as,
+19c38,39
+< with scale factor at present time defined as $a(t_0) = 1$.
+---
+> \\
+> This means that a source at redshift z = 1 is observed at a time when the Universe was half of its current size (a = 1/2).\\
+21c41,47
+< The local Hubble law are given by the following formula,\\
+---
+> Due to the expansion of the Universe, a set of comoving observers sees the recession of surrounding objects. The corresponding velocity is,
+> \begin{equation}
+> v=\dot{a}x= \frac{\dot{a}}{a}r=H(t)r
+> \end{equation}
+> where r = ax, and $ H(t)=\frac{\dot{a}}{a} $ is the Hubble parameter, a measure of the cosmic expansion rate.
+> \noindent
+> The local Hubble law according to today's result are given by the following formula,\\
+23c49
+<     v_{esc}=H_{0}D
+---
+>  v_{esc}=H_{0}D
+26c52,53
+<  where, $H_{0} = H(t_0)$ is Hubble constant and $D$ is the distance between object and observer.
+---
+>  \noindent
+>  Where, $H_{0} $ is Hubble constant and D is the distance between object and observer.
+31c58
+<   	D_\text{ang}(z)=2R/\delta=a(z)f_{K}(w)
+---
+>   	D_{ang}(z)=2R/\delta=a(z)f_{K}(w)
+35c62
+<   Where, $R$ is the radius of the distant object, $\delta$ is the angular diameter, and $z$ is the cosmological redshift. If we consider an observer at redshift $ z_{1} $ gives the angular diameter of another object at redshift $ z_{2} $, so equation \ref{DAngular} becomes
+---
+>   Where, 'R' is the radius of the distant object, '$\delta$' is the angular diameter, and 'z' is the cosmological redshift. If we consider an observer at redshift $ z_{1} $ gives the angular diameter of another object at redshift $ z_{2} $, so equation \ref{DAngular} becomes
+37c64
+<   D_\text{ang}(z_{1},z_{2})=a(z_{2})f_{K}[w(z_{2}) - w(z_{1})]
+---
+>   D_{ang}(z_{1},z_{2})=a(z_{2})f_{K}[w(z_{2})=w(z_{1})]
+42c69
+<   D_\text{lum}(z)=\sqrt{\frac{L}{4\pi S}}
+---
+>   D_{lum}(z)=\sqrt{\frac{L}{4\pi S}}
+52c79
+<    \caption{Schematic diagram of the gravitational lensing system~\cite{wiki}. \textcolor{blue}{picture and citation missing!}}%
+---
+>   	\caption{Schematic diagram of the gravitational lensing system~\cite{wiki}.}%
+60c87
+< \pmb\beta = \pmb\theta - \pmb\alpha (\pmb\theta)
+---
+> \beta =\theta -\alpha (\theta)
+64c91
+< Where, $\pmb\theta$ be the apparent angular position of the source in the sky, $\pmb\beta$ is its true position, and $\pmb\alpha $ is the scaled deflection angle.
+---
+> Where, $\theta$ be the apparent angular position of the source in the sky, $\beta$ is its true position, and $\alpha $ is the scaled deflection angle.
+65a93,103
+> The angles can be related to the physical distances as,
+> \begin{equation}
+> \eta = \frac{D_{s}}{D_{d}}\xi - D_{ds} \hat\alpha(\xi)
+> \label{AReation}
+> \end{equation}
+> \noindent
+> With, $ D_{d}\theta= \xi $, $ \eta=D_{s}\beta $, and $\hat{\alpha}$ is the true deflection angle which is related to the scaled deflection angle via:
+> \begin{equation}
+> \hat\alpha(\xi)=\frac{4G}{c^2}\int d^2{\xi'}\sum(\xi') \frac{\xi-\xi'}{{\mid\xi-\xi'\mid}^2}
+> \end{equation} 
+> Where, $\sum(\xi') $ is the surface mass density and $\mid \xi -\xi'\mid$ is the impact parameter for $\sum(\xi') $.
+68c106
+< \kappa(\theta)=\frac{\sum(D_{d}\theta)}{\sum_\text{cr}}
+---
+> \kappa(\theta)=\frac{\sum(D_{d}\theta)}{\sum_{cr}}

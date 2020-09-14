@@ -1,12 +1,19 @@
-
 \documentclass[11pt, a4paper, DIV=12]{scrartcl}
-\usepackage[latin1]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \graphicspath{{figs/}}
-
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{braket} % easy braket notation
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{here}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage[separate-uncertainty=true]{siunitx}
 
 \usepackage[backend=biber, sorting=none]{biblatex}
 \bibliography{refs.bib}
@@ -19,10 +26,10 @@
 
 \input{intro}
 \input{theory}
+\input{preparatory_tasks}
 \input{procedure}
 \input{analysis}
 \input{conclusion}
-\input{preparatory_tasks}
 
 
 \clearpage
