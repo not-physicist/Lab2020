@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper, DIV=12]{scrartcl}
+\documentclass[11pt, a4paper, DIV=12]{scrreprt}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -14,6 +14,12 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage[separate-uncertainty=true]{siunitx}
+\usepackage{gensymb}
+\usepackage{listings}
+
+% footnote with symbols
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \usepackage[backend=biber, sorting=none]{biblatex}
 \bibliography{refs.bib}
@@ -24,14 +30,20 @@
 \begin{document}
 \maketitle
 
+\chapter{Lensing}
 \input{intro}
 \input{theory}
 \input{preparatory_tasks}
 \input{lensing}
-\input{badweather}
-\input{analysis}
 \input{conclusion}
 
+\chapter{Bad weather}
+\input{intro2}
+\input{theory2}
+\input{badweather}
+\input{conclusion2}
+
+\input{appendix}
 
 \clearpage
 \printbibliography

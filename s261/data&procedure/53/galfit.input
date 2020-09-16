@@ -57,4 +57,3 @@ S) 1                   # Modify/create objects interactively?
  2) 0.000      0       # dsky/dx (sky gradient in x) 
  3) 0.000      0       # dsky/dy (sky gradient in y) 
  Z) 0                  # leave in [1] or subtract [0] this comp from data?
-
