@@ -1,0 +1,10 @@
+# imstats: THELI Pipeline Version: 1.9.5
+# imstats: called at 2020-09-18T11:55:37
+# imstats: estimating statistics in
+# 600 < x < 1000, 1400 < y < 1700 within -60000.000000 < pixvalue < 60000.000000
+#
+# imstats: filename	mode	lquartile	median	uquartile	mean	sigma	min	max	goodpix	goodpix/percent
+BIAS.fit	1954.58	1948.00	1955.00	1961.00	1954.54	  9.83	1905.00	2350.00	120000	100.00
+difference.fit	 12.34	-125.00	 14.00	153.00	 15.70	205.26	-831.00	894.00	120000	100.00
+FLAT-1.fit	31733.46	31565.00	31735.00	31906.00	31735.08	251.77	30704.00	32791.00	120000	100.00
+FLAT.fit	31743.54	31583.00	31744.00	31916.00	31750.79	239.94	30758.00	32737.00	120000	100.00
