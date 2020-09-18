@@ -1,0 +1,49 @@
+%!
+72 72 scale
+4 5 translate
+1 72 div setlinewidth
+
+0 0 2.8 0 180 arc 0.9 gsave setgray fill grestore stroke
+0 0 3.4 0 180 arc stroke
+
+0 3.4 moveto 
+0 2.8 lineto stroke
+/y 3.4 dup mul 1.2 dup mul sub sqrt def
+0.2 0.2 0.7 setrgbcolor
+0 2.8 moveto
+-1.2 y lineto stroke
+0.6 setgray
+3.72 sqrt neg 2.8 moveto
+3.72 sqrt 2.8 lineto stroke
+
+1 0 0 setrgbcolor
+0 2.8 0.05 0 360 arc fill
+0 0 0 setrgbcolor
+0 2.8 0.3 90  y 1.2  atan 92 add arc stroke
+
+
+/Helvetica-Bold findfont
+12 72 div scalefont
+setfont
+-0.05 3.45 moveto
+(Z) show
+-0.15 2.91 moveto
+(z) show 
+-2.1 2.75 moveto
+(H) show
+
+-0.5 2.4 moveto
+(Z = Zenith) show stroke
+1 0 0 setrgbcolor
+-0.45 2.25 0.05 0 360 arc fill
+-0.35 2.2 moveto
+0 0 0 setrgbcolor
+(= Observer) show stroke
+-0.48 2 moveto
+(z = angle from zenith) show
+-0.51 1.8 moveto
+(H = Horizon) show
+
+
+
+showpage 
