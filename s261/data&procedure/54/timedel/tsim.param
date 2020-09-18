@@ -1,0 +1,57 @@
+##################################################################
+# Default parameter file for TSim      		      (JH 2007)  #
+##################################################################
+
+
+###Length of observing period (integer, days)
+Obs_Period				...
+
+###Time delay (days)
+TimeDelay				...
+
+###Characteristic time scale of source variability
+CharScalePeriod				...
+
+###RMS source variability (mag)
+Var_RMS					...
+
+###Mean magnitudes of the images (mag)
+MeanMag1				...
+MeanMag2				...
+
+###RMS photometry error (mag)
+NoiseRMS				...
+
+###Number of gaps without observations
+N_gaps				        ...
+
+###Specify the gap intervalls here
+###Format: gap1_begin,gap1_end,gap2_begin,gap2_end,...
+Gap_limits				...,...
+
+###Fraction of data points missing in addition the the gaps
+###(bad weather, etc.)
+Missing_frac				...
+
+###Basename of output files
+Output_Basename				...
+
+###Number of Fourier coefficients;
+###less make light curve smoother
+N_Coeff					1000
+
+###RNG seed for Gaussian random field (LC shape)
+RNG_rf					-23
+
+###RNG seed for magnitude noise
+###(not used if NoiseRMS==0)
+RNG_mag					-3587
+
+###RNG seed for missing observations
+###(not used if Missing_frac==0)
+RNG_miss				-368
+
+###RNG seed for observation times
+###if set to 0, observations will be equally spaced
+RNG_time				-9645
+

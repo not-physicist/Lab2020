@@ -1,0 +1,47 @@
+##################################################################
+# Default parameter file for Tdel   		      (JH 2007)  #
+##################################################################
+
+
+###Initial value of time delay for iteration
+Delay_guess				...
+
+###Minimum delay that is tested
+Delay_Min				...
+
+###Maximum delay that is tested
+Delay_Max				...
+
+###Number of (linear) bins in [Delay_Min; Delay_Max]
+Delay_nbin				...
+
+###Minimum mean mag that is tested
+mmag_Min				...
+
+###Maximum mean mag that is tested
+mmag_Max				...
+
+###Number of magnitude shifts probed
+mmag_nbin				...
+
+###Shall MC error estimation be performed? (0=No,1=yes)
+UseMC 					...
+
+###Number of MC realisations for error estimation
+NMC					...
+
+###Required fractional accuray for mean magnitudes
+Mag_FracAcc				0.001
+
+###Required fractional accuray for time delay
+Del_FracAcc				0.001
+
+###Define "gap": no data for more than _ days
+MinGapLength				...		
+
+###Minimum number of pairs of data points
+MinPairs				20
+
+
+###Basename of DispFctn-files
+DispFctns_base				...
