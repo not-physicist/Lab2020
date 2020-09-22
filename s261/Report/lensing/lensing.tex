@@ -68,9 +68,9 @@ After co-addition, bias frames are free of small white dots as seen before and f
 The minimal value in normalised flat-field is $0$. Dithering during co-addition helps to remove bright objects (stars and etc.).
 
 \paragraph{Background modelling}
-In this processing group, only background model correction is selected, where a superflat and fringe model is created and applied. Its configurations are set according to~\cite{manual}: $\verb|DT| = 1.0$, $\verb|DMIN|=10$, mask expansion factor$=3$, \verb|median| combination, \verb|divide smoothed model, subtract fringes| method, smoothing kernel for background model $=256$.
+In this processing group, only background model correction is selected, where a super-flat and fringe model is created and applied. Its configurations are set according to~\cite{manual}: $\verb|DT| = 1.0$, $\verb|DMIN|=10$, mask expansion factor$=3$, \verb|median| combination, \verb|divide smoothed model, subtract fringes| method, smoothing kernel for background model $=256$.
 
-In superflat, one can clearly see fringes pattern. Fringes and background sky can be extracted with smoothing process. In \verb|SDSS1650+4251_R_block0_1_fringe.fits|, there is only fringes visible and in \verb|SSD1650+4251_R_block0_1_illum.fits| only smooth gradient, i.e.~background.
+In super-flat, one can clearly see fringes pattern. Fringes and background sky can be extracted with smoothing process. In \verb|SDSS1650+4251_R_block0_1_fringe.fits|, there is only fringes visible and in \verb|SSD1650+4251_R_block0_1_illum.fits| only smooth gradient, i.e.~background.
 
 Correction given by illumination is roughly \num{500} (counts). Fringes are removed after correction, see figure~\ref{fig:before} and~\ref{fig:after}.
 \begin{figure}[H]
