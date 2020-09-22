@@ -33,10 +33,13 @@ The local Hubble law are given by the following formula,\\
   \end{equation}
   \noindent
   Where, $R$ is the radius of the distant object, $\delta$ is the angular diameter, and $z$ is the cosmological redshift. If we consider an observer at redshift $ z_{1} $ gives the angular diameter of another object at redshift $ z_{2} $, so equation \ref{DAngular} becomes
-  \begin{equation}
-  D_\text{ang}(z_{1},z_{2})=a(z_{2})f_{K}[w(z_{2}) - w(z_{1})]
+  \begin{align}
+	  \begin{split}
+	  D_\text{ang}(z_{1},z_{2}) &=a(z_{2})f_{K}[w(z_{2}) - w(z_{1})] \\
+										 &= \frac{1}{1+z_2} f_{K} \left[ \frac{c}{H_0} \int_{z_1}^{z_2} \frac{\dd{z'}}{\sqrt{(1-\Omega_\text{m}-\Omega_\Lambda)(1+z')^2 + \Omega_\text{m}(1+z')^3+\Omega_\Lambda}} \right]					
+	  \end{split}
   \label{math:Dangular2}
-  \end{equation}
+  \end{align}
   Another distance measure relates the observed flux, S, of a source to its luminosity, L. For a known luminosity, the distance to the source can be determined as,
   \begin{equation}
   D_\text{lum}(z)=\sqrt{\frac{L}{4\pi S}}

@@ -16,8 +16,38 @@ COL & LINE & RMAG & FLUX & SKY & PIXELS & R & ELLIP & PA & PEAK & MFWHM\\
 \bottomrule
 \end{tabular}
 
+\clearpage
 \section{galfit.input}\label{app:galfit}
 \lstinputlisting[language=Python]{../data&procedure/53/galfit.input}
 
+\clearpage
 \section{Raw data of time delay estimate}\label{app:timdel}
 \input{lensing/timedel_tex}
+
+\clearpage
+\section{Input parameters of program tdel}
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{cc}
+		\toprule
+		parameter & value \\	
+		\midrule
+		\verb|Delay_guess| & 30 \\
+		\verb|Delay_Min| & 10 \\
+		\verb|Delay_Max| & 50 \\
+		\verb|Delay_nbin| & 10 \\
+		\verb|mmag_Max| & -2.5 \\
+		\verb|mmag_Min| & 2.5 \\
+		\verb|mmag_nbin| & 50 \\
+		\verb|UseMC| &	0 \\
+		\verb|NMC| & 0\\
+		\verb|MinGapLength| & 100\\
+		\bottomrule
+	\end{tabular} 
+	\caption{Initial content of tdel.param. Some other inputs are not shown here, since they remain unchanged from default values. Later Monte Carlo is turned on with UseMC $1$ and NMC $500$.}
+	\label{tab:tdelInParam}
+\end{table}
+
+\clearpage
+\section{Raw data of Monte Carlo}\label{app:MCout}
+\input{lensing/MCout}
