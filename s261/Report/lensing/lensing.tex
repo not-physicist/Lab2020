@@ -240,16 +240,72 @@ One could also wonder if the target could consist only of one image, since it ap
 	\label{fig:galfitOneOut}
 \end{figure}
 
+\clearpage
 \section{Time-delay estimate} 
 Time delay between two images can be estimated using minimal dispersion method. But a large number of observations are needed for it to work. Thus we take the data of~\cite{vuissoz} and the raw data are presented in appendix.~\ref{app:timdel}.
 
-Before using minimal dispersion method, one can try to inspect the light curves visually. Figure.~\ref{fig:timeDelay} shows the light curves. Most noticeable feature is a large gap between observations caused by rotation/spin of the Earth. Time delay is quite hard to discern in this plot, but if there is it should be $\order{10}$ days.
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{timeDelay.pdf}
+	\includegraphics[width=0.7\linewidth]{timeDelay.pdf}
 	\caption{Light curves of two images. Note that image A is originally much dimmer. For better comparison, its magnitude is added with $1.8$.}%
 	\label{fig:timeDelay}
 \end{figure}
+Before using minimal dispersion method, one can try to inspect the light curves visually. Figure.~\ref{fig:timeDelay} shows the light curves. Most noticeable feature is a large gap between observations caused by rotation/spin of the Earth. Time delay is quite hard to discern in this plot, but if there is it should be $\order{10}$ days. There is also quite a magnitude difference.
 
+To reliably determine time delay of two images, one has to use minimal dispersion method, implemented in program \verb|tdel|. Before using Monte Carlo, one should roughly find good input parameters of the program, so that the true global minimum can be found. Parameters are listed in table.~\ref{tab:tdelInParam}.
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}[t]{\textwidth}
+	\begin{center}
+		\includegraphics[width=0.6\linewidth]{disp.out_magshiftbin_0.dat.pdf}
+	\end{center}%
+	\caption{magnitude shift=\num{-2.5}}
+	\label{fig:disp1}
+	\end{subfigure}
+	\begin{subfigure}[t]{\textwidth}
+	\begin{center}
+		\includegraphics[width=0.6\linewidth]{disp.out_magshiftbin_25.dat.pdf}
+	\end{center}%
+	\caption{magnitude shift=\num{0}}
+	\label{fig:disp2}
+	\end{subfigure}
+	\begin{subfigure}[t]{\textwidth}
+	\begin{center}
+		\includegraphics[width=0.6\linewidth]{disp.out_magshiftbin_49.dat.pdf}
+	\end{center}%
+	\caption{magnitude shift=\num{2.4}}
+	\label{fig:disp3}
+	\end{subfigure}%
+	\caption{Dispersion spectra with various magnitude shifts.}%
+	\label{fig:disp}
+\end{figure}
+Time delay is determined to be
+\begin{equation}
+	\lambda = \num{34.29}	
+\end{equation}
+Dispersion spectra of this preliminary run are figure.~\ref{fig:disp1},~\ref{fig:disp2}, and~\ref{fig:disp3}. Note the magnitude shift here refers to the magnitude shift after an initial adjustment, so that in the end minimal dispersion should be located at somewhere near zero magnitude shift. Indeed, the dispersion spectra show no clear minima within the selected region, except for zero magnitude shift. So we are certain that we found a global minimum.
+
+With this knowledge and input parameters, Monte Carlo is turned on and it gives us
+\begin{equation}
+	\lambda = \num{34.336 +- 2.184}
+\end{equation}
+
+Here Monte Carlo method also gives us probabilities of various time delays, see figure.~\ref{fig:MCprob}. Fitting using function
+\begin{equation*}
+	f(t) = \frac{1}{\sigma \sqrt{2\pi}} \exp(-\frac{1}{2} \frac{(t-\mu)^2}{\sigma^2}) 
+\end{equation*}
+determined the parameters and covariance matrix to be
+\begin{align*}
+	\mu &= 33.959 \\
+	\sigma &= 1.988 \\
+	\Sigma &= \begin{pmatrix} 0.0064 & -0.0002 \\ -0.0002 & 0.004 \end{pmatrix}
+\end{align*}
+Note that here the fit function does not have either multiplicative or additive constant, since we have probability directly. These values are very close to direct output of Monte Carlo. So one may say the result of Monte Carlo is realistic.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{MCprob.pdf}
+	\caption{Probability of different time delays estimated by Monte Carlo method. Raw data in appendix.~\ref{app:MCout}}%
+	\label{fig:MCprob}
+\end{figure}
 \section{Lensing analysis}
-
