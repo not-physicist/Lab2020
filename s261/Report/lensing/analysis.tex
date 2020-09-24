@@ -1,0 +1,39 @@
+\clearpage
+\section{Lensing analysis} 
+\paragraph{Calculation with accepted value of $H_0$}
+Since the redshifts of lens and source system are known, one can from image separation determine the velocity dispersion in SIS model. Angular distances should be computed also by equation.~\ref{math:Dangular2}. Here the cosmological parameters are taken from~\cite{planck}
+\begin{equation*}
+	\Omega_m = \num{0.3089 +- 0.0062}, \quad \Omega_\Lambda=\num{0.6911 +- 0.0062}
+\end{equation*}
+For simplicity, errors in these parameters are not propagated in further analysis (almost negligible). For this part, currently accepted value of $H_0$ is used.
+
+Image separation can be used to compute Einstein radius. Results of \verb|galfit| are in pixels, so they need to be converted to angles first. As given in~\cite{alfa-manual}, the field of view of Cassegrain focus is $21'\times14'$, meaning one pixel corresponds to $0.4''$. Image separation can be expressed by Einstein radius with equation.~\ref{math:imSep}. The separation in pixels and in radians are then
+\begin{align*}
+	\Delta r &= \num{6.60 +- 0.079} \, \text{(pixels)} \\
+	\Delta \theta &= (\num{1.281 +-0.015}) \cdot 10^{-5} = 2 \theta_E
+\end{align*}
+Here the error is properly propagated using
+\begin{align*}
+	\sigma_{\Delta r} ^2 &= \left( \pdv{\Delta r}{x_A}  \right)^2 \sigma_{x_A}^2 + \left( \pdv{\Delta r}{y_A}  \right)^2 \sigma_{y_A}^2 + \left( \pdv{\Delta r}{x_B}  \right)^2 \sigma_{x_B}^2 + \left( \pdv{\Delta r}{y_B}  \right)^2 \sigma_{y_B}^2 \\
+								&= \frac{1}{(\Delta r)^2} \left[ (x_A - x_B)^2(\sigma_{x_A}^2 + \sigma_{x_B}^2) + (y_A - y_B)^2 (\sigma_{y_A}^2 + \sigma_{y_B}^2) \right]
+\end{align*}
+
+With equation.~\ref{Equ:ThetaE}, one finds
+\begin{equation}
+	\sigma_v = (\num{9.913 +- 0.597 })\cdot 10^{-4} c
+\end{equation}
+where the error is given by
+\begin{equation*}
+	\sigma_{\sigma_v} = \frac{\sigma_v}{2\theta_E} \sigma_{\theta_E}
+\end{equation*}
+
+According to equation.~\ref{math:projMass}, projected mass inside Einstein radius is computed to be
+\begin{equation}
+	M(\theta < \theta_E) = (\num{5.766 +- 0.139}) \cdot 10^{11} M_\odot
+\end{equation}
+This has similar magnitude as the estimated mass of milky way ($\sim \num{1e12} M_\odot$)~\cite{Grand_2019}. The error is propagated to be
+\begin{equation*}
+	\sigma_{M} = \frac{2M}{\theta_E} \sigma_{\theta_E}
+\end{equation*}
+
+\paragraph{Determination of $H_0$}

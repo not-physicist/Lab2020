@@ -21,6 +21,11 @@ COL & LINE & RMAG & FLUX & SKY & PIXELS & R & ELLIP & PA & PEAK & MFWHM\\
 \lstinputlisting[language=Python]{../data&procedure/53/galfit.input}
 
 \clearpage
+\section{Output of galfit}\label{app:galfitOut}
+First group of output is the fitting of two components (images), second group with only one component. Coordinates shown in curly brackets are the coordinates and their errors according to~\cite{galfitManual}. In our analysis, the variables/errors are interpreted as uncorrelated, so that a simple propagation of error formula can be used.
+\lstinputlisting[language=Python]{../data&procedure/53/fit.log}
+
+\clearpage
 \section{Raw data of time delay estimate}\label{app:timdel}
 \input{lensing/timedel_tex}
 
@@ -51,3 +56,5 @@ COL & LINE & RMAG & FLUX & SKY & PIXELS & R & ELLIP & PA & PEAK & MFWHM\\
 \clearpage
 \section{Raw data of Monte Carlo}\label{app:MCout}
 \input{lensing/MCout}
+
+

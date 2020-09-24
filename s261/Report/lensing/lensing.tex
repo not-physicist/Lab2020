@@ -222,9 +222,9 @@ Input parameters of fitting are stored in \verb|galfit.input|, listed in appendi
 
 Execution of component fitting with the given parameter list outputs a log file \verb|fit.log| and a image block, see figure~\ref{fig:galfitOut}. The log file contains the coordinates of two images
 \begin{equation*}
-	(29.69, 24.71), (31.11, 31.16)
+	\pmb{r}_A = (\num{29.69 +- 0.05}, \num{24.71 +- 0.08}),\quad \pmb{r}_B = (\num{31.11 +- 0.01}, \num{31.16 +- 0.01})
 \end{equation*}
-magnitude difference $1.70$, and $\chi^2/\nu = \num{44.542}$. From the residuals, one can see that the fitting works properly. They are quite uniformly distributed with some fluctuation, except there is a slightly bright spot at bottom. As suggested by the tutors, it could be caused by neighbouring stars. 
+magnitude difference $1.70$, and $\chi^2_\nu = \num{44.542}$. From the residuals, one can see that the fitting works properly. They are quite uniformly distributed with some fluctuation, except there is a slightly bright spot at bottom. As suggested by the tutors, it could be caused by neighbouring stars. 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{galfitOutput.png}
@@ -232,7 +232,7 @@ magnitude difference $1.70$, and $\chi^2/\nu = \num{44.542}$. From the residuals
 	\label{fig:galfitOut}
 \end{figure}
 
-One could also wonder if the target could consist only of one image, since it appears to be so visually. Another fitting is done but only with two components, one PSF fit and one sky background. Resultant image block is figure~\ref{fig:galfitOneOut}. There is a clear dark spot in the residual plot and $\chi^2/\nu = 101.615$, much worse than previous fitting. So the image cannot be explained by just one image.
+One could also wonder if the target could consist only of one image, since it appears to be so visually. Another fitting is done but only with two components, one PSF fit and one sky background. Resultant image block is figure~\ref{fig:galfitOneOut}. There is a clear dark spot in the residual plot and $\chi^2_\nu = 101.615$, much worse than previous fitting. So the image cannot be explained by just one image.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{galfitOneOutput.png}
@@ -308,4 +308,3 @@ Note that here the fit function does not have either multiplicative or additive 
 	\caption{Probability of different time delays estimated by Monte Carlo method. Raw data in appendix.~\ref{app:MCout}}%
 	\label{fig:MCprob}
 \end{figure}
-\section{Lensing analysis}

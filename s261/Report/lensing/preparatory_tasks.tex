@@ -4,30 +4,22 @@
  \noindent
  From equation \ref{psiTheta} the deflection potential, which gives the information about the mass distribution of the lens, is define as,
  \begin{equation}
- \psi(\theta)=\frac{1}{\pi}\int d^2\theta'\kappa(\theta')In \mid \theta-\theta'\mid 
+ \psi(\theta)=\frac{1}{\pi}\int d^2\theta'\kappa(\theta')\ln |\theta-\theta'| 
  \end{equation}
- In the case of axial symmetry of SIS lens equation \ref{psiTheta} simplifies to (Given on the question)
+ In the case of axial symmetry of SIS lens equation \ref{psiTheta} simplifies to (given on the question)
  \begin{equation}
- \psi(\theta)=2\int_{0}^{\theta}d\theta' \theta'\kappa(\theta')ln \bigg(\frac{\theta}{\theta'}\bigg)
+ \psi(\theta)=2\int_{0}^{\theta}d\theta' \theta'\kappa(\theta') \ln \bigg(\frac{\theta}{\theta'}\bigg)
  \label{Equ:psiSIS}
  \end{equation}
 
  By substituting the values of $ \Sigma(D_{d}\theta) $, where $ D_{d}\theta=\xi $ from equation \ref{equ:Sigma(xi)} and  $ \Sigma_{cr} $ from equation \ref{SumCr} on equation \ref{Equ:KTheta}, then by plugging the new expression of  $ \kappa(\theta) $ equation \ref{Equ:psiSIS} becomes
  
  
- \begin{equation}
- \psi(\theta)=\frac{4\pi}{c^2}\frac{D_{ds}}{D_{s}}\sigma^2_{v}\int_{0}^{\theta}d\theta' ln \bigg(\frac{\theta}{\theta'}\bigg)
- \end{equation}
- 
- By integrating,
- \begin{equation}
- =\frac{4\pi}{c^2}\frac{D_{ds}}{D_{s}}\sigma^2_{v}[\theta'ln(\frac{\theta}{\theta'})+\theta']
- \end{equation}
- 
- \begin{equation}
- =\theta_{E}(\theta ln \theta - \theta ln \theta + \theta )
- \end{equation}
- 
+ \begin{align*}
+	 \psi(\theta)&=\frac{4\pi}{c^2}\frac{D_{ds}}{D_{s}}\sigma^2_{v}\int_{0}^{\theta}d\theta' ln \bigg(\frac{\theta}{\theta'}\bigg) \\
+					 &=\frac{4\pi}{c^2}\frac{D_{ds}}{D_{s}}\sigma^2_{v} \left[\theta' \ln(\frac{\theta}{\theta'})+\theta'\right] \\
+					 &=\theta_{E}(\theta \ln \theta - \theta \ln \theta + \theta )
+ \end{align*}
  Therefore, 
  \begin{equation}
  \psi(\theta)=\theta_{E}\theta 
@@ -35,12 +27,12 @@
  \end{equation}
  From equation \ref{Equ:AlphaTheta} scaled deflection angle is defined as
  \begin{equation}
- \alpha(\theta)=\bigtriangledown\psi(\theta)
+ \alpha(\theta)=\nabla\psi(\theta)
  \label{Equ:AlphaTheta2}
  \end{equation}
  From equations: \ref{Equ:psiFinal} and \ref{Equ:AlphaTheta2},
  \begin{equation}
- \alpha(\theta)=\bigtriangledown \theta_{E}\theta = \theta_{E}\hat{\theta}
+ \alpha(\theta)=\nabla \theta_{E}\theta = \theta_{E}\hat{\theta}
  \label{Equ:AlphaThetaFinal}
  \end{equation}
  \\
@@ -56,22 +48,23 @@
  \beta=\theta-\theta_{E}\hat{\theta}
  \end{equation}
  or, 
- \begin{equation}
+ \begin{equation*}
  \alpha(\theta)=\beta+\theta_{E}\hat{\theta}
- \end{equation}
+ \end{equation*}
  for $ \hat{\theta}>0 $,
- \begin{equation}
+ \begin{equation*}
  \theta_{A}=\beta + \theta_{E}
  \label{Equ:ThetaA}
- \end{equation}
+ \end{equation*}
  for $ \hat{\theta}<0 $,
- \begin{equation}
+ \begin{equation*}
  \theta_{B}=\beta -\theta_{E}
  \label{Equ:ThetaB}
- \end{equation}
+ \end{equation*}
  Thus, the separation of these  images is given by,
  \begin{equation}
- \Delta\theta= \theta_{A}- \theta_{B} = \beta+\theta_{E}-(\beta-\theta_{E})= 2\theta_{E}
+ \Delta\theta= \theta_{A}- \theta_{B} = 2\theta_{E}
+ \label{math:imSep}
  \end{equation}
  \\
  
