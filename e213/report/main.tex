@@ -1,0 +1,43 @@
+\documentclass[11pt, a4paper, DIV=12]{scrartcl}
+
+% useful packages 
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{graphicx}					  
+\graphicspath{{figs/}}
+
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[separate-uncertainty=true]{siunitx}
+\usepackage{xcolor}
+\usepackage{braket} % easy braket notation
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{here}
+
+\usepackage[backend=biber, sorting=none]{biblatex}
+\bibliography{refs.bib}
+
+% \numberwithin{equation}{section}
+
+% New command and etc
+
+\title{Lab report\\E213 Analysis of $Z^0$ Decay}
+\date{\today}
+\author{Chenhuan Wang and Harilal Bhattarai}
+\begin{document}
+\maketitle
+
+\input{intro}
+\input{theory}
+\input{pre_lab}
+\input{procedure}
+\input{analysis}
+\input{conclusion}
+
+
+\clearpage
+\printbibliography
+\end{document}
