@@ -1,0 +1,5 @@
+separate s and t: need s-channel to analyze Z0, t is basically elastic
+
+use cos_thet < 0.5 to make curve look somewhat symmetric
+
+cos_thet > -0.9 to get rid of meaning less stuff

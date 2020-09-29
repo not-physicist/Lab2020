@@ -1,0 +1,8 @@
+\section{Statistical Analysis}
+With large datasets, previous "event display" method will no longer be efficient and accurate. Thus data analysis tools are necessary. Here \verb|root| is used and three macros to apply cuts are already implemented. As before we have four sets of Monte Carlo simulated data in order to find the optimal cuts, then there are a couple of real data samples.
+
+First of all, there is a couple of general cuts. The collider energy of LEP is $\sim\SI{200}{\giga\eV}$. Thus the scalar sum of momenta should be maximally around this value. Events with even larger momenta are caused by various unphysical processes. Secondly, the data here is written such as when there are multiple outgoing positive particles, $\verb|cos_thet|=1000$. For $ee$ and $\mu\mu$ process, it should not be possible, since no hadronisation can occur. So for these two events selection, cut $\verb|cos_thet| <= 1.0$ is applied.
+
+In event display part, we had success using cut $\verb|Ncharged| > 7$ for $qq$ processes. This is no longer sufficient.
+
+\input{510.tex}

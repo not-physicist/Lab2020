@@ -16,7 +16,7 @@ for filename in os.listdir(directory):
 
         k = 0
         plt.figure(num=k, figsize=(10, 7))
-        plt.hist(Ctrk_N, bins=[-0.5, 0.5, 1.5, 2.5, 3.5])
+        plt.hist(Ctrk_N, bins=5)
         plt.xlabel("number of charged tracks")
         plt.savefig(filename.replace(".dat", "") + "_Ctrk_N.pdf",
                     bbox_inches="tight")
@@ -24,7 +24,7 @@ for filename in os.listdir(directory):
         k += 1
 
         plt.figure(num=k, figsize=(10, 7))
-        plt.hist(Ctrk_Sump, bins=5)
+        plt.hist(Ctrk_Sump, bins=8)
         plt.xlabel("sum of momenta")
         plt.savefig(filename.replace(".dat", "") + "_Ctrl_Sump.pdf",
                     bbox_inches="tight")
@@ -32,7 +32,7 @@ for filename in os.listdir(directory):
         k += 1
 
         plt.figure(num=k, figsize=(10, 7))
-        plt.hist(Ecal, bins=5)
+        plt.hist(Ecal, bins=8)
         plt.xlabel("Ecal")
         plt.savefig(filename.replace(".dat", "") + "_Ecal.pdf",
                     bbox_inches="tight")
@@ -40,7 +40,7 @@ for filename in os.listdir(directory):
         k += 1
 
         plt.figure(num=k, figsize=(10, 7))
-        plt.hist(Hcal, bins=5)
+        plt.hist(Hcal, bins=8)
         plt.xlabel("Hcal")
         plt.savefig(filename.replace(".dat", "") + "_Hcal.pdf",
                     bbox_inches="tight")

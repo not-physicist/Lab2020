@@ -1,0 +1,26 @@
+General cuts:
+Pcharged < 200 (energy of LEP cannot be that high)
+
+ee:
+cos_thet <= 1 (950 in the beginning)
+Ncharged < 4 (get rid of qq)
+E_ecal > 60
+E_hcal < 2
+
+mm:
+cos_thet <= 1 (950 in the beginning)
+Ncharged < 4 (get rid of qq)
+E_ecal < 60 (get rid of ee)
+Pcharged > 70
+
+tt:
+Ncharged < 5 (get rid of qq)
+Pcharged < 60
+Pcharged > 1
+E_ecal < 70
+
+qq:
+Ncharged > 10
+
+## in the beginning use 950 for the cos_thet. Some pdfs are generated with this cut. After we realized that cos_theta should alwyas be less or equal to 1. Thus we changed the cuts in the end of 5.7. This will not change the plots a lot though.
+## Calculate cut efficiencies!

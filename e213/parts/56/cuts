@@ -1,0 +1,24 @@
+ee:
+Ctrk_N <= 3,
+Ecal > 50,
+Hcal < 1,
+
+mm:
+Ctrl_N < 3,
+Ctrl_Sump => 75,
+Ecal < 10,
+Hcal < 30,
+
+tt:
+Ctrl_N <= 7,
+Ctrl_Sump < 75,
+Ecal < 60,
+Hcal < 30,
+
+qq: 
+Ctrl_N > 7,
+Ecal > 30,
+
+#First, Ctrk_N to pick out qq from others, also verify Ecal number
+#Then, Ecal and Hcal to see if it is ee
+#In the end, look at Ctrk_Sump, maybe also verify Ecal and Hcal

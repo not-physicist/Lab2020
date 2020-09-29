@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 G_F = 1.1663e-5  # GeV-2
 sin2_thetaW = 0.2312
+thetaW = np.arcsin(np.sqrt(sin2_thetaW))
 cos2_thetaW = 1 - sin2_thetaW
 M_Z = 91.182  # GeV
 
@@ -61,16 +62,34 @@ def sigma_f(f_dict, s):
     return sig
 
 
-def s_diff_cross(theta):
-    return 1 + np.cos(theta)**2
+def s_diff_cross(cos_theta):
+    return 1 + cos_theta**2
 
 
-def t_diff_cross(theta):
-    return (1-np.cos(theta))**(-2)
+def t_diff_cross(cos_theta):
+    return (1-cos_theta)**(-2)
 
 
 def total_diff_cross(theta):
     return s_diff_cross(theta) + t_diff_cross(theta)
+
+
+def v_f(f_dict):
+    return vector_cplg(f_dict["LI3"], f_dict["Q"])/(2*np.cos(thetaW)*np.sin(thetaW))
+
+
+def a_f(f_dict):
+    return axial_vector_cplg(f_dict["LI3"])/(2*np.cos(thetaW)*np.sin(thetaW))
+
+
+def fb_asymmetry(f_dict, s):
+    A_FB = -3/2
+    A_FB *= a_f(e_dict) * a_f(f_dict) * f_dict["Q"]
+    A_FB /= ((v_f(e_dict)**2 + a_f(e_dict)**2) * (v_f(f_dict)**2 + a_f(f_dict)**2))
+    A_FB *= s * (s - M_Z**2)
+    A_FB /= ((s-M_Z**2)**2 + (s*Gamma_Z/M_Z)**2)
+    return A_FB
+
 
 if __name__ == "__main__":
     # Q5.1
@@ -111,7 +130,7 @@ if __name__ == "__main__":
           "(a change of ", change, "percent)")
 
     # Q5.4
-    x = np.linspace(0.7, np.pi-0.2, 100)
+    x = np.linspace(-0.9, 0.8, 100)
     k = 0
     plt.figure(num=k, figsize=(10,7))
     plt.plot(x, s_diff_cross(x), label="s-channel", color="blue")
@@ -123,3 +142,13 @@ if __name__ == "__main__":
     plt.savefig("./angDep.pdf", bbox_inches="tight")
     plt.close(k)
     k += 1
+
+    # Q5.5
+    for s in [89.225, 91.225, 93.225]:
+        for sin2_thetaW in [0.21, 0.23, 0.25]:
+            thetaW = np.arcsin(np.sqrt(sin2_thetaW))
+            print("Energy:", s, "sin2_thetaW:", sin2_thetaW, "Asymmetry:", fb_asymmetry(e_dict, s))
+
+    # reset
+    sin2_thetaW = 0.2312
+thetaW = np.arcsin(np.sqrt(sin2_thetaW))

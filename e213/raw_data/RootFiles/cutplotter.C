@@ -11,6 +11,25 @@
 //
 //
 
+TString ee_cuts = "Pcharged < 200 && cos_thet <= 1 && Ncharged < 4 && E_ecal > 60 && E_hcal < 2 && cos_thet > -0.9 && cos_thet < 0.5";
+
+TString mm_cuts = "Pcharged < 200 && cos_thet <=1 && Ncharged < 4 && E_ecal < 60 && Pcharged > 70";
+
+TString tt_cuts = "Pcharged < 200 && Ncharged < 5 && Pcharged < 60 && Pcharged > 1 && E_ecal < 70";
+
+TString qq_cuts = "Pcharged < 200 && Ncharged > 10";
+
+TString s1 = "E_lep > 44.0 && E_lep < 44.5 ";
+TString s2 = "E_lep > 44.5 && E_lep < 45 ";
+TString s3 = "E_lep > 45 && E_lep < 45.2 ";
+TString s4 = "E_lep > 45.2 && E_lep < 45.7 ";
+TString s5 = "E_lep > 45.7 && E_lep < 46.2 ";
+TString s6 = "E_lep > 46.2 && E_lep < 46.7 ";
+TString s7 = "E_lep > 46.7 && E_lep < 48.0 ";
+
+TString fd = "cos_thet >= 0 && cos_thet <= 1 ";
+TString bd = "cos_thet >= -1 && cos_thet <= 0 ";
+
 void cutplotter(TString FileName="ERROR", TString BranchName="ERROR",TString cuts="")
 {
 	 if(FileName=="ERROR" && BranchName!="ERROR"){
