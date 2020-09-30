@@ -7,10 +7,11 @@ Since the redshifts of lens and source system are known, one can from image sepa
 \end{equation*}
 For simplicity, errors in these parameters are not propagated in further analysis (almost negligible). For this part, currently accepted value of $H_0$ is used.
 
-Image separation can be used to compute Einstein radius. Results of \verb|galfit| are in pixels, so they need to be converted to angles first. As given in~\cite{alfa-manual}, the field of view of Cassegrain focus is $21'\times14'$, meaning one pixel corresponds to $0.4''$. Image separation can be expressed by Einstein radius with equation.~\ref{math:imSep}. The separation in pixels and in radians are then
+Image separation can be used to compute Einstein radius. Results of \verb|galfit| are in pixels, so they need to be converted to angles first. As given in~\cite{manual}, one pixel corresponds to $0.177''$. Image separation can be expressed by Einstein radius with equation.~\ref{math:imSep}. The separation in pixels and in radians are then
 \begin{align*}
 	\Delta r &= \num{6.60 +- 0.079} \, \text{(pixels)} \\
-	\Delta \theta &= (\num{1.281 +-0.015}) \cdot 10^{-5} = 2 \theta_E
+	\Delta \theta &= 1''.170 \pm 0''.014 =  (\num{5.667 +- 0.068}) \cdot 10^{-6}\\
+	\theta_E &= (\num{2.834 +- 0.034}) \cdot 10^{-6}
 \end{align*}
 Here the error is properly propagated using
 \begin{align*}
@@ -20,7 +21,7 @@ Here the error is properly propagated using
 
 With equation.~\ref{Equ:ThetaE}, one finds
 \begin{equation}
-	\sigma_v = (\num{9.913 +- 0.597 })\cdot 10^{-4} c
+	\sigma_v = (\num{6.594 +- 0.040 })\cdot 10^{-4} c
 \end{equation}
 where the error is given by
 \begin{equation*}
@@ -29,7 +30,7 @@ where the error is given by
 
 According to equation.~\ref{math:projMass}, projected mass inside Einstein radius is computed to be
 \begin{equation}
-	M(\theta < \theta_E) = (\num{5.766 +- 0.139}) \cdot 10^{11} M_\odot
+	M(\theta < \theta_E) = (\num{2.246 +- 0.054}) \cdot 10^{41} \si{\kg} = (\num{1.129 +- 0.027}) \cdot 10^{11} M_\odot
 \end{equation}
 This has similar magnitude as the estimated mass of milky way ($\sim \num{1e12} M_\odot$)~\cite{Grand_2019}. The error is propagated to be
 \begin{equation*}
@@ -37,3 +38,41 @@ This has similar magnitude as the estimated mass of milky way ($\sim \num{1e12} 
 \end{equation*}
 
 \paragraph{Determination of $H_0$}
+By looking at equation \eqref{math:timeDelaySIS}, it is certain that we need not only the separation but also the position of two images in order to compute $H_0$. This information can be extracted using the flux ratio or magnitude difference
+\begin{equation}
+	\Delta m = m_1 - m_2 = \underbrace{ - (100^{1/5})}_{=: 1/A} \log_{10} \left( \frac{S_1}{S_2} \right)
+\end{equation}
+By inverting this and from equation~\eqref{math:galfitResult}, we have
+\begin{equation}
+	\frac{S_A}{S_B} = \num{0.210}  = \frac{\theta_A}{\theta_B}
+\end{equation}
+Error is calculated by
+\begin{equation*}
+	\sigma_{S_A/S_B} = A \ln(10) \sqrt{ 10^{2Am_A} \sigma_{m_A}^2 + 10^{-2Am_B}\sigma_{m_B}^2} \approx \num{4e-10}
+\end{equation*}
+This error is too small and will be neglected in further analysis.
+
+Image separation is also known, thus the image angular positions relative to the lens system can be calculated
+\begin{align}
+	\begin{split}	
+	\theta_A &= -(\num{1.51 +- 0.02 })\cdot 10^{-6}\\
+	\theta_B &= -(\num{7.18 +- 0.09})\cdot 10^{-5}
+	\end{split}
+\end{align}
+
+Now we have all the ingredients in \eqref{math:timeDelaySIS} to determine Hubble constant. Introduce the dimensionless angular distance
+\begin{equation*}
+	D'(z_1, z_2 ) = \frac{H_0}{c} D(z_1, z_2)
+\end{equation*}
+Then we have
+\begin{equation}
+	H_0 =  \frac{1}{2 \Delta t} (1+z_d) \frac{D'_d D'_s}{D'_{ds}} (\theta_A^2 - \theta_B^2)
+\end{equation}
+The sign of $H_0$ must be positive. We are not certain how to properly pair the images of \verb|galfit| and time delay analysis. So in the end, we just add minus sign to make Hubble constant positive. We have
+\begin{equation}
+	H_0 = \SI{246.47 +- 15.68}{\km\per\s\per\mega\parsec}
+\end{equation}
+
+Just from the numerical value of the determined $H_0$, it is quite questionable already. Comparing to some other reputable measurements~\cite{Aghanim:2018eyx}\cite{Riess:2019cxk} for example, this value is roughly off by factor of three. The origin of this discrepancy should be the lens model. SIS model is an axial symmetric model, where the sketch in~\cite{manual} objects are not properly aligned. The result we obtained is not realistic. 
+
+In~\cite{Morgan:2003cf}, they have basically the same data: image separation $1''.2$, and $\sim 1:5$ flux ratio in $R$-band. However, because of the clear asymmetry, SIS model with a shear term is used. In the end, they are able to predict $\sim 33$ days time delay using the reasonable Hubble constant $H_0 = \SI{75}{\km\per\s\per\mega\parsec}$. So the inaccurate lens model should be blamed for the awful determination of $H_0$.

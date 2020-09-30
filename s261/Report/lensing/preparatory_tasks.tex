@@ -1,157 +1,93 @@
 \section{Preparatory Tasks}
-\textbf{ P.3.1 Calculation of the deflection potential, $\psi(\theta) $ and the scaled deflection angle of an SIS lens.}\\
- 
- \noindent
+\paragraph{Calculation of the deflection potential $\psi(\theta) $ and the scaled deflection angle of an SIS lens.}\hspace{0pt}\\
  From equation \ref{psiTheta} the deflection potential, which gives the information about the mass distribution of the lens, is define as,
  \begin{equation}
  \psi(\theta)=\frac{1}{\pi}\int d^2\theta'\kappa(\theta')\ln |\theta-\theta'| 
  \end{equation}
- In the case of axial symmetry of SIS lens equation \ref{psiTheta} simplifies to (given on the question)
+ In the case of axial symmetry of SIS lens equation \ref{psiTheta} simplifies to (given in the question)
  \begin{equation}
  \psi(\theta)=2\int_{0}^{\theta}d\theta' \theta'\kappa(\theta') \ln \bigg(\frac{\theta}{\theta'}\bigg)
  \label{Equ:psiSIS}
  \end{equation}
 
- By substituting the values of $ \Sigma(D_{d}\theta) $, where $ D_{d}\theta=\xi $ from equation \ref{equ:Sigma(xi)} and  $ \Sigma_{cr} $ from equation \ref{SumCr} on equation \ref{Equ:KTheta}, then by plugging the new expression of  $ \kappa(\theta) $ equation \ref{Equ:psiSIS} becomes
- 
- 
- \begin{align*}
-	 \psi(\theta)&=\frac{4\pi}{c^2}\frac{D_{ds}}{D_{s}}\sigma^2_{v}\int_{0}^{\theta}d\theta' ln \bigg(\frac{\theta}{\theta'}\bigg) \\
-					 &=\frac{4\pi}{c^2}\frac{D_{ds}}{D_{s}}\sigma^2_{v} \left[\theta' \ln(\frac{\theta}{\theta'})+\theta'\right] \\
-					 &=\theta_{E}(\theta \ln \theta - \theta \ln \theta + \theta )
- \end{align*}
- Therefore, 
+ By substituting the values of $ \Sigma(D_{d}\theta) $, where $ D_{d}\theta=\xi $ from equation \ref{equ:Sigma(xi)} and  $ \Sigma_\text{cr} $ from equation \ref{SumCr} and equation \ref{Equ:KTheta}, then by plugging the new expression of  $ \kappa(\theta) $ equation \ref{Equ:psiSIS} becomes
+ \begin{equation*}
+	 \psi(\theta) =\frac{4\pi}{c^2}\frac{D_{ds}}{D_{s}}\sigma^2_{v}\int_{0}^{\theta}d\theta' \ln \bigg(\frac{\theta}{\theta'}\bigg) \\
+ \end{equation*}
+ Therefore for $\theta > 0$, 
  \begin{equation}
  \psi(\theta)=\theta_{E}\theta 
  \label{Equ:psiFinal}
  \end{equation}
  From equation \ref{Equ:AlphaTheta} scaled deflection angle is defined as
- \begin{equation}
+ \begin{equation*}
  \alpha(\theta)=\nabla\psi(\theta)
  \label{Equ:AlphaTheta2}
- \end{equation}
+ \end{equation*}
  From equations: \ref{Equ:psiFinal} and \ref{Equ:AlphaTheta2},
  \begin{equation}
- \alpha(\theta)=\nabla \theta_{E}\theta = \theta_{E}\hat{\theta}
+ \alpha(\theta)=\nabla \theta_{E}\theta = \theta_{E} \frac{\theta}{|\theta|}
  \label{Equ:AlphaThetaFinal}
  \end{equation}
- \\
  
- \textbf{P.3.2: Solving the lens equation and finding the separation between images}\\
- 
- The lens equation is given by,
- \begin{equation}
+ \paragraph{Solving the lens equation and finding the separation between images}\hspace{0pt} \\
+ The lens equation in axial symmetric case can be written as
+ \begin{equation*}
  \beta=\theta-\alpha(\theta)
- \end{equation}
+ \end{equation*}
  By using the expression for scaled deflection angle for SIS from \ref{Equ:AlphaThetaFinal}
+ \begin{equation*}
+ \beta=\theta-\theta_{E} \frac{\theta}{|\theta|}
+ \end{equation*}
+ % or,
+ % \begin{equation*}
+	 % \alpha(\theta)=\beta+\theta_{E}\frac{\theta}{|\theta|}
+ % \end{equation*}
+
+ There are two solutions ($\theta/|\theta| = \pm 1$)
  \begin{equation}
- \beta=\theta-\theta_{E}\hat{\theta}
+ \theta_{A, B}=\beta \pm \theta_{E}
+ \label{Equ:ThetaAB}
  \end{equation}
- or, 
- \begin{equation*}
- \alpha(\theta)=\beta+\theta_{E}\hat{\theta}
- \end{equation*}
- for $ \hat{\theta}>0 $,
- \begin{equation*}
- \theta_{A}=\beta + \theta_{E}
- \label{Equ:ThetaA}
- \end{equation*}
- for $ \hat{\theta}<0 $,
- \begin{equation*}
- \theta_{B}=\beta -\theta_{E}
- \label{Equ:ThetaB}
- \end{equation*}
- Thus, the separation of these  images is given by,
+ Thus, the separation of these  images is given by
  \begin{equation}
  \Delta\theta= \theta_{A}- \theta_{B} = 2\theta_{E}
  \label{math:imSep}
  \end{equation}
- \\
  
- \textbf{P.3.3: Magnification ratio of the two images of SIS lens.}\\
- 
- The magnification of a gravitational lens is given by,
+ \paragraph{Magnification ratio of the two images of SIS lens.}\hspace{0pt}\\
+ The determinant can be computed with equation~\ref{Equ:ThetaAB} by
  \begin{equation}
- \mu=(det \text{A})^{-1}
- \end{equation}\\
- 
- 
- 
- 
- 
- \textbf{P.3.4: Time delay derivation for SIS lens as a function of $ \theta_{A}$ and $ \theta_{B}$.}\\
- 
- The time delay is given by\cite{manual}
+	 \det \mathcal{A} = \frac{\beta}{\theta}\dv{\beta}{\theta} 
+							= 
+							\begin{cases}
+								1 - \frac{\theta_E}{\theta_A} & \text{for A} \\
+								1 + \frac{\theta_E}{\theta_B} & \text{for B}
+							\end{cases}
+ \end{equation}
+
+ The magnification of a gravitational lens is given by equation~\ref{math:mag}. If one assume the ratio of magnification is the ratio of flux, then image A has more flux coming in. The flux ratio of two images is
  \begin{equation}
- \text{c}\Delta\text{t}(\beta)=(1+ \text{z}_{d})\frac{\text D_{d}D_{s}}{D_{ds}}[\tau(\theta_{A};\beta) - \tau(\theta_{B}; \beta)]
- \label{Equ:timeDelay}
+	 \left| \frac{\mu_A}{\mu_B} \right| = \frac{\theta_A}{\theta_B}
  \end{equation}
  
- Also, from \ref{Equ:Format} the Format's potential is defined as,
+ \paragraph{Time delay derivation for SIS lens as a function of $ \theta_{A}$ and $ \theta_{B}$.}\hspace{0pt}\\
+ Plugin the solution in equation~\ref{Equ:TimeDelay} and also taking care of negative image, we have
  \begin{equation}
- \tau(\theta; \beta)=\frac{1}{2}(\beta -\alpha)^2 -\psi(\theta)
+	 c \Delta t_\text{SIS} = \frac{1}{2} (1 + z_d) \frac{D_d D_s}{D_{ds}} (\theta_A^2 -\theta_B^2)
+	 \label{math:timeDelaySIS}
  \end{equation}
- So,
- 
- \begin{equation}
- \tau(\theta_{A}; \beta)=\frac{1}{2}(\beta -\theta_{A})^2 -\psi(\theta_{A})
- \end{equation}
- By plugging the values of $\beta$ and $\psi(\theta_{A})$,
- \begin{equation}
- =\frac{1}{2}(\theta_{A}-\theta_{E} -\theta_{A})^2 -\theta_{E}\theta_{A}
- \end{equation}
- Therefore,
- \begin{equation}
- \tau(\theta_{A}; \beta)=\frac{1}{2}\theta^2_{E} -\theta_{E}\theta_{A}
- \end{equation}
- 
-  Similarly,
+  
+  
+ \paragraph{Minimum Dispersion Estimator}\hspace{0pt} \\
+  Minimum dispersion method as described before assume the functional form of light curves is sufficiently smooth, so that the function in between the increments of $\lambda$ and $\Delta m$ can be properly interpolated. One way to deal with this, is to explore the whole 2d plane of $D^2(\lambda, \Delta m)$.
+  
+  
+  \paragraph{The approximation of dispersion function near the minimum by a parabola.}\label{sec:parabola}\hspace{0pt}\\
+  The dispersion function near the minimum can be found by Taylor expanding equation~\ref{math:disp}
   \begin{equation}
-  \tau(\theta_{B}; \beta)=\frac{1}{2}(\beta -\theta_{B})^2 -\psi(\theta_{B})
-  \end{equation}
-  
-   \begin{equation}
-   =\frac{1}{2}(\theta_{B}+\theta_{E} -\theta_{B})^2 -\theta_{E}\theta_{B}
-   \end{equation}
- 
-   \begin{equation}
-  \tau(\theta_{B}; \beta) =\frac{1}{2}\theta^2_{E} - \theta_{E}\theta_{B}
-   \end{equation}
-  By substituting these values equation \ref{Equ:timeDelay} becomes, 
- \begin{equation}
- \text{c}\Delta\text{t}(\beta)=(1+ \text{z}_{d})\frac{\text D_{d}D_{s}}{D_{ds}}(\frac{1}{2}\theta^2_{E} -\theta_{E}\theta_{A} - \frac{1}{2}\theta^2_{E} + \theta_{E}\theta_{B})
- \end{equation}
-  Therefore,
-  
-  \begin{equation}
-  \Delta\text{t}(\beta)=\frac{(1+ \text{z}_{d})}{\text{c}}\frac{\text D_{d}D_{s}}{D_{ds}}\theta_{E}(\theta_{B}-\theta_{A})
-  \end{equation}
-  Thus, the time delay is proportional to the Einstein radius.\\
-  
-  
-  
-  \textbf{P.3.5: Minimum Dispersion Estimator}\\
-  
-  \noindent
-  The minimum dispersion estimator is a simple, efficient and well tested method to estimate time delay from observed light curve\cite{manual}
-  It helps to fine the difference between the curve at various delay times.
-  Since it assume that light curves have the same shape but they are separated by time.\\
-  
-  
-  \textbf{P3.6: The approximation of dispersion function near the minimum by a parabola.}\\
-  
-  The dispersion function near the minimum can be find by Taylor expanding of the functional function. i.e.
-  
-  \begin{equation}
-  d^2(\lambda)=D^2(\lambda_{0}) +\frac{\text{d}D^2(\lambda_{0})}{\text{d}\lambda}(\lambda- \lambda_{0}) + \frac{\text{d}^2 D^2(\lambda_{0})}{\text{d}\lambda^2}(\lambda - \lambda_{0})^2 + 0
+	  D^2(\lambda)=D^2(\lambda_{0}) +\frac{\text{d}D^2(\lambda_{0})}{\text{d}\lambda}(\lambda- \lambda_{0}) + \frac{\text{d}^2 D^2(\lambda_{0})}{\text{d}\lambda^2}(\lambda - \lambda_{0})^2 +  \order{(\lambda-\lambda_0)^3}
   \label{Equ:lambda}
   \end{equation}
-  Where, $ \text{D}^2 $ is the dispersion function and $ \lambda $ is the time shift.
-  Here high order terms are negligible compared to first and second order terms.\\
-  
-  The dispersion function is minimum at $ \lambda= \lambda_{0} $. Now the second term of equation \ref{Equ:lambda} goes to zero. i.e.
-  
-  \begin{equation}
-  d^2(\lambda)=D^2(\lambda_{0}) + \frac{\text{d}^2 D^2(\lambda_{0})}{\text{d}\lambda^2}(\lambda - \lambda_{0})^2 
-  \end{equation}
-  it is parabolic in shape.
+  The dispersion function is minimum at $ \lambda= \lambda_{0} $. So the second term of equation \ref{Equ:lambda} goes to zero.
+ 

@@ -50,6 +50,9 @@ plt.legend()
 
 plt.xlabel("Time delay")
 plt.ylabel("Probability")
+ax = plt.gca()
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
 plt.savefig("MCProb.pdf", bbox_inches="tight")
 plt.close(k)
 k += 1

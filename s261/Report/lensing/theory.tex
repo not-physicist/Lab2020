@@ -115,7 +115,8 @@ From the deflection potential a further scalar function, the Fermat potential, c
 
 Finally to find the magnification of the images is given by
 \begin{equation}
-\mu =(det A)^{-1}
+\mu =(\det A)^{-1}
+\label{math:mag}
 \end{equation}
 where, \text{A} is the Jacobian matrix of lens mapping.
 \begin{equation}
@@ -193,8 +194,9 @@ here, $ \pmb\theta_{\text{A, B}} $ are the positions of the two images. Equation
 In this experiment we can use \textit{minimum dispersion method} to calculate time-delays. The light curve for one quasar image is denoted as $ A(t_{k}) $ and other one is $ B(t_{k}) $ which is shifted by time shift $ \lambda $. In this case, the dispersion function $ \text{D}^2 $ is defined as~\cite{manual},
 \begin{equation}
 \text{D}^2(\lambda, \Delta m)=\sum_{k=1}^{N}(\text{A}(t_{k}) - \text{B}(t_{k}+\lambda, \Delta m) )^2
+\label{math:disp}
 \end{equation}
-where, the light curves are sampled at a discrete number of times $ t_{k}$. This method basically search for minimal dispersion in $2$d-plane of $\lambda$ and $\Delta m$.
+where the light curves are sampled at a discrete number of times $ t_{k}$ and $\Delta m$ is the magnitude shift. This method basically search for minimal dispersion in $2$d-plane of $\lambda$ and $\Delta m$.
 The error bars of the time delay can be estimated by a Monte-Carlo strategy.
 
 
@@ -215,7 +217,7 @@ The main purpose of dark frame is to measure the dark current (thermal noise). T
 All the pixels of CCD have different quantum efficiency (QE), so they need to be properly normalized. One way to obtain a flat field frame is by illuminating the telescope dome from the inside and taking short exposures as not to saturate the CCD. It is called dome flats and they can always obtain even during daytime. Another way is by sky flats which are obtained by taking exposures during evening and/or morning twilight~\cite{manual}. 
 % To make master co-added flat-field image we have to take ten or more flats then averaged together.
 
-\subsection{Image reduction}
+\subsection{Image reduction}\label{subsec:imageReduction}
 The image reduction is done to remove instrumental signature and improve the signal-to-noise (S/N) in the data before extracting any scientific information\cite{manual}.
 \subsubsection{Super-flat and Fringing}
 If the flat frame unable to flatten the pixels properly then we should use super-flat. The position of the telescope is slightly displaced every time, dithering, to avoid the same region of the sky falling on to the pixels. It also correct the falling of important data on bad pixels in the image. Science exposures should be used for a super-flat frame~\cite{manual}.
@@ -237,6 +239,6 @@ Stacking all science frame in to one master frame is called Co-adding. One needs
 \subsubsection{Photometric Calibration}
 The earth atmosphere play an important role in our observations. Different telescopes have different flux values for the same target in different atmospheric conditions. For standard stars, the relation between instrumental magnitude and true magnitude is given by~\cite{manual},
 \begin{equation}
-\text{m}_{\text{calb}}=\text{m}_{\text{instr}}+ \text{Z}
+{m}_{\text{calb}}={m}_{\text{instr}}+ {Z}
 \end{equation}
-Where $Z$ is the photometric zero point.
+where $Z$ is the photometric zero point.
