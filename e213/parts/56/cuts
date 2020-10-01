@@ -4,7 +4,7 @@ Ecal > 50,
 Hcal < 1,
 
 mm:
-Ctrl_N < 3,
+Ctrl_N <= 3,
 Ctrl_Sump => 75,
 Ecal < 10,
 Hcal < 30,

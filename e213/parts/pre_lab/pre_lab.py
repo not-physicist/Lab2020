@@ -130,7 +130,7 @@ if __name__ == "__main__":
           "(a change of ", change, "percent)")
 
     # Q5.4
-    x = np.linspace(-0.9, 0.8, 100)
+    x = np.linspace(-1, 0.70, 100)
     k = 0
     plt.figure(num=k, figsize=(10,7))
     plt.plot(x, s_diff_cross(x), label="s-channel", color="blue")
@@ -139,6 +139,9 @@ if __name__ == "__main__":
     plt.legend()
     plt.xlabel("$\Theta$")
     plt.ylabel(r"$\sim \frac{d \sigma}{d \Omega}$")
+    ax = plt.gca()
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
     plt.savefig("./angDep.pdf", bbox_inches="tight")
     plt.close(k)
     k += 1
@@ -151,4 +154,4 @@ if __name__ == "__main__":
 
     # reset
     sin2_thetaW = 0.2312
-thetaW = np.arcsin(np.sqrt(sin2_thetaW))
+    thetaW = np.arcsin(np.sqrt(sin2_thetaW))
