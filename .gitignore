@@ -6,3 +6,7 @@
 *.out
 *.synctex.gz
 *.fdb_latexmk
+*.cpt
+*.xml
+__pycache__/
+.ipynb_checkpoints/
