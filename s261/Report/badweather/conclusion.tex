@@ -1,0 +1,9 @@
+\section{Conclusion}
+We have successfully determined several properties of the CCD chip. Dark current and its dependence on temperature. With the obtained information, we can extrapolate to compute dark current at \SI{-25}{\degreeCelsius} and find it will not affect HOLIGRAIL observations. Detector gain is calculated by two different methods and they deliver consistent results. Full-well capacity (saturation level) is determined to relatively high precision.
+
+One can try to compare data from analysis and their reference values. The model name of the CCD chip can be found in the header file: \verb|SBIG STL-6303 3 CCD Camera|. It seems to be commercially available and its specifications are listed for example~\cite{SBIG}
+\begin{itemize}
+	\item gain: $1.4$ unbinned
+	\item full-well capacity: $\num{100 000} e^-$
+\end{itemize}
+Images we have should all be unbinned, since the header shows the binning is $1\times 1$. Full-well capacity lies roughly $1\sigma$ away from the literature value.
