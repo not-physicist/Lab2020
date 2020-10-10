@@ -26,9 +26,9 @@ Average bias level is somewhat near $200$. This values changes, though not so ob
 
 Middle of bias frame is chosen to calculated background and sigma, since it doesn't have large-scale variation. Output of \verb|imstats| gives us mean and sigma: $\num{198.72 +- 2.59}$. Noise here should be readout variations and random fluctuations~\cite{manual}.
 
-In flat-field, most obvious feature is black circles or doughnuts. These are dusts on dewar windows and/or filter~\cite{manual}. This results in lower photon counts, thus black in flat-field images. They are not on CCD chips, since they are not properly focused. Some large-scale structure can be seen. It can be explained by different quantum efficiency at different area of CCD. There are quite a lot small sharp black dots visibly. They are most likely to be bad pixels and dust directly on CCD chip.
+In flat-field, most obvious feature is black circles or doughnuts. These are dusts on dewar windows and/or filter~\cite{manual}. This results in lower photon counts, thus black in flat-field images. They are not on CCD chips, since they are not properly focused. Some large-scale structures can be seen. They can be explained by different quantum efficiency of CCD pixels. There are quite a lot small sharp black dots visibly. They are most likely to be bad pixels and dust directly on CCD chip.
 
-Each flat-field has different exposure time. One can try to find correlation between mean value of image and exposure time using commands provided in~\cite{manual}. Ratios between these two goes down with increasing exposure time. Firstly of all, CCD chips should not be saturated here, since with exposure time, mean values goes down. One possibility is that read-out noise in circuit gets averaged out with long exposure time, thus lower ratio. Shot noise should play a more important role here. It becomes especially the (one of) dominate noises at long exposure time.
+Each flat-field has different exposure time. One can try to find correlation between mean value of image and exposure time using commands provided in~\cite{manual}. Ratios between these two goes down with increasing exposure time. Firstly of all, CCD chips are saturated here, since with exposure time, mean values goes down. One possibility is that read-out noise in circuit gets averaged out with long exposure time, thus lower ratio. 
 \begin{figure}[H]
    \centering
    \includegraphics[width=0.6\linewidth]{mean_exp.pdf}
@@ -46,7 +46,7 @@ In science frame one can clearly see doughnut structures and sharp black dots as
 We use \verb|image008068.fits| as an example and compute mean and sigma in area without bright objects. Values are \num{693.20 +- 19.00}. It is greater than the mean value of bias frame. This is easy to understand, since science frame must contain sky. And average pixel count in flat frames is significantly larger than in bias.
 
 \subsection{Image reduction}
-Several science frames containing source \verb|SDSS1650+4251|  are taken from one filter ($R$). Now these images with be reduced with help of calibrations frames and some more in \verb|theli|. \verb|theli| mainly consists of several tabs or processing groups. Each of following paragraph corresponds one processing group/
+Several science frames containing source \verb|SDSS1650+4251|  are taken from one filter ($R$). Now these images with be reduced with help of calibrations frames and some more in \verb|theli|. \verb|theli| mainly consists of several tabs or processing groups. Each of following paragraph corresponds one processing group.
 
 \paragraph{Initialise}  First off, \verb|theli| should be properly reset and initialised. Number of CPU cores and instrument (telescope) are specified accordingly. Paths to image files containing bias, flat, and science frames are filled in.
 
@@ -60,7 +60,7 @@ Through this processing group, headers contained in \verb|.fits| files can be sp
 They are more changes, but the listed alterations are most noticeable.
 
 \paragraph{Calibration}
-In this step, calibration frames are getting co-added. In co-addition process, images are stacked on top of each other, while making sure each object falls onto the same pixel~\cite{manual}. By doing this and in the end only calibrating with co-added images, random noises will get averaged out.  
+In this step, calibration frames are getting co-added. By doing this and in the end only calibrating with co-added images, random noises will get averaged out.  
 
 After co-addition, bias frames are free of small white dots as seen before and flat frames get a bit brighter. One can further computer noise dispersion of co-added bias frame and single bias frame. They are respectively \num{0.72} and \num{2.27}. So noise level in co-added images is much lower.
 
@@ -123,7 +123,7 @@ Frames are astrometrically co-added, subtracted by sky/background, and normalise
 
 \clearpage
 \section{PSF extraction}
-In this section, point-spread-function (PSF) will be extracted. First of all, the target need to be found using standard coordinates: $\text{RA} = 16^\text{h}50^\text{m}43.4^\text{s}$, $\text{DEC}=+42\degree 51'49''.00$. In \verb|ds9|, coordinates can be turned on with \verb|coordinate grid| option, see figure~\ref{fig:coor-grid}. As mentioned in~\cite{manual}, this target consists of two lensing images, but the separation is similar to a typical seeing, so images are blended.
+In this section, point-spread-function (PSF) will be extracted. First of all, the target need to be found using its standard coordinates: $\text{RA} = 16^\text{h}50^\text{m}43.4^\text{s}$, $\text{DEC}=+42\degree 51'49''.00$. In \verb|ds9|, coordinates can be turned on with \verb|coordinate grid| option, see figure~\ref{fig:coor-grid}. As mentioned in~\cite{manual}, this target consists of two lensing images, but the separation is similar to a typical seeing, so images are blended.
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\linewidth]{coor.png}
@@ -131,7 +131,7 @@ In this section, point-spread-function (PSF) will be extracted. First of all, th
    \label{fig:coor-grid}
 \end{figure}
 
-In order to perform component fitting, PSFs of other various objects need to be extracted. One can gain more detailed information about objects using \verb|iraf| task \verb|imexam|. 
+In order to perform component fitting, PSFs of other various objects need to be extracted. One can gain more detailed information about bright objects using \verb|iraf| task \verb|imexam|. 
 
 \begin{figure}[ht]
    \centering
@@ -151,7 +151,7 @@ In order to perform component fitting, PSFs of other various objects need to be 
    \label{fig:galaxyPlots}
 \end{figure}
 
-There are mainly two categories of objects: stars and galaxies. Since galaxies contain a number of radiation sources, their full widths at half maximum (FWHMs) are typically larger than single stars. Indeed, that is what we see. FWHMs of stars are $\sim\num{6+-1}$ pixels, of galaxies $\sim\num{9+-1}$ pixels. Identification of stars and galaxies can be easier with various plots provided by \verb|imexam|. Two example plots each are figure~\ref{fig:galaxyPlots} and~\ref{fig:starPlots}. In contour plots, stars appear to be (almost perfect) concentric circles while galaxies are messier. Radial profiles of star have clear trend while they are scattered for galaxies. These plots support previous argument regarding differentiation stars from galaxies.
+There are mainly two categories of objects: stars and galaxies. Since galaxies contain a number of radiation sources, their full widths at half maximum (FWHMs) are typically larger than single star. Indeed, that is what we see. FWHM of star is $\sim\num{6+-1}$ pixels, of galaxy is $\sim\num{9+-1}$ pixels. Identification of stars and galaxies can be easier with various plots provided by \verb|imexam|. Two example plots each are figure~\ref{fig:galaxyPlots} and~\ref{fig:starPlots}. In contour plots, stars appear to be (almost perfect) concentric circles while galaxies are messier. Radial profiles of star have clear trend while they are scattered for galaxies. These plots support previous argument regarding differentiation stars from galaxies.
 \begin{figure}[ht]
    \centering
    \begin{subfigure}[t]{0.5\textwidth}
@@ -170,7 +170,7 @@ There are mainly two categories of objects: stars and galaxies. Since galaxies c
    \label{fig:starPlots}
 \end{figure}
 
-One can try to determine the seeing of the instrument using the images of stars, since they are ideally point sources. Here all of the stars in appendix~\ref{app:LIST} are used (of course except the last one, which is the quasar images). Given the information that $1$ pixel is $0''.177$ from~\cite{manual}, the seeing is
+One can try to determine the seeing of the instrument using the images of stars, since they are ideally point sources. Here all of the star images in appendix~\ref{app:LIST} are used (of course except the last one, which is the of quasar). Given the information that $1$ pixel is $0''.177$ from~\cite{manual}, the seeing is
 \begin{equation}
 	\num{8.04 +- 0.11} \text{ pixels} = 1''.42 \pm 0.02
 \end{equation}
@@ -217,7 +217,7 @@ Outputs of \verb|create_psf.csh| are each individual cut-outs \verb|cut_scale*.f
 
 \clearpage
 \section{Component fitting}
-Although two images are blended, one can still try to use component fitting to find out individual flux and their separation. The 2d fitting program \verb|galfit| is used here.
+Although two images are blended, one can still try to use component fitting to find out individual fluxes and their separation. The 2d fitting program \verb|galfit| is used here.
 
 \verb|galfit| is able to fit sky value in images and sky background is important to compute the $\sigma$-image~\cite{galfitManual}. Sky value is a fit parameter in \verb|galfit|, thus one need to compute it using \verb|imstats| and \verb|dfits| for normalisation: sky=\SI{1.71}{\per\s}. This value is then added into the image with \verb|ic| command provided in~\cite{manual}.
 
@@ -238,7 +238,7 @@ Execution of component fitting with the given parameter list outputs a log file 
 	m_B &= \num{19.20 +- 0.02}
 	\end{split}\label{math:galfitResult}
 \end{align}
-and $\chi^2_\nu = \num{44.542}$. From the residuals, one can see that the fitting works properly. They are quite uniformly distributed with some fluctuation, except there is a slightly bright spot at bottom. As suggested by the tutors, it could be caused by neighbouring stars. 
+and $\chi^2_\nu = \num{44.542}$. From the residual image, one can see that the fitting works properly. They are quite uniformly distributed with some fluctuation, except there is a slightly bright spot at bottom. As suggested by the tutors, it could be caused by neighbouring stars. 
 
 One could also wonder if the target could consist only of one image, since it appears to be so visually. Another fitting is done but only with two components, one PSF fit and one sky background. Content of the log file can be found in appendix~\ref{app:galfitOut}. Resultant image block is figure~\ref{fig:galfitOneOut}. There is a clear dark spot in the residual plot and $\chi^2_\nu = 101.615$, much worse than previous fitting. So the image cannot be explained by just one image.
 \begin{figure}[ht]
@@ -317,7 +317,7 @@ determined the parameters and covariance matrix to be
 	\sigma &= 1.988 \\
 	\Sigma &= \begin{pmatrix} 0.0064 & -0.0002 \\ -0.0002 & 0.004 \end{pmatrix}
 \end{align*}
-Note that here the fit function does not have either multiplicative or additive constant, since we have probability directly. These values are very close to direct output of Monte Carlo. So one may say the result of Monte Carlo is realistic.
+Note that here the fit function does not have either multiplicative or additive constant, since we have probabilities directly. These values are very close to direct output of Monte Carlo. So one may say the result of Monte Carlo is realistic.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.6\linewidth]{MCprob.pdf}

@@ -1,38 +1,38 @@
 \section[Background]{Background}
 \subsection{Cosmic Expansion}
-A spatially homogeneous and isotropic Universe can be described as FLRW metric. Solving Einstein's field equations with FLRW metric gives expansion of the Universe~\cite{TEU}. Hubble parameter $H(t)=\dot{a}(t)/a(t)$ evolves according to
+A spatially homogeneous and isotropic Universe can be described as FLRW metric. Solving Einstein's field equations with FLRW metric gives expansion of the Universe~\cite{TEU}. Hubble parameter $H(t)=\dot{a}(t)/a(t)$ evolves according to~\cite{manual}
 \begin{equation}
 H^2(t) = H_0^2 \left[ \Omega_\text{rad} a^{-4}(t) + \Omega_\text{mat}a^{-3}(t) + \Omega_\text{curv}a^{-2} (t) + \Omega_\Lambda \right]
 \end{equation}
 
-Because of expansion of the Universe, light emitted in the past gets redshifted over time. The redshift of a source is given by,
+Because of expansion of the Universe, light emitted in the past gets redshifted over time. The redshift of a source is given by~\cite{manual}
 \begin{equation}
 z=\frac{\lambda_\text{obj}-\lambda_\text{em}}{\lambda_\text{em}}
 \label{math:z}
 \end{equation}
 \noindent
 Where, $\lambda_\text{obs}$ and $\lambda_\text{em}$ are, respectively, the wavelengths at time of observation and emission.
-Redshift is directly related to the scale factor by,
+Redshift is directly related to the scale factor by~\cite{manual}
 \begin{equation}
 1+z=\frac{1}{a(t_{em})}
 \end{equation}
 with scale factor at present time defined as $a(t_0) = 1$. Also, this equation shows that the Universe was half of its current size when a source at redshift $z= 1$ is observed.
 
-The local Hubble law is given by the following formula,\\
+The local Hubble law is given by the following formula~\cite{manual}
  \begin{equation}
     v_\text{esc}=H_{0}D
  \label{Hubble}
  \end{equation}
- where, $H_{0} = H(t_0)$ is Hubble constant and $D$ is the distance between object and observer.
+ where $H_{0} = H(t_0)$ is Hubble constant and $D$ is the distance between object and observer.
   
   \subsection{Distances}
-  Accordingly, one defines the angular diameter distance as exactly this ratio,
+  One defines the angular diameter distance in a static Universe as
   \begin{equation}
   	D_\text{ang}(z)=2R/\delta=a(z)f_{K}(w)
   \label{DAngular}
   \end{equation}
   \noindent
-  Where, $R$ is the radius of the distant object, $\delta$ is the angular diameter, and $z$ is the cosmological redshift. If we consider an observer at redshift $ z_{1} $ gives the angular diameter of another object at redshift $ z_{2} $, so equation \ref{DAngular} becomes~\cite{manual}
+  where $R$ is the radius of the distant object, $\delta$ is the angular diameter, and $z$ is the cosmological redshift. If we consider an observer at redshift $ z_{1} $ gives the angular diameter of another object at redshift $ z_{2} $ in FLRW Universe, the equation \ref{DAngular} becomes~\cite{manual}
   \begin{align}
 	  \begin{split}
 	  D_\text{ang}(z_{1},z_{2}) &=a(z_{2})f_{K}[w(z_{2}) - w(z_{1})] \\
@@ -46,12 +46,13 @@ The local Hubble law is given by the following formula,\\
   % \end{equation}
 
 \subsection{Quasars}
-Quasars (QUASi-stellar radio sources) are an extremely luminous and distant active galactic nuclei (AGN). The power for AGNs comes from accretion of matter onto super-massive black-hole, where the significant fraction of the gravitational energy is released as radiation. The radiating part of the quasars must be very compact due to the variability nature
+Quasars (QUASi-stellar radio sources) are an extremely luminous and distant active galactic nuclei (AGN). The power for AGNs comes from accretion of matter onto super-massive black-hole, where the significant fraction of the gravitational energy is released as radiation
+% The radiating part of the quasars must be very compact due to the variability nature
 %. High variability is also strongly correlated with other three properties: high degree of polarization, compact radio structure and strong $ \gamma $ -ray emission
-\cite{manual}. Quasars have variable luminosity at shorter wavelength which can be used to determine the time delay between light beams.
+\cite{manual}. Quasars have variable luminosity which can be used to determine the time delay between lens images.
 
 \subsection{Gravitational lensing}
-A gravitational field is caused by distribution of the matter like, a cluster of galaxies between distant light source and an observer. Due to the effects of this field, light rays are bending traveling from a source to an observer. This effect is called the \textit{gravitational lensing}. The general situation of gravitational lensing is considered as in figure.\ref{Fig:lensing} Where, we suppose the mass distribution at distance $ \text{D}_{\text{d}}$, a source is located at distance $ \text{D}_{\text{s}} $, and $ \text{D}_{\text{ds}}$ is the distance from deflector to a source. All distances used in gravitational lensing are the angular diameter distances.
+A gravitational field is caused by distribution of the matter like, a cluster of galaxies between distant light source and an observer. Due to the effects of this field, light rays are bending traveling from a source to an observer. This effect is called the \textit{gravitational lensing}. The general situation of gravitational lensing is considered as in figure.\ref{Fig:lensing}. Here we suppose the mass distribution at distance $ \text{D}_{\text{d}}$, a source is located at distance $ \text{D}_{\text{s}} $, and $ \text{D}_{\text{ds}}$ is the distance from deflector to a source. All distances used in gravitational lensing are the angular diameter distances.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{lensing.jpg}
@@ -60,43 +61,42 @@ A gravitational field is caused by distribution of the matter like, a cluster of
 \end{figure}
 
 \subsubsection{Lens Equation}
-To study the deflection of light by mass distribution, called lens system, we consider some conditions. First, the distance from an observer to lens and lens to a source is very large so we assume that all angles considers are small i.e. $\tan x \approx \sin x \approx x$. Secondly, source plane and lens plane are parallel, and deflection of light only occur in lens plane as in Born approximation.
+To study the deflection of light by the lens system, we need some approximations. First, the distance from an observer to lens and lens to a source is very large so that all angles can be considered small i.e. $\tan x \approx \sin x \approx x$. Secondly, source plane and lens plane are parallel, and deflection of light only occur in lens plane as in Born approximation.
+
 For a given source, the lens equation is given by,
 \begin{equation}
 \pmb\beta =\pmb\theta - \pmb\alpha (\pmb\theta)
 \label{LEquation}
 \end{equation}
 \noindent
-where, $\pmb\theta$ is the apparent angular position of the source in the sky, $\pmb\beta$ is its true position, and $\pmb\alpha $ is the scaled deflection angle.
-
+where $\pmb\theta$ is the apparent angular position of the source in the sky, $\pmb\beta$ is its true position, and $\pmb\alpha $ is the scaled deflection angle.
 % The angles can relates to physical distances as,
 % \begin{equation}
 % \pmb\eta=\frac{\text{D}_{\text{s}}}{\text{D}_{\text{d}}} \pmb\xi - \text{ D}_{\text{ds}}\hat{\pmb\alpha}(\pmb\xi)
 % \end{equation}
 % where $\text{D}_{\text{d}}\pmb\theta =\pmb\xi $, $\pmb\eta= \text{D}_{\text{s}}\pmb\beta $, and $ \hat{\pmb\alpha(\pmb\xi)} $ is the true deflection angle.
-
-The scaled deflection angle and true deflection angle are connected as,
+The scaled deflection angle and true deflection angle are connected with~\cite{manual}
 \begin{equation}
-\pmb\alpha(\pmb\theta)=\frac{\text{D}_{\text{ds}}}{\text{D}_{\text{s}}} \hat{\pmb\alpha}(D_{d}\pmb\theta)
+\pmb\alpha(\pmb\theta)=\frac{{D}_{\text{ds}}}{{D}_{\text{s}}} \hat{\pmb\alpha}(D_{d}\pmb\theta)
 \end{equation}
 
-Now, we can define a dimensionless surface mas density with convergence as,
+Convergence is defined as
 \begin{equation}
 \kappa(\pmb\theta)=\frac{\sum(D_{d} \pmb \theta)}{\sum_\text{cr}}
 \label{Equ:KTheta}
 \end{equation}
-with the critical surface mass density,
+with the critical surface mass density~\cite{manual}
 \begin{equation}
 \Sigma_\text{cr}=\frac{c^2}{4\pi G}\frac{D_{s}}{D_{d}D_{ds}}
 \label{SumCr}
 \end{equation}
 
-The scaled deflection angle can be written purely in terms of observable angles as,
+The scaled deflection angle can be written purely in terms of observable angles~\cite{manual}
 \begin{equation}
 \pmb\alpha(\pmb\theta)=\frac{1}{\pi}\int \dd[2]{\theta'} \kappa(\pmb{\theta}')\frac{\pmb\theta-\pmb\theta'}{| \pmb\theta -\pmb\theta'| ^2}
 \label{ScaledDA}
 \end{equation} 
-For further convenience, a deflection potential is introduced
+For further convenience, the deflection potential is introduced~\cite{manual}
 \begin{equation}
 \psi(\pmb\theta)=\frac{1}{\pi}\int \dd[2]{\theta'} \kappa(\pmb\theta') \ln | \pmb\theta- \pmb\theta'| 
 \label{psiTheta}
@@ -107,35 +107,35 @@ The use of this quantity is well-motivated because it encloses all information o
 \pmb\alpha(\pmb\theta)=\pmb\nabla\psi(\pmb\theta)
 \label{Equ:AlphaTheta}
 \end{equation}
-From the deflection potential a further scalar function, the Fermat potential, can be defined
+From the deflection potential a further scalar function, the Fermat potential, can be defined~\cite{manual}
 \begin{equation}
 \tau(\pmb\theta; \pmb\beta)=\frac{1}{2}(\pmb\beta -\pmb\theta)^2 -\psi(\pmb\theta)
 \label{Equ:Format}
 \end{equation}
 
-Finally to find the magnification of the images is given by
+Finally to find the magnification of the images is given by~\cite{manual}
 \begin{equation}
 \mu =(\det A)^{-1}
 \label{math:mag}
 \end{equation}
-where, \text{A} is the Jacobian matrix of lens mapping.
+where \text{A} is the Jacobian matrix of lens mapping
 \begin{equation}
 A_{ij}=\frac{\partial\beta_{i}}{\partial \theta_{j}}
 \end{equation}\\
 
-\subsubsection{Strong lensing}
-Multiple images of a source can be obtain in strong lensing. It can be  describe by considering the Format potential $\tau(\pmb\beta;\pmb\theta) $ with fixing $\beta$ and assuming det$ A \ne 0$~\cite{manual}.
-
-\begin{itemize}
-	\item Minima: det$ A\textgreater 0$, tr $A\textgreater 0$
-	\item Maxima: det$ A\textgreater 0$, tr $A\textless 0$
-	\item Saddle points: det $A\textless 0$
-\end{itemize}
-\noindent
-\textbf{Critical curves and Caustics}: Those points in image plane where the magnification diverges i.e. det $A=0  $ called critical curves. Also, the mapping of a critical curve into the source plane is called caustics. In general, critical curves are closed and smooth. Caustics are closed, but not necessarily smooth.
+% \subsubsection{Strong lensing}
+% Multiple images of a source can be obtain in strong lensing. It can be  describe by considering the Format potential $\tau(\pmb\beta;\pmb\theta) $ with fixing $\beta$ and assuming det$ A \ne 0$~\cite{manual}.
+%
+% \begin{itemize}
+	% \item Minima: det$ A\textgreater 0$, tr $A\textgreater 0$
+	% \item Maxima: det$ A\textgreater 0$, tr $A\textless 0$
+	% \item Saddle points: det $A\textless 0$
+% \end{itemize}
+% \noindent
+% \textbf{Critical curves and Caustics}: Those points in image plane where the magnification diverges i.e. det $A=0  $ called critical curves. Also, the mapping of a critical curve into the source plane is called caustics. In general, critical curves are closed and smooth. Caustics are closed, but not necessarily smooth.
 
 \subsubsection{The Odd Number Theorem}
-If a source has a large offset from line of sight from observer to the lens, it is easy to see only one image. The odd number theorem tells us, when we started with one image there will always be an odd number of images of gravitational lensing; however, normally at least one of them is highly de-magnified. So, we can only observe even number of images mostly as doubly or quadruply~\cite{manual}.
+If a source has a large offset from line of sight from observer to the lens, it is easy to see only one image. The odd number theorem tells us, when we started with one image there will always be an odd number of images of gravitational lensing; however, normally at least one of them is highly de-magnified. So we can only observe even number of images (mostly double or quadruple images)~\cite{manual}.
 
 \subsubsection{The SIS (Singular Isothermal Sphere)}
 A simple model to describe the mass distribution of a galaxy acting as a lens is the singular isothermal sphere (SIS):
@@ -171,11 +171,11 @@ and second is the potential time delay which induced by the way of light through
 
 We will find the time delay by using the following expression~\cite{manual}
 \begin{equation}
-c\Delta t(\beta)=(1+z_{\text{d}})\frac{\text{D}_{\text{d}}\text{D}_{\text{s}}}{\text{D}_{\text{ds}}}[\tau(\pmb\theta_{\text{A}}; \pmb\beta)-\tau(\pmb\theta_{\text{B}}; \pmb\beta)]
+c\Delta t(\beta)=(1+z_{\text{d}})\frac{{D}_{{d}}{D}_{{s}}}{{D}_{{ds}}}[\tau(\pmb\theta_{\text{A}}; \pmb\beta)-\tau(\pmb\theta_{\text{B}}; \pmb\beta)]
 \label{Equ:TimeDelay}
 \end{equation}
 \noindent
-here, $ \pmb\theta_{\text{A, B}} $ are the positions of the two images. Equation \ref{Equ:TimeDelay} shows that the time delay is proportional to the inverse Hubble constant, i.e.
+Equation \ref{Equ:TimeDelay} shows that the time delay is inverse proportional to the Hubble constant, i.e.
 \begin{equation}
 \pmb\Delta t \propto \frac{1}{\text{H}_{0}}
 \end{equation}
@@ -189,15 +189,13 @@ here, $ \pmb\theta_{\text{A, B}} $ are the positions of the two images. Equation
 % \noindent
 % From Fig. \ref{Fig:H_{0}}, it is clearly seen that if we take same redshift, image position, and flux ratio for both cases but there is large difference on the lensing system due to the time delay. Also, it is clear that the time delay and Hubble constant are inversely proportional each other.  \\
 
-\noindent
-In this experiment we can use \textit{minimum dispersion method} to calculate time-delays. The light curve for one quasar image is denoted as $ A(t_{k}) $ and other one is $ B(t_{k}) $ which is shifted by time shift $ \lambda $. In this case, the dispersion function $ \text{D}^2 $ is defined as~\cite{manual},
+In this report, we can use \textit{minimum dispersion method} to calculate time-delays. The light curve for one quasar image is denoted as $ A(t_{k}) $ and other one is $ B(t_{k}) $ which is shifted by time shift $ \lambda $. In this case, the dispersion function $ \text{D}^2 $ is defined as~\cite{manual},
 \begin{equation}
 \text{D}^2(\lambda, \Delta m)=\sum_{k=1}^{N}(\text{A}(t_{k}) - \text{B}(t_{k}+\lambda, \Delta m) )^2
 \label{math:disp}
 \end{equation}
 where the light curves are sampled at a discrete number of times $ t_{k}$ and $\Delta m$ is the magnitude shift. This method basically search for minimal dispersion in $2$d-plane of $\lambda$ and $\Delta m$.
-The error bars of the time delay can be estimated by a Monte-Carlo strategy.
-
+The error bars of the time delay can be estimated using a Monte-Carlo strategy.
 
 \subsection{Calibration frames}
 In astronomical observation, the different kind of calibration frames are necessary for image reduction. These frames are described as following.

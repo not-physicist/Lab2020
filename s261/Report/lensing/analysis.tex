@@ -7,7 +7,7 @@ Since the redshifts of lens and source system are known, one can from image sepa
 \end{equation*}
 For simplicity, errors in these parameters are not propagated in further analysis (almost negligible). For this part, currently accepted value of $H_0$ is used.
 
-Image separation can be used to compute Einstein radius. Results of \verb|galfit| are in pixels, so they need to be converted to angles first. As given in~\cite{manual}, one pixel corresponds to $0.177''$. Image separation can be expressed by Einstein radius with equation.~\ref{math:imSep}. The separation in pixels and in radians are then
+Image separation can be used to compute Einstein radius. Results of \verb|galfit| are in pixels, so they need to be converted to angles first. As given in~\cite{manual}, one pixel corresponds to $0''.177$. Image separation can be expressed by Einstein radius with equation.~\ref{math:imSep}. The separation in pixels and in radians are then
 \begin{align*}
 	\Delta r &= \num{6.60 +- 0.079} \, \text{(pixels)} \\
 	\Delta \theta &= 1''.170 \pm 0''.014 =  (\num{5.667 +- 0.068}) \cdot 10^{-6}\\
@@ -68,7 +68,7 @@ Then we have
 \begin{equation}
 	H_0 =  \frac{1}{2 \Delta t} (1+z_d) \frac{D'_d D'_s}{D'_{ds}} (\theta_A^2 - \theta_B^2)
 \end{equation}
-The sign of $H_0$ must be positive. We are not certain how to properly pair the images of \verb|galfit| and time delay analysis. So in the end, we just add minus sign to make Hubble constant positive. We have
+The sign of $H_0$ must be positive. We are not certain how to properly pair the images in \verb|galfit| and in time delay analysis. So in the end, we just add minus sign to make Hubble constant positive. We have
 \begin{equation}
 	H_0 = \SI{246.47 +- 15.68}{\km\per\s\per\mega\parsec}
 \end{equation}

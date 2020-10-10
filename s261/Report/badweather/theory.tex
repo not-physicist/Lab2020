@@ -34,7 +34,7 @@ In optical astronomy, the optical brightness of a source is called magnitude.
 
 The difference in magnitudes between two sources is defined on the basis of ratio of their observed fluxes $ {S}_{1} $ and $ {S}_{2} $ as,
 \begin{equation}
-	\Delta {m}= {m}_{1}-{m}_{2}=-(100^{1/5}). \log_{10} \bigg(\frac{{S}_{1}}{{S}_{2}}\bigg)
+	\Delta {m}= {m}_{1}-{m}_{2}=-(100^{1/5}) \cdot \log_{10} \bigg(\frac{{S}_{1}}{{S}_{2}}\bigg)
 \end{equation}
 With this definition, fainter sources have higher magnitude.
 
@@ -48,11 +48,11 @@ use to quantify the position of celestial objects in optical astronomy. The equa
 \end{itemize}
 
 \subsection{Charge-coupled device}
-Charge-coupled devices (CCD) are two-dimensional detector used to detect electromagnetic radiations. It response wide wavelength range (from near infrared to the soft X-ray). Its working principle relies on photoelectric effects, thus usually highly linear~\cite{manual}.
+Charge-coupled device (CCD) is a two-dimensional detector used to detect electromagnetic radiations. It responds to wide wavelength range (from near infrared to the soft X-ray). Its working principle relies on photoelectric effects, thus usually highly linear~\cite{manual}.
 
 % The distribution of photons is converted to a distribution of charge packets which are collected and stored in three dimensional potential wells. To measure the amount of charge in each packets they have to be transported across the full detector surface to output amplifier. During this transportation of charge packets potential barriers in the transport direction can be manipulated by applying appropriate voltage waveform. The transport is done by parallel shift and series shift. On this functioning principle electrons are shifted, detected and converted in a digital number or count or analog-to-digit unit (ADU) at a rate of about 30 kHz.
 
-Good quality CCDs have high quantum efficiency, low read noise, and excellent linearity. In this experiment we will determine these properties. Some of these properties are discussed below.
+Good quality CCDs are supposed to have high quantum efficiency, low read noise, and excellent linearity. In this experiment we will determine these properties. Some of these properties are discussed below.
 
 \subsubsection{Stability}
 There are several aspect to hold excellent stability characteristic by a CCD. Some of them are
@@ -63,9 +63,9 @@ There are several aspect to hold excellent stability characteristic by a CCD. So
 \end{itemize}
 
 \subsubsection{Dark Current}
-The dark current is a thermal noise. It depends on the temperature of CCD. At room temperature, it fills CCD pixels to their saturation level within a short period of time (a minute or even less). Therefore, it is necessary to keeps the detector system at a low temperature. The cooing of CCD is done thermo-electrically with closed cycle system or by using liquid nitrogen~\cite{manual}.
+Dark current is essentially thermal noise. It depends on the temperature of CCD. At room temperature, it fills CCD pixels to their saturation level within a short period of time (a minute or even less). Therefore, it is necessary to keeps the detector system at a low temperature. The cooling of CCD is done thermo-electrically with closed cycle system or by using liquid nitrogen~\cite{manual}.
 
-The dark current, $ {I}_{\text{dark}} $ changes  with temperature, $T$, as
+The dark current $ {I}_{\text{dark}} $ changes  with temperature  $T$ as
 \begin{equation}
 {I}_{\text{dark}}=c {T}^{3/2} e^{-{\frac{{E}_{{g}}}{2k_{\text{B}}{T}}}}
 \label{Equ:DarkCurrent}
@@ -77,7 +77,7 @@ The ratio between the amount of charge in a CCD pixel and the corresponding digi
 \begin{equation}
 	{N}_{e}= \sigma^2_{e}= k{N}_{e, {d}}= k^2 {\sigma}^2_{e,{d}}
 \end{equation}
-where ${N}_{e}$ and $ \sigma_{e} $ are average number of electron and its variance. Subscript $\text{d}$ means that the numbers are converted to \si{\ADU} already. Therefore, the gain can be determined with
+where ${N}_{e}$ and $ \sigma_{e} $ are average number of electron and its standard deviation. Subscript $\text{d}$ means that the numbers are converted to \si{\ADU} already. Therefore, the gain can be determined with
 \begin{equation}
 k=\frac{{N}_{e, {d}}}{\sigma^2_{e,{d}}}
 \label{math:gain}
@@ -90,7 +90,7 @@ Quantum efficiency is defined as the ratio of produced electrons to the number o
 Even fully covered CCD still have signals varying from pixel to pixel due to the amplification noise occurring in the electronics. The standard deviation of this scatter is called read out noise~\cite{manual}. 
 
 \subsubsection{Noise}
-Noise always means that the standard deviation of the signal level. In our detector system there are three sources of noise: read-out noise, photon noise and PRNU noise. The so-called Pixel Response Non-Uniformity (PRNU) noise is pixel to pixel variation caused by difference quantum efficiency. Thus the total noise is given by~\cite{manual}
+In our detector system there are three sources of noise: read-out noise, photon noise and PRNU noise. The so-called pixel response non-uniformity (PRNU) noise is pixel to pixel variation caused by difference quantum efficiency. Thus the total noise is given by~\cite{manual}
 \begin{equation}
 	\sigma_{\text{tot}}=\sqrt{ \sigma^2_{\text{RON}} + \sigma^2_{e} + \sigma^2_\text{PRNU}}
 \end{equation}
@@ -102,6 +102,6 @@ where $ \sigma_{\text{PRNU}} $ is proportional to signal level,
 $ {f}_{\text{PRNU}} $ is a detector dependent characteristic PRNU factor. It is typically in the order of 0.01~\cite{manual}.
 
 \subsubsection{Linearity and full-well capacity}
-One the most appealing feature of CCDs as astronomical detectors is their linearity. Here, the output signal is proportional to the incoming photons received by the detector. They are linear over the full dynamic range of $10^4 $ to $10^5 $ and deviation from linearity is just $\pm 0.5 \%$  for well behaved system~\cite{manual}.
+One the most appealing feature of CCD as astronomical detectors is it linearity. Here, the output signal is proportional to the incoming photons received by the detector. They are linear over the full dynamic range of $10^4 $ to $10^5 $ and deviation from linearity is just $\pm 0.5 \%$  for well behaved system~\cite{manual}.
 
 The CCD pixels have limited charge capacity. The maximal number of the electrons fitting into a single pixel is called full-well capacity. If one pixel site gets full, electrons will start to spill over to adjacent pixels, causing the so-called  blooming effect~\cite{manual}. Saturation level is essentially the same thing as full-well capacity, but given in the unit of \si{\ADU}.  

@@ -18,7 +18,7 @@ For every temperature, a linear fitting is done to the three data points. Slope 
 	\label{fig:bias}
 \end{figure}
 
-Since slope and intercept are calculated from the same fitting process, there are correlation between these two to some extent. For simplicity, correlations are ignored and only the diagonal entries of the covariance matrix are used in further discussion. Errors drawn in figure~\ref{fig:darkCurrent} and~\ref{fig:bias} are thus the diagonal part of the matrix. Dark current is here given in unit of \si{\ele\per\px\per\s}, thus we want to convert it using gain from later parts (section~\ref{sec:gain} and~\ref{sec:linear}). These two values are combined (averaged) and their errors are propagated properly (variance is additive). The gain used here is
+Since slope and intercept are calculated from the same fitting process, there are correlations between these two to some extent. For simplicity, correlations are ignored and only the diagonal entries of the covariance matrix are used in further discussion. Errors drawn in figure~\ref{fig:darkCurrent} and~\ref{fig:bias} are thus the diagonal part of the matrix. Dark current is here given in unit of \si{\ele\per\px\per\s}, thus we want to convert it using gain from later parts (section~\ref{sec:gain} and~\ref{sec:linear}). These two values are combined (averaged) and their errors are propagated properly (variance is additive). The gain used here is
 \begin{equation*}
 	k = \SI{1.49 +- 0.05}{\ele\per\ADU}
 \end{equation*}
@@ -27,7 +27,7 @@ Error of dark current is given in
 	\sigma_{I_\text{dark}} = I_\text{dark} \sqrt{ \left( \frac{\sigma_k}{k} \right)^2 + \left( \frac{\sigma_{I_{\text{dark,d}}}}{I_{\text{dark,d}}} \right)^2  }	
 \end{equation*}
 
-In figure~\ref{fig:bias}, bias levels somewhat depend on the temperature as well. This might be understood because the determined dark current and bias have correlation in the fitting process. Or maybe the cooling also affects the read-out circuit. Anyway this fluctuation is really tiny ($\sim 0.2\%$).
+In figure~\ref{fig:bias}, bias levels somewhat depend on the temperature as well. This might be understood as that the determined dark current and bias have correlation in the fitting process. Or maybe the cooling also affects the read-out circuit. Anyway this fluctuation is really tiny ($\sim 0.2\%$).
 
 The fit curve in figure~\ref{fig:darkCurrent} is done with equation~\ref{Equ:DarkCurrent}, but with extra additive constant $A$. This constant makes the fitting so much better. The origin of this constant is still puzzle to us. With it, dark current at quite low temperature could be negative, thus the model breaks down. These parameters are
 \begin{align*}
