@@ -1,1 +1,153 @@
+
 \section{Event display}
+In this part, we focused into learning how to distinguish different channel by event display and four different variables. All channels have 20 events. We have used screen-shot images from the program GRope to do that.
+
+\subsection{The OPAL-Detector}
+We have used data in this experiment from OPAL detector. OPAL was one of the four detector devices at LEP at the CERN \cite{manual}. The collision point is surrounded by an central detector with  a vertex chamber, jet- and Z-chambers. The main function of all these chambers is tracking the charged particles. The whole device is situated within an autoclave contains a mixture of argon, methane and isobutane at a pressure of 4 bar \cite{manual}.
+
+The central detector is surrounded by two calorimeters: electromagnetic calorimeter (ECAL) and hadronic calorimeter (HCAL). ECAL consists of lead glass blocks and surrounding jet chamber. The cathod pads are arranged behind these blocks. The energy and position of the electromagnetic showers are determined by th signal from cathode pads. The electron-positron particle showers deposited their energy in ECAL. Hadrons deposited their some part of energy in ECAL and rest of the part in HCAL. 
+
+Whole set up surrounded by draft chamber where charged particles usually muons are detected, therefore it is called muons chamber. A Forward Calorimeter (FCAL) is arranged close to the beam pipe consist of a sandwich of lead glass. FCAL used to measured the luminosity.
+
+
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.8\linewidth]{opal.jpg}
+ 	\caption{ The OPAL detector \cite{manual}. }
+ 	\label{fig:OPAL}
+ \end{figure}
+
+\subsection{Identification of the particle at the OPAL detector}
+To identify the particles, firstly, we divide all particle in charged and uncharged on the basis of visible trajectory.
+
+The charged hadrons and electrons are separated on the basis of their form and beginning of the shower. The electromagnetic showers caused by an electron have small lateral spread and completely situated with in the electromagnetic calorimeter (ECAL); however, hadronic showers are wider and extended up to the hadronic calorimeter(HCAL). And, muons do not produce any shower.
+
+ The neutral particles are identify with the help of different parameters of showers (length, width). The neutral particle decay in to charged particles and follow V tracks. Figure \ref{fig:signature} represent the signature of the particles. 
+ 
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.8\linewidth]{signature.jpg}
+ 	\caption{Schematical representation of the signature of elementary particles at the OPAL \cite{manual}. }
+ 	\label{fig:signature}
+ \end{figure}
+ 
+ 
+The different decay channels are identified as:
+\begin{enumerate}
+\item $ \text{z}^0\rightarrow e^+e^- $\\
+They create electromagnetic showers through Bremsstrahlung and deposit their energy in the electromagnetic calorimeter. 
+
+\item $ \text{z}^0\rightarrow \mu^+\mu^- $\\ 
+Muons are heaver than electrons, they don't show showers either Ecal nor Hcal. They penetrate the Hcal and trigger signal in the muon chambers.
+
+\item $ \text{z}^0\rightarrow \tau^+\tau-$\\
+Tau particles have short life time, so they decay quickly. They can be identified by their decay product. Since they are heavier than electrons and muon and their sum of momentum is less than that electrons and muons for the same energy.
+
+\item $ \text{z}^0\rightarrow q\bar{q}$\\
+Since quarks cannot exist freely and they form jet of hadrons via strong interaction. Hadronic events have high charge tracks, so they are easy identified.
+\end{enumerate}
+
+In this part we can measured the following variables for each event:
+\begin{itemize}
+	\item Ctrk(N): Number of charged tracks
+	\item Ctrk(SumP): Momentum of all charged tracks
+	\item Ecal(SumE): Total energy deposited in the electromagnetic calorimeter
+	\item Hcal(SumE): Total energy deposited in the hadronic calorimeter
+\end{itemize}
+The measured values for each events of channels: $ \text{z}^0\rightarrow e^+e^- $, $ \text{z}^0\rightarrow \mu^+\mu^- $, $ \text{z}^0\rightarrow \tau^+\tau-$,  and $ \text{z}^0\rightarrow  $  of $ z^0 $ boson are, respectively, listed in Tables \ref{tab:ee}, \ref{tab:mm}, \ref{tab:tt}, and \ref{tab:qq} in the appendix. Figure \ref{fig:eventsDisplay} shows the GROUPE output of different decay channels.
+
+
+
+\begin{figure}[H]   
+	\begin{minipage}[t]{0.5\textwidth}
+		\includegraphics[width=\linewidth]{ee_1.pdf}
+		\begin{center}
+			{(a) $  \text{z}^0\rightarrow e^+e^- $}
+		\end{center}
+	\end{minipage} \quad
+	\begin{minipage}[t]{0.5\textwidth}
+		\includegraphics[width=\linewidth]{mm_1.pdf}
+		\begin{center}
+			{(b) $ \text{z}^0\rightarrow \mu^+\mu^- $}
+		\end{center}
+	\end{minipage}\\\\
+	
+	
+	\begin{minipage}[t]{0.5\textwidth}
+		\includegraphics[width=\linewidth]{tt_1.pdf}
+		\begin{center}
+			{(c) $ \text{z}^0\rightarrow \tau^+\tau^- $}
+		\end{center}
+	\end{minipage} \quad
+\begin{minipage}[t]{0.5\textwidth}
+		\includegraphics[width=\linewidth]{qq_1.pdf}
+		\begin{center}
+			{(d) $ \text{z}^0\rightarrow q \bar{q}$}
+		\end{center}
+	\end{minipage}
+\caption{ GROPE output of four different decay modes of $ Z^0 $ boson.}
+\label{fig:eventsDisplay}	
+\end{figure}
+
+\subsection{Determination of appropriate cuts for events classification}
+We plotted the histograms for different parameters of different channels and used to choose the appropriate cuts. Figure \ref{Fig:histograms} shows Histograms of different variables measured in $  \text{z}^0\rightarrow e^+e^- $ channel. From histograms we set the cuts to optical separation of the $ \text{Z}^0 $ decays of different channels. For this we have chosen acceptance of cuts (AC) as
+\begin{equation}
+AC= \frac{\text{The events of a certain class fullfilling the cut criterion}}{\text{Total number of events of the same class}}
+\end{equation}
+Hence our taken cuts are listed in table \ref{Tab:cuts}
+
+  
+\begin{figure}[H]   
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{ee_Ctrk_N.pdf}
+		\begin{center}
+			{(a) Histogram showing the number of charge tracks}
+		\end{center}
+	\end{minipage} \quad
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{ee_Ctrl_Sump.pdf}
+		\begin{center}
+			{(b) Histogram showing the total scalar sum of track momenta}
+		\end{center}
+	\end{minipage}\\\\
+	
+	
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{ee_Ecal.pdf}
+		\begin{center}
+			{(c) Histogram showing the energy deposited in the Electromagnetic Calorimeter}
+		\end{center}
+	\end{minipage} \quad
+	\begin{minipage}[t]{0.6\textwidth}
+		\includegraphics[width=\linewidth]{ee_Hcal.pdf}
+		\begin{center}
+			{(d) Histogram showing the energy deposited in the Hadronic Calorimeter}
+		\end{center}
+	\end{minipage}
+	\caption{Histograms of different variables measured in $  \text{z}^0\rightarrow e^+e^- $ channel.}
+\label{Fig:histograms}	
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ccc ccc}
+		\toprule
+		Particle & Ctrk(N) & Ctrk(Sump) & Ecal(SumE) & Hcal(SumE) \\
+		\midrule
+		Electrons & $ \le $ 3 &   &    \textgreater 50  & \textless 1	\\
+		Muons &  $ \le $ 3 &  $ \ge $50  &    \textless 10  & \textless 30	\\
+		Tauon &  $ \le $ 7 & \textless 75  & \textless 60    & \textless 30	\\
+		Hadrons &  $ \ge $7 &   &  \textgreater 30    &	\\
+		
+		\bottomrule
+	\end{tabular}
+	\caption{Measured Cuts for different variables of different channels.}
+	\label{Tab:cuts}
+\end{table}
+\subsection{Event classification for test sample}
+
+
+	
+To classify events from the sample test1 we used the cuts from table \ref{Tab:cuts}. To do so, firstly, we checked the  CtrkN to pick out hadrons particle from others, also we verified  Ecal number. Secondly, we check the values of Ecal and Hcal to verified electrons. Finally, we checked the value of CtrkSump as well as  Ecal and Hcal to conform the muons or tauons. The measured valued for each variables and the decay channel clasification result are given table \ref{tab:test1}.
+
+\input{test1.tex}
