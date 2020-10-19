@@ -1,62 +1,40 @@
 import numpy as np
 
-# total # of events
-# before Pcharged and cos_thet cuts
-ee_total = 93802
-mm_total = 94381
-tt_total = 79214
-qq_total = 98563
-#after Pcharged and cos_thet cuts
-ee_total = 20499
-mm_total = 89646
-tt_total = 79099
-qq_total = 98100
+data = np.genfromtxt("N.dat", skip_header=2, delimiter=",").T[1:].T
+#  print(data)
 
-# cut for ee s-channel
-ee_ee = 19817
-ee_ee /= ee_total
-ee_mm = 0
-ee_mm /= mm_total
-ee_tt = 651
-ee_tt /= tt_total
-ee_qq = 0
-ee_qq /= tt_total
-eps1 = np.array([ee_ee, ee_mm, ee_tt, ee_qq])
+N_orig = data[1]
+N_ee = data[2]
+N_mm = data[3]
+N_tt = data[4]
+N_qq = data[5]
 
-# cut for mm
-mm_ee = 144
-mm_ee /= ee_total
-mm_mm = 83228
-mm_mm /= mm_total
-mm_tt = 480
-mm_tt /= tt_total
-mm_qq = 0
-mm_qq /= qq_total
-eps2 = np.array([mm_ee, mm_mm, mm_tt, mm_qq])
+N = np.array([N_orig, N_ee, N_mm, N_tt, N_qq])
+sigma_N = np.sqrt(N)
 
-# cut for tt
-tt_ee = 314
-tt_ee /= ee_total
-tt_mm = 2841
-tt_mm /= mm_total
-tt_tt = 70250
-tt_tt /= tt_total
-tt_qq = 39
-tt_qq /= qq_total
-eps3 = np.array([tt_ee, tt_mm, tt_tt, tt_qq])
+eps = np.array([N_ee, N_mm, N_tt, N_qq])/N_orig
+sigma_eps = np.sqrt((sigma_N[0]*N[1:]/N[0]**2)**2 + (sigma_N[1:]/N[0])**2)
 
-# cut for qq
-qq_ee = 0
-qq_ee /= ee_total
-qq_mm = 0
-qq_mm /= mm_total
-qq_tt = 78
-qq_tt /= tt_total
-qq_qq = 92688
-qq_qq /= qq_total
-eps4 = np.array([qq_ee, qq_mm, qq_tt, qq_qq])
+#########################################
+# correct ee efficiency
+#########################################
 
-eps = np.array([eps1, eps2, eps3, eps4])
-np.set_printoptions(precision=3)
-np.set_printoptions(suppress=True)
-print(eps)
+
+def ind_int(x):
+    return (x+x**3/3)
+
+
+def s_int_result(a, b):
+    return (ind_int(b) - ind_int(a))
+
+
+corr_factor = s_int_result(-1, 1) / s_int_result(-0.9, 0.5)
+print("Correction factor for N_ee:", corr_factor)
+
+eps[:, 0] = eps[:, 0]/corr_factor
+sigma_eps[:, 0] = sigma_eps[:, 0]/corr_factor
+
+
+np.set_printoptions(precision=5, suppress=True)
+np.savetxt("eps.dat", eps, delimiter=',', fmt="%.4f")
+np.savetxt("sigma_eps.dat", sigma_eps, delimiter=',', fmt="%.4f")

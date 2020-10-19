@@ -15,6 +15,14 @@ e_dict = {
     "RI3": 0,
 }
 
+mu_dict = {
+    "name": "muon",
+    "Q": -1,
+    "Nc": 1,
+    "LI3": -1/2,
+    "RI3": 0,
+}
+
 nu_dict = {
     "name": "neutrino",
     "Q": 0,
@@ -55,6 +63,7 @@ def Gamma_f(f_dict):
     Gamma *= 1000   # MeV
 
     return Gamma
+
 
 def sigma_f(f_dict, s):
     sig = 12 * np.pi / M_Z**2 * s * Gamma_f(e_dict) * Gamma_f(f_dict)
@@ -137,7 +146,7 @@ if __name__ == "__main__":
     plt.plot(x, t_diff_cross(x), label="t-channel", color="red")
     plt.plot(x, total_diff_cross(x), label="total", color="black")
     plt.legend()
-    plt.xlabel("$\Theta$")
+    plt.xlabel("$\cos\Theta$")
     plt.ylabel(r"$\sim \frac{d \sigma}{d \Omega}$")
     ax = plt.gca()
     ax.spines['top'].set_visible(False)

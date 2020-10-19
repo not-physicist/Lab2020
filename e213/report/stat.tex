@@ -1,6 +1,6 @@
 \clearpage
 \section{Statistical Analysis}
-\paragraph{Mode selection}
+\subsection{Mode selection}
 With large datasets, previous "event display" method will no longer be efficient and accurate. Thus data analysis tools are necessary. Here \verb|root| is used and three macros to apply cuts are already implemented. As before we have four sets of Monte Carlo simulated data in order to find the optimal cuts, then there are a couple of real data samples.
 
 First of all, there are a couple of general cuts. The collider energy of LEP is $\sim\SI{200}{\giga\eV}$. Thus the scalar sum of momenta should be maximally around this value. Events with even larger momenta are caused by various unphysical processes. Secondly, the data here is written such as when there are multiple outgoing positive particles, $\verb|cos_thet|=1000$. For $ee$ and $\mu\mu$ process, it should not be possible, since no hadronisation can occur and initial/final state radiation for these two only involve photons. So for these two event selections, cut $\verb|cos_thet| <= 1.0$ is applied, see figure~\ref{fig:cos_thet_cut}. After the cut(s), there are $56613$ $ee$ events, $89646$ $\mu\mu$ events, $79099$ $\tau\tau$ events, and $98100$ $qq$ events.
@@ -64,4 +64,109 @@ All the cuts are summarizes in table~\ref{tab:cuts_all}
 	\label{tab:cuts_all}
 \end{table}
 
-\paragraph{Channel selection}
+\clearpage
+\subsection{Channel selection} Since processes with $e^+ e^-$ as final states include also $t$-channel elastic scattering between electron and positron and they are irrelevant processes in our discussion, we want to somehow get rid of these contributions. From figure~\ref{fig:angDep} in pre-lab tasks, we know that $s$-channel dominates at small $\cos\Theta$ and $s$-channel contributions should look like symmetric around $\cos\Theta = 0$. Naturally, first thing comes in our minds is to cut $\cos\Theta$ from somewhere between $0$ and $1$ to $-\infty$, so that it looks symmetric. Figure~\ref{fig:s_t_cut} is done with $\cos\Theta < 0.5$. There is a quite significant peak around $\cos\Theta = -1$, which we don't really expect. Physical origin of this peak is unknown to us, but anyway this should be cut away. In the end, we have the cut $-0.9 < \cos\Theta < 0.5$. This cut along with the previous $ee$ cuts will be the new $ee$ cuts used onwards.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\linewidth]{s_t_cut.pdf}
+	\caption{$\cos\Theta$ distribution of $ee$ events after previously determined $ee$ cuts and $\cos \Theta< 0.5$.}%
+	\label{fig:s_t_cut}
+\end{figure}
+
+\subsection{Forward-backward asymmetry}
+Numbers of events in forward ($0 <\cos\theta<1$) and backward ($-1<\cos\theta<0$) are measured using \verb|data1.root| and MC data with $\mm$ as final states. In the actual analysis, only the real data are used. Upon inspection of definition~\ref{math:AFBdef}, it is clear that correction for cut efficiency is unnecessary here, since $N_{+,-}$ share the same cuts.
+
+After application of equation~\ref{math:AFBdef} at all available CMS energy, correction terms should be added to the measured asymmetry. As we understand it, applying these corrections will remove radiation corrections in measured data, so that we can directly compare experimental values with tree-level theoretical values.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\linewidth]{A_FB.pdf}
+	\caption{Forward-backward asymmetry after applying corrections. }%
+	\label{fig:A_FB}
+\end{figure}
+
+Figure~\ref{fig:A_FB} shows the forward-backward asymmetry at various CMS energies. Errors are calculated as usual $\sigma_N \approx \sqrt{N}$.
+
+If one says that the fourth data point (with $\sqrt{s} =\SI{91.22}{\giga\eV}$) lies \textit{exactly} at the peak of resonance, this $A_\text{FB}$ can be used to determined the Weinberg angle
+\begin{align*}
+	\sin^2\theta_W &= \frac{1-\sqrt{A^{\mu, \text{peak}}_{\text{FB}}/3}}{4} \\
+	\sigma_{\sin^2\theta_W} &= \frac{1}{8\sqrt{3}} \frac{\sigma_A}{\sqrt{A}}	
+\end{align*}
+Then we have
+\begin{equation}
+	\sin^2\theta_W = \num{0.2347 +- 0.0112}
+\end{equation}
+
+In principle one can calculate the Weinberg angle at every CMS energy using equation~\ref{math:AFBgen}. But then according to QFT, value of Weinberg angle also changes, since it depends on the coupling $g$ and $g'$. Thus we just settle with this value as our final result.
+
+\subsection{Cut efficiency}
+Cut efficiency can be defined as
+\begin{equation}
+	\epsilon_{ij} = \frac{N_i}{N_j}
+\end{equation}
+where a cut $i$ is applied to a process $j$. In previous sections, there are multiple cuts and MC simulation data. By applying all the cuts to all the data, a $4\times4$ efficiency matrix can be obtained.
+\begin{align}
+	\mathbf{\epsilon} &= \begin{pmatrix} N_{ee, \text{cuts}}/N_{ee} & N_{ee, \text{cuts}}/N_{\mm} & N_{ee, \text{cuts}}/N_{\tta} & N_{ee, \text{cuts}}/N_{qq} \\ 
+	N_{\mm, \text{cuts}}/N_{ee} & N_{\mm, \text{cuts}}/N_{\mm} & N_{\mm, \text{cuts}}/N_{\tta} & N_{\mm, \text{cuts}}/N_{qq} \\ 
+	N_{\tta, \text{cuts}}/N_{ee} & N_{\tta, \text{cuts}}/N_{\mm} & N_{\tta, \text{cuts}}/N_{\tta}  &N_{\tta, \text{cuts}}/N_{qq} \\ 
+	N_{qq, \text{cuts}}/N_{ee} & N_{qq, \text{cuts}}/N_{\mm} & N_{qq, \text{cuts}}/N_{\tta}  &N_{qq, \text{cuts}}/N_{qq} 
+\end{pmatrix} \label{math:epsFor}\\
+							&= \begin{pmatrix} \num{0.9667 +- 0.0096} & \num{0.0000 +- 0.0000} & \num{0.0082 +- 0.0003} & \num{0.0000 +- 0.0000} \\ 
+								\num{0.0070 +- 0.0006} & \num{0.9284 +- 0.0045} & \num{0.0061 +- 0.0003} & \num{0.0000 +- 0.0000} \\
+								\num{0.0153 +- 0.0009} & \num{0.0317 +- 0.0006} & \num{0.8881 +- 0.0046} & \num{0.0004 +- 0.0001} \\
+								\num{0.0000 +- 0.0000} & \num{0.0000 +- 0.0000} & \num{0.0010 +- 0.0001} & \num{0.9448 +- 0.0043} 
+	\end{pmatrix}\notag
+\end{align}
+Raw data can be found in appenfix~\ref{app:59}. Note that the total number of events considered here is the number \textit{after} \verb|Pcharged| and \verb|cos_thet| (including $s$-channel selection) cuts. After all, cuts efficiencies we discuss here are only the efficiencies of cuts like $ee$ cuts and so on.
+
+Error is estimated using Poisson statistic and usual error propagation formula. 
+\begin{equation*}
+	\sigma_{\epsilon_{ij}} = \sqrt{ \left(\frac{1}{N_j} \sigma_{N_i} \right)^2 + \left(\frac{N_i}{N_j^2} \sigma_{N_j}\right)^2  }  = \sqrt{ \frac{N_i}{N_j^2} + \frac{N_i^2}{N_j^3} }
+\end{equation*}
+
+Actually the $\epsilon_{i, ee}$ efficiencies are problematic, because in \verb|cos_thet| cuts, one part of $s$-channel gets lost. Main purpose of efficiency matrix is to obtain true number of events from measured number of events. If we continue to use $\epsilon_{i, ee}$ without further corrections, the true number of events are of $-0.9 < \verb|cos_thet| < 0.5$, resulting lower counts. 
+
+The correction involves adjustment of denominator or $\epsilon_{i, ee}$, since in selecting $N_{ee}$ the $s$-channel cuts are applied. For this, the function $(1+\cos^2\Theta)$ is integrated in $-0.9 < \cos\Theta < 0.5 $  and in $-1 < \cos\Theta < 1$.
+\begin{equation}
+	\text{corr. factor} = \frac{\int_{-1}^{1} \dd{x} (1+x^2)}{ \int_{-0.9}^{0.5}\dd{x} (1+x^2)} \approx \num{1.583}
+\end{equation}
+This number is then multiplied to all the denominator of first column in equation~\ref{math:epsFor}. Now the corrected efficiency matrix is
+\begin{equation}
+	\epsilon = \begin{pmatrix} \num{0.6107 +- 0.0061} & \num{0.0000 +- 0.0000} & \num{0.0082 +- 0.0003} & \num{0.0000 +- 0.0000} \\ 
+								\num{0.0044 +- 0.0004} & \num{0.9284 +- 0.0045} & \num{0.0061 +- 0.0003} & \num{0.0000 +- 0.0000} \\
+								\num{0.0097 +- 0.0006} & \num{0.0317 +- 0.0006} & \num{0.8881 +- 0.0046} & \num{0.0004 +- 0.0001} \\
+								\num{0.0000 +- 0.0000} & \num{0.0000 +- 0.0000} & \num{0.0010 +- 0.0001} & \num{0.9448 +- 0.0043} 
+	\end{pmatrix}
+\end{equation}
+
+
+
+
+
+\subsection{Partial cross sections}
+From last section, cut efficiency matrix is obtained. It describes how true numbers of events $T_i$ translate into measured numbers of events $M_i$, i.e.
+\begin{equation}
+	\mathbf{M} = \epsilon \mathbf{T}
+\end{equation}
+In this compact matrix notation, $\mathbf{M}$ and $\mathbf{T}$ are vectors containing the numbers of events in a decay mode.
+
+With real data in \verb|data1.root|, we have the measured numbers using the cuts defined earlier. To find out true numbers, one needs to find inverse matrix $\epsilon^{-1}$.
+\begin{equation}
+	\mathbf{T} = \epsilon^{-1} \mathbf{M}
+\end{equation}
+
+We are aware that we can propagate errors in $\epsilon$ and $\mathbf{M}$ to obtain an accurate error estimation of $\mathbf{T}$. According to~\cite{Lefebvre:400631},
+\begin{equation}
+	\text{Cov}(\epsilon^{-1}_{\alpha\beta}, \epsilon^{-1}_{a b})= ([\epsilon^{-1}]_{\alpha i} [\epsilon^{-1}]_{a i}) [\sigma_{\epsilon}]^2_{ij} ([\epsilon^{-1}]_{j \beta} [\epsilon^{-1}]_{jb})
+\end{equation}
+and the correlation matrix of $\mathbf{T}$ is
+\begin{equation}
+	\text{Cov}(T_i, T_j) = M_\alpha M_\beta \text{Cov} (\epsilon^{-1}_{i\alpha}, \epsilon^{-1}_{j\beta}) + \epsilon^{-1}_{ik} \epsilon^{-1}_{jl} \text{Cov}(M_k, M_l)
+	\label{math:CovTT}
+\end{equation}
+where $\text{Cov}(M_k, M_l)$ is generally diagonal. 
+For simplicity, we neglect first term in equation~\ref{math:CovTT}. This is well justified, since errors in $\mathbf{T}$ are generally a couple of magnitudes larger than errors in $\epsilon$. In the end, we want the diagonal entries of $\text{Cov}(T_i, T_j)$, thus
+\begin{equation}
+	\sigma_{{T_i}}^2 = \epsilon^{-1}_{ik} \epsilon^{-1}_{ik} \sigma_{M_k}^2 
+\end{equation}
+
+After correction for efficiency, number of events needs to be subtracted by integrated luminosity $\int\dd{t} \mathcal{L}$ to obtain partial differential cross section.
