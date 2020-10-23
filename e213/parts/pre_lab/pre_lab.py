@@ -1,6 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def MeV_2_nb(x):
+    return x/2.5682e-12
+
+
 G_F = 1.1663e-5  # GeV-2
 sin2_thetaW = 0.2312
 thetaW = np.arcsin(np.sqrt(sin2_thetaW))
@@ -91,11 +96,13 @@ def a_f(f_dict):
     return axial_vector_cplg(f_dict["LI3"])/(2*np.cos(thetaW)*np.sin(thetaW))
 
 
-def fb_asymmetry(f_dict, s):
-    A_FB = -3/2
-    A_FB *= a_f(e_dict) * a_f(f_dict) * f_dict["Q"]
+def fb_asymmetry(f_dict, sqrt_s):
+    s = sqrt_s**2
+    print(sqrt_s, M_Z, Gamma_Z, sin2_thetaW)
+    A_FB = 1
+    A_FB = -3/2 * (a_f(e_dict) * a_f(f_dict) * f_dict["Q"])
     A_FB /= ((v_f(e_dict)**2 + a_f(e_dict)**2) * (v_f(f_dict)**2 + a_f(f_dict)**2))
-    A_FB *= s * (s - M_Z**2)
+    A_FB *= (s * (s - M_Z**2))
     A_FB /= ((s-M_Z**2)**2 + (s*Gamma_Z/M_Z)**2)
     return A_FB
 
@@ -131,6 +138,9 @@ if __name__ == "__main__":
     sigma_total = sigma_ch + sigma_inv + sigma_q
     print("Total cross section =", sigma_total, "MeV-2")
 
+    print("Partial cross section to charged particles =", MeV_2_nb(sigma_ch)/1e6, "nb-1")
+    print("Partial cross section to hardrons =", MeV_2_nb(sigma_q)/1e6, "nb-1")
+
     # Q5.3
     Gamma_prime_Z = Gamma_Z + Gamma_e + Gamma_nu + Gamma_up + Gamma_down
     change = Gamma_prime_Z - Gamma_Z
@@ -156,10 +166,12 @@ if __name__ == "__main__":
     k += 1
 
     # Q5.5
-    for s in [89.225, 91.225, 93.225]:
+    Gamma_Z = 2.537
+    M_Z = 91.1876
+    for sqrt_s in np.array([89.225, 91.225, 93.225]):
         for sin2_thetaW in [0.21, 0.23, 0.25]:
             thetaW = np.arcsin(np.sqrt(sin2_thetaW))
-            print("Energy:", s, "sin2_thetaW:", sin2_thetaW, "Asymmetry:", fb_asymmetry(e_dict, s))
+            print("sqrt_s =", sqrt_s, "sin2_thetaW:", sin2_thetaW, "Asymmetry =", fb_asymmetry(mu_dict, sqrt_s))
 
     # reset
     sin2_thetaW = 0.2312

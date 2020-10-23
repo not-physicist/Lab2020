@@ -1,6 +1,8 @@
 \section{Theory}
+We will not try to derive the whole electroweak theory again. Here only some important, relevant equations are presented.
+
 \paragraph{Decay width}
-The partial decay width of $Z^0$ decay into fermion $f$ is
+The partial decay width of $Z^0$ decay into fermion $f$ is~\cite{manual}
 \begin{equation}
 	\Gamma_f = \frac{ \sqrt{2} N_c^f}{12\pi} G_F M_Z^3 \left( (g_V^f)^2 + (g_A^f)^2  \right)
 	\label{math:Gammaf}
@@ -15,10 +17,16 @@ One needs to be aware that $\Gamma_f$ contains contribution from both chiralitie
 Partial cross section of $Z^0 \rightarrow f\bar{f}$ is given by~\cite{manual}
 \begin{equation}
 	\sigma_f(s) = \frac{12 \pi}{M_Z^2} \frac{s \Gamma_e \Gamma_f}{ (s-M_Z^2)^2 + (s^2 \Gamma^2_Z / M_Z^2)}
+	\label{math:sigmaf}
+\end{equation}
+and exactly at peak of resonance
+\begin{equation}
+	\sigma_{f, \text{peak}} = \frac{12 \pi}{M_Z^2} \frac{\Gamma_e \Gamma_f}{\Gamma_Z^2}
+	\label{math:sigmafPeak}
 \end{equation}
 
 \paragraph{Angular distribution}
-In $ee \rightarrow ee$ scattering, two relevant channels have different angular dependences. For $s$-channel,
+In $ee \rightarrow ee$ scattering, two relevant channels have different angular dependences. For $s$-channel~\cite{manual},
 \begin{equation}
 	\dv{\sigma}{\Omega}_s \sim (1 + \cos^2 \Theta)
 	\label{math:diffCrossS}
@@ -37,7 +45,7 @@ For $t$-channel,
 \end{equation}
 where $N_{+,-}$ denotes number of events in forward or backward direction.
 
-Near $Z^0$ resonance can be approximated by
+Near $Z^0$ resonance can be approximated by~\cite{manual}
 \begin{align}
 	\begin{split}
 	A_\text{FB}^f &\approx \frac{-3}{2} \frac{a_e a_f Q_f \Re(\chi)}{(v_e^2 + a_e^2) (v_f^2 + a_f^2)} \\
@@ -45,4 +53,8 @@ Near $Z^0$ resonance can be approximated by
 	\end{split}
 	\label{math:AFBgen}
 \end{align}
-
+Exactly at resonance peak, we have
+\begin{equation}
+	A_\text{FB}^{l,\text{peal}} \approx 3 \left( \frac{v_l}{a_l} \right)^2 = 3 \left( \frac{I_3^l - 2 Q_l \sin^2\theta_W}{I_3^l} \right)^2
+	\label{math:AFBpeak}
+\end{equation}

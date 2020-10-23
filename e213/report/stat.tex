@@ -86,7 +86,7 @@ After application of equation~\ref{math:AFBdef} at all available CMS energy, cor
 
 Figure~\ref{fig:A_FB} shows the forward-backward asymmetry at various CMS energies. Errors are calculated as usual $\sigma_N \approx \sqrt{N}$.
 
-If one says that the fourth data point (with $\sqrt{s} =\SI{91.22}{\giga\eV}$) lies \textit{exactly} at the peak of resonance, this $A_\text{FB}$ can be used to determined the Weinberg angle
+If one says that the fourth data point (with $\sqrt{s} =\SI{91.22}{\giga\eV}$) lies \textit{exactly} at the peak of resonance, this $A_\text{FB}$ can be used to determined the Weinberg angle from equation~\ref{math:AFBpeak}
 \begin{align*}
 	\sin^2\theta_W &= \frac{1-\sqrt{A^{\mu, \text{peak}}_{\text{FB}}/3}}{4} \\
 	\sigma_{\sin^2\theta_W} &= \frac{1}{8\sqrt{3}} \frac{\sigma_A}{\sqrt{A}}	
@@ -95,6 +95,8 @@ Then we have
 \begin{equation}
 	\sin^2\theta_W = \num{0.2347 +- 0.0112}
 \end{equation}
+
+From PDG~\cite{PDG}, in $\bar{\text{MS}}$ and $\sqrt{s} = M_Z$, the angle is $\sin^2\theta_W = \num{0.23121 +- 0.00004}$. Our value matches it quite well.
 
 In principle one can calculate the Weinberg angle at every CMS energy using equation~\ref{math:AFBgen}. But then according to QFT, value of Weinberg angle also changes, since it depends on the coupling $g$ and $g'$. Thus we just settle with this value as our final result.
 
@@ -154,19 +156,206 @@ With real data in \verb|data1.root|, we have the measured numbers using the cuts
 	\mathbf{T} = \epsilon^{-1} \mathbf{M}
 \end{equation}
 
-We are aware that we can propagate errors in $\epsilon$ and $\mathbf{M}$ to obtain an accurate error estimation of $\mathbf{T}$. According to~\cite{Lefebvre:400631},
+We can propagate errors in $\epsilon$ and $\mathbf{M}$ to obtain an accurate error estimation of $\mathbf{T}$. According to~\cite{Lefebvre:400631},
 \begin{equation}
-	\text{Cov}(\epsilon^{-1}_{\alpha\beta}, \epsilon^{-1}_{a b})= ([\epsilon^{-1}]_{\alpha i} [\epsilon^{-1}]_{a i}) [\sigma_{\epsilon}]^2_{ij} ([\epsilon^{-1}]_{j \beta} [\epsilon^{-1}]_{jb})
+	\text{Cov}(\epsilon^{-1}_{ab}, \epsilon^{-1}_{cd})= ([\epsilon^{-1}]_{a i} [\epsilon^{-1}]_{c i}) [\sigma_{\epsilon}]^2_{ij} ([\epsilon^{-1}]_{j b} [\epsilon^{-1}]_{j d})
 \end{equation}
 and the correlation matrix of $\mathbf{T}$ is
 \begin{equation}
 	\text{Cov}(T_i, T_j) = M_\alpha M_\beta \text{Cov} (\epsilon^{-1}_{i\alpha}, \epsilon^{-1}_{j\beta}) + \epsilon^{-1}_{ik} \epsilon^{-1}_{jl} \text{Cov}(M_k, M_l)
 	\label{math:CovTT}
 \end{equation}
-where $\text{Cov}(M_k, M_l)$ is generally diagonal. 
-For simplicity, we neglect first term in equation~\ref{math:CovTT}. This is well justified, since errors in $\mathbf{T}$ are generally a couple of magnitudes larger than errors in $\epsilon$. In the end, we want the diagonal entries of $\text{Cov}(T_i, T_j)$, thus
+where $\text{Cov}(M_k, M_l)$ is covariance matrix for measured counts and generally diagonal. This a bit complicated formula should be used instead of ignoring uncertainties in $\epsilon$, since it has been tested that simplification will lead to at least $50\%$ under-estimation of the errors.
+
+After correction for efficiency, number of events needs to be divided by integrated luminosity $L = \int\dd{t} \mathcal{L}$ to obtain partial differential cross section. To account for higher order of Feynman diagrams, radiative corrections are added to the final results. They are listed in table~\ref{tab:p_cross}
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{c cccc}
+		\toprule
+		$\sqrt{s}$ [\si{\giga\eV}] / $\sigma_i$[\si{\nano\barn}] & $ee$ &  $\mm$ &  $\tta$ & $qq$ \\ 
+		\midrule 
+		\num{88.47} & \num{0.389 +- 0.028} & \num{0.304 +- 0.018} & \num{0.338 +- 0.021} & \num{7.260 +- 0.094}\\
+		\num{89.46} & \num{0.791 +- 0.043} & \num{0.656 +- 0.030} & \num{0.602 +- 0.030} & \num{14.105 +- 0.146}\\
+		\num{90.22} & \num{1.221 +- 0.060} & \num{1.196 +- 0.047} & \num{0.980 +- 0.043} & \num{25.744 +- 0.230}\\
+		\num{91.22} & \num{1.718 +- 0.032} & \num{1.805 +- 0.022} & \num{1.619 +- 0.022} & \num{40.578 +- 0.175}\\
+		\num{91.97} & \num{1.094 +- 0.050} & \num{1.328 +- 0.044} & \num{1.107 +- 0.041} & \num{28.804 +- 0.231}\\
+		\num{92.96} & \num{0.458 +- 0.041} & \num{0.562 +- 0.036} & \num{0.541 +- 0.037} & \num{13.721 +- 0.188}\\
+		\num{93.71} & \num{0.323 +- 0.030} & \num{0.362 +- 0.025} & \num{0.308 +- 0.025} & \num{8.102 +- 0.125}\\
+		\bottomrule
+	\end{tabular}
+	\caption{Partial cross section for various decay modes\label{tab:p_cross}}
+\end{table}
+
+Here the partial cross section is calculated with
 \begin{equation}
-	\sigma_{{T_i}}^2 = \epsilon^{-1}_{ik} \epsilon^{-1}_{ik} \sigma_{M_k}^2 
+	\pmb\sigma = \mathbf{L}^{-1} \mathbf{T}
+\end{equation}
+where $\pmb\sigma$ is vector like $\mathbf T$ and luminosity has been "promoted" to be a (diagonal) matrix $\mathbf L$. So formula~\ref{math:CovTT} can be used to calculate covariance matrix of partial cross sections. In table~\ref{tab:p_cross}, errors are propagated using only diagonal entries (variance) of the covariance matrix.
+
+Figure~\ref{fig:lepCross} shows the partial cross sections of leptonic decay channels. Three curves are quite similar. From the numerical values in table~\ref{tab:p_cross}, one can see that the leptonic partial cross sections at peak ($\sqrt{s} = \SI{91.22}{\giga\eV}$) differ from each other with $\sim 2 \sigma$'s. Leptonic universality states that except mass difference, three generations of leptonic should behave the same. At such high energy ($\sqrt{s} \approx \SI{90}{\giga\eV}$), lepton masses are negligible and the partial cross sections should be identical. Here we do see some differences. This could be caused by some systematic regarding detection of one or more of the leptonic channels.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{sigma_lep.pdf}
+	\caption{Partial cross section in leptonic channels}%
+	\label{fig:lepCross}
+\end{figure}
+
+Partial cross sections to hadronic end states are quite high, because of the colour charge. Their partial cross sections are plotted in figure~\ref{fig:hadCross}.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{sigma_had.pdf}
+	\caption{Partial cross section in hadronic channels}%
+	\label{fig:hadCross}
+\end{figure}
+
+To compare theory and our measurement, one can try to calculate the ratios of hadronic cross section to (total) leptonic cross section. From the data, we have
+\begin{equation}
+	\left[ \frac{\sigma_\text{had}}{\sigma_\text{lep}} \right]_\text{exp}= \num{7.892 +- 0.076}
+\end{equation}
+whereas the theory predicts
+\begin{equation}
+	\left[ \frac{\sigma_\text{had}}{\sigma_\text{lep}} \right]_\text{theo}= \num{6.692}
+\end{equation}
+The measured value is quite off from the prediction, meaning it is not very likely that statistical fluctuations will explain this. A possible cause of this is the error could be underestimated somehow. Other factors like detection efficiencies and Monte Carlo simulation quality can play a role.
+
+Actually this calculation can be misleading and inaccurate. With formula~\ref{math:CovTT}, we see that there should be correlation of different channels to some extent. But when calculating the ratio, this correlation is not considered. Instead, it would be better to draw $1\sigma$, $2\sigma$ etc. circles on $\sigma_\text{had}$-$\sigma_\text{lep}$ plane and see where the theoretical value lies. We reckon that it will not change the result too much and decide not to proceed with this method.
+
+\subsection{Breit-Wigner fit}
+For all decay modes, there is a clear peak at $\sqrt{s} = M_Z \approx \SI{91}{\giga\eV}$, where the partial cross sections increase drastically. This behaviour can be modelled with the Breit-Wigner form~\ref{math:sigmaf}, where $\Gamma_e$, $\Gamma_f$, $M_Z$ and $\Gamma_Z$ are the to be determined fit parameters. According to CERN documentation~\cite{cms}, the actual shape of curve might be a convolution of Breit-Wigner and Gaussian function, depending on the detector resolution. Here we will proceed with simple Breit-Wigner form.
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}[b]{0.5\textwidth}
+	\begin{center}
+	\includegraphics[width=\linewidth]{sigma_ee.pdf}%
+	\end{center}
+	\caption{$Z^0 \rightarrow ee$ partial cross section}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.5\textwidth}
+	\begin{center}
+	\includegraphics[width=\linewidth]{sigma_mm.pdf}
+	\end{center}
+	\caption{$Z^0 \rightarrow \mm$ partial cross section}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.5\textwidth}
+	\begin{center}
+	\includegraphics[width=\linewidth]{sigma_tt.pdf}%
+	\end{center}
+	\caption{$Z^0 \rightarrow \tta$ partial cross section}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.5\textwidth}
+	\begin{center}
+	\includegraphics[width=\linewidth]{sigma_qq.pdf}
+	\end{center}
+	\caption{$Z^0 \rightarrow qq$ partial cross section}
+	\end{subfigure}
+	\caption{Partial cross section of all (visible) channels along with fit. Here the "$68\%$" CL regions are drawn only using the errors in $\Gamma_e$ and $M_Z$, since no errors in $\Gamma_e$ and $\Gamma_f$ can be reliably determined.}%
+	\label{fig:p_cross_fit}
+\end{figure}	
+
+Since we have only $7$ data points but $4$ fit parameters for one channel, we should not expect the fit quality to be high (degrees of freedom $3$). (One can improve the fit by making $\Gamma_e \cdot \Gamma_f$ into a fit parameter, so that degrees of freedom decreases by $1$.) Actually, \verb|curve_fit| method in \verb|scipy| cannot give reliable estimation of covariance matrix involving $\Gamma_e$ and $\Gamma_f$. This can be caused by high condition number~\cite{stackoverflow}. This leads to a problem that errors of $\Gamma_e$ and $\Gamma_f$ cannot be provided in the fitting process. It should not be a big issue, since in this step we want to find out the $Z^0$ width and peak only. Also the errors in $\sigma_i$ are always from the diagonal entries of the covariance matrix, since the covariance matrices represent correlation of different cross sections at one certain CMS energy but here we plot one $\sigma_i$ at all CMS energies (otherwise one could input the appropriate covariance matrix into \verb|curve_fit|).
+
+\begin{table}[ht]
+\renewcommand{\arraystretch}{1.5}
+	\centering
+	\label{tab:label}
+	\begin{tabular}{c | ccccc}
+		\toprule
+		channel & $\Gamma_e[\si{\mega\eV}]$ & $\Gamma_f[\si{\mega\eV}]$ & $\Gamma_Z[\si{\giga\eV}]$ & $M_Z[\si{\giga\eV}]$ & $\sigma_{i, \text{peak}}[\si{\nano\barn}]$\\
+		\midrule 
+		$ee$ & \num{84.568} & \num{77.060} & \num{2.551 +- 0.106} & \num{90.972 +- 0.033} & $1.777^{+0.159}_{-0.141}$\\
+		$\mm$ & \num{84.209} & \num{77.171} & \num{2.513 +- 0.066} & \num{91.166 +- 0.029} & $1.818^{+0.101}_{-0.093}$\\
+		$\tta$ & \num{78.267} & \num{76.439} & \num{2.559 +- 0.111} & \num{91.151 +- 0.029} & $1.615^{+0.151}_{-0.132}$ \\
+		$qq$ & \num{93.619} & \num{1565.958} & \num{2.526 +- 0.025} & \num{91.193 +- 0.008} & $40.584^{+0.832}_{-0.810}$\\
+		\bottomrule
+	\end{tabular}
+	\caption{Fit parameters and peak partial cross sections.}
+\end{table}
+
+There are multiple $\Gamma_Z$'s and $M_Z$'s from the fitting, these values need to get averaged
+\begin{align}
+	M_Z &= \SI{91.118 +- 0.053}{\giga\eV} \\
+	\Gamma_Z &= \SI{2.537 +- 0.169}{\giga\eV}
+\end{align}
+where the errors are propagated to be (same for both quantities)
+\begin{equation*}
+	\sigma_{\Gamma_Z} = \sqrt{\sum \sigma_{\Gamma_{Z}, i}^2}
+\end{equation*}
+PDG gives $M_Z = \SI{91.1876 +- 0.0021}{\giga\eV}$ and $\Gamma_Z = \SI{2.4952 +- 0.0023}{\giga\eV}$ as their best fit~\cite{PDG}. It tells us our value of $\Gamma_Z$ is consistent with theirs (less than $1\sigma$), whereas $M_Z$ lie a bit further than $1\sigma$ from the literature values.
+
+
+In order to test the goodness of our result, a $\chi^2$ test is performed. First of all, $\chi^2$ is computed with
+\begin{equation}
+	\chi^2 = \sum_{k=1}^N \frac{(O_k - E_k)^2}{\sigma_k^2}
+\end{equation}
+where $O_k$ is the observed values, $E_k$ the expected values and $\sigma_k$ is the standard deviation (assuming Gaussian distribution)~\cite{stats}. Degree of freedom is $3$. Then these two values are plugged in CDF of $\chi^2$ distribution to obtain the so-called $p$-value.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{ccc}
+		\toprule
+		channel & $\chi^2$ & $p$ value \\
+		\midrule
+		$ee$  & \num{8.153} & \num{0.043} \\
+		$\mm$ & \num{3.804} & \num{0.283} \\
+		$\tta$ & \num{9.652} & \num{0.022} \\
+		$qq$ & \num{4.333} & \num{0.228} \\
+		\bottomrule
+	\end{tabular}
+	\caption{$\chi^2$ and $p$-value for each channel}
+	\label{tab:chi2}
+\end{table}
+
+$\chi^2$ and $p$-values for each datasets are listed in table~\ref{tab:chi2}. $p$-value represents the probability to obtain results as extreme or more extreme than the already observed one. By that bigger numbers are better in the sense that the results as extreme or more extreme are quite likely to be reproduced. Then we see that $\mm$ and $qq$ have good $p$-values, whereas the others don't. $ee$ channel is inherently contaminated by $t$-channel elastic contributions, so data with relatively poor quality is expected. $\tta$ may involves some messy QCD processes, which can cause the problem here. As mentioned before, the fit model can be improved with convolution of Gaussian and Breit-Wigner functions to take detection resolution into account. 
+
+\subsection{Partial width}
+Partial widths can be easily determined given width and mass of $Z^0$, partial cross section at peak and width to $ee$, see equation~\ref{math:sigmafPeak}. All except width to $ee$ are known from fitting. 
+
+One may notice that the errors in $\sigma_{i, \text{peak}}$ are asymmetrical, i.e.~not Gaussian. Here to simplify thins, we assume they are still Gaussian and just take mean value of upper and lower bounds to form standard deviations.
+
+
+$\Gamma_e$ should be first determined out of all widths by looking at $\sigma_{e,\text{peak}}$
+\begin{equation}
+	\Gamma_e = \sqrt{\frac{\sigma_{e, \text{peak}}}{12\pi}} M_Z \Gamma_Z  
+\end{equation}
+The error is calculated with
+\begin{equation*}
+	\sigma_{\Gamma_e}^2 = \Gamma_e^2 \left[ \left( \frac{\sigma_{\sigma_{e, \text{peak}}}}{2 \sigma_{e, \text{peak}}} \right)^2 + \left( \frac{\sigma_{\Gamma_Z}}{\Gamma_Z} \right)^2 + \left( \frac{\sigma_{M_Z}}{M_Z} \right)^2 \right]
+\end{equation*}
+
+With $\Gamma_e$, other partial widths can be obtained using
+\begin{equation}
+	\Gamma_f = \frac{\sigma_{f,\text{peak}}}{12\pi} M_Z^2 \Gamma_Z^2 \frac{1}{\Gamma_e}	
+\end{equation}
+Now the errors are
+\begin{equation*}
+	\sigma_{\Gamma_f}^2 = \Gamma_f^2 \left[ \left( \frac{\sigma_{\sigma_{f,\text{peak}}}}{\sigma_{f, \text{peak}}} \right)^2 + \left( \frac{2\sigma_{M_Z}}{M_Z} \right)^2 + \left( \frac{2\sigma_{\Gamma_Z}}{\Gamma_Z} \right)^2 + \left( \frac{\sigma_{\Gamma_e}}{\Gamma_e} \right)^2 \right]
+\end{equation*}
+
+\begin{table}[ht]
+	\centering
+	\label{tab:Gammas}
+	\begin{tabular}{ccc} 
+		\toprule
+	& measured[\si{\mega\eV}] & PDG[\si{\mega\eV}] \\
+	\midrule
+		$\Gamma_e$ & \num{80.426 +- 6.346} & \num{83.91+-0.12} \\
+		$\Gamma_\mu$ & \num{82.297 +- 13.486} & \num{83.99 +- 0.18} \\
+		$\Gamma_\tau$ & \num{73.083 +- 13.009} & \num{84.08 +- 0.22}\\
+		$\Gamma_q$ & \num{1836.996 +- 287.054} & \num{1744.4 +- 2.0} \\
+	\bottomrule
+	\end{tabular}
+	\caption{Comparison of measured partial widths and partial widths from PDG~\cite{PDG}}
+\end{table}
+
+Measured values along with values from PDG are listed in table~\ref{tab:Gammas}. They are consistent with each other. Our values have quite high uncertainties. This can be traced back to poor quality of fits and the fit parameters have high uncertainties.
+
+\subsection{Generations of light neutrinos}
+From previous section, we have collected total decay width of $Z^0$ and visible partial decay width of $Z^0$. The difference is the invisible partial width, which should consists of $Z^0 \rightarrow \nu\bar\nu$ processes.
+\begin{equation}
+	\Gamma_\text{inv} = \SI{464.195 +- 142.036}{\mega\eV}
 \end{equation}
 
-After correction for efficiency, number of events needs to be subtracted by integrated luminosity $\int\dd{t} \mathcal{L}$ to obtain partial differential cross section.
+Assuming decay width of $Z^0$ to single generation of neutrino is exactly as the theory predicts, like in equation~\ref{math:Gammanu}. Then we have the number of neutrino generations 
+\begin{equation}
+	N_{\nu} = \num{2.799 +- 0.856}
+\end{equation}

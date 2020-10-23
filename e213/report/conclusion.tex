@@ -1,2 +1,16 @@
 \clearpage
 \section{Conclusion and outlook}
+In this report, we have made up our cuts for different decay channels of $Z^0$. Using these cuts, we can count the number of events in one specific decay channel and thus calculate the cross section using luminosity values. 
+
+By looking at final states in forward and backward direction, the so-called forward-backward asymmetry is determined and this value is directly related to Weinberg angle. It is found to be $\sin^2\theta_W = \num{0.2347 +- 0.0112}$, which agree with PDG data.
+
+A Breit-Wigner fit is performed for each decay channel. From the fit, we are able to determine total width $\Gamma_Z = \SI{2.537 +- 0.169}{\giga\eV}$ and $M_Z = \SI{91.118 +- 0.053}{\giga\eV}$. These values are more or less consistent with PDG data~\cite{PDG}. With these two values and peak partial cross sections (generated from fit function), partial decay widths are found. Although these values have quite large uncertainties, for which the poor-quality fit should be blamed, the numbers do fit in the PDG data~\cite{PDG}. In the end, the invisible decay width is calculated and under assumption of validity of the Standar Model, number of neutrino generations is $N_{\nu} = \num{2.799 +- 0.856}$. It agrees again with the theory ($N_\nu = 3$).
+
+There a few things that we assume but may introduce further uncertainties in the analysis. The number of events is assumed to be Poisson distributed thus the error is approximately $\sqrt{N}$. Reality may not strictly follow this for various reasons.
+
+We also assumed that measured values (e.g.~partial cross sections) are Gaussian distributed. All the propagation of errors is based on this fact. We have seen already that the uncertainties of peak partial cross sections are asymmetrical, meaning that they shouldn't follow Gaussian distribution. Our simplification in this step may make the error estimation onwards inaccurate.
+
+$t$-channel contributions are cut out by selecting events with specific $\cos\Theta$ angles. Although the efficiencies are corrected by numerical integration, there must still be some $t$-channel contamination left in the events that we select as $Z^0 \rightarrow ee$ events. This could be an important reason why Breit-Wigner fit works rather poorly in $ee$ case.
+
+CMS energies in the actual data are not "discrete". Rather they are distributed around the seven values given in table~\ref{tab:p_cross}. This may have some impact on the result, especially abound the resonance peak. However, a definite statement of the severity of this problem cannot be made.
+
