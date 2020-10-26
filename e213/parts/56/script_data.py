@@ -18,7 +18,7 @@ for filename in os.listdir(directory):
         plt.figure(num=k, figsize=(10, 7))
         plt.hist(Ctrk_N, bins=5)
         plt.xlabel("Number of charged tracks")
-        plt.ylabel("Number of events")
+	plt.ylabel("Number of events")
         plt.savefig(filename.replace(".dat", "") + "_Ctrk_N.pdf",
                     bbox_inches="tight")
         plt.close(k)
@@ -27,7 +27,7 @@ for filename in os.listdir(directory):
         plt.figure(num=k, figsize=(10, 7))
         plt.hist(Ctrk_Sump, bins=8)
         plt.xlabel("Sum of momenta")
- 	plt.ylabel("Number of events")
+	plt.ylabel("Number of events")
         plt.savefig(filename.replace(".dat", "") + "_Ctrl_Sump.pdf",
                     bbox_inches="tight")
         plt.close(k)
@@ -36,7 +36,7 @@ for filename in os.listdir(directory):
         plt.figure(num=k, figsize=(10, 7))
         plt.hist(Ecal, bins=8)
         plt.xlabel("Ecal")
- 	plt.ylabel("Number of events")
+	plt.ylabel("Number of events")
         plt.savefig(filename.replace(".dat", "") + "_Ecal.pdf",
                     bbox_inches="tight")
         plt.close(k)
@@ -45,7 +45,7 @@ for filename in os.listdir(directory):
         plt.figure(num=k, figsize=(10, 7))
         plt.hist(Hcal, bins=8)
         plt.xlabel("Hcal")
-        plt.ylabel("Number of events")
+	plt.ylabel("Number of events")
         plt.savefig(filename.replace(".dat", "") + "_Hcal.pdf",
                     bbox_inches="tight")
         plt.close(k)
