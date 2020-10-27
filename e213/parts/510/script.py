@@ -213,10 +213,10 @@ for i in [0, 1, 2, 3]:
     print("p =", 1-chi2.cdf(chi, df))
 
 Gamma_Z = np.mean(Gamma_Z_array)
-sigma_Gamma_Z = np.sqrt(np.sum(sigma_Gamma_Z_array**2))
+sigma_Gamma_Z = np.sqrt(np.sum(sigma_Gamma_Z_array**2)) / 4
 print("Gamma_Z =", Gamma_Z, "+-", sigma_Gamma_Z)
 M_Z = np.mean(M_Z_array)
-sigma_M_Z = np.sqrt(np.sum(sigma_M_Z_array**2))
+sigma_M_Z = np.sqrt(np.sum(sigma_M_Z_array**2)) / 4
 print("M_Z =", M_Z, "+-", sigma_M_Z)
 
 # partial widths

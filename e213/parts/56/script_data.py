@@ -15,38 +15,46 @@ for filename in os.listdir(directory):
         Hcal = data[4]
 
         k = 0
-        plt.figure(num=k, figsize=(10, 7))
+        plt.figure(num=k, figsize=(7, 5))
         plt.hist(Ctrk_N, bins=5)
         plt.xlabel("Number of charged tracks")
-	plt.ylabel("Number of events")
-        plt.savefig(filename.replace(".dat", "") + "_Ctrk_N.pdf",
-                    bbox_inches="tight")
+        plt.ylabel("Number of events")
+        ax = plt.gca()
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        plt.savefig(filename.replace(".dat", "") + "_Ctrk_N.pdf", bbox_inches="tight")
         plt.close(k)
         k += 1
 
-        plt.figure(num=k, figsize=(10, 7))
+        plt.figure(num=k, figsize=(7, 5))
         plt.hist(Ctrk_Sump, bins=8)
-        plt.xlabel("Sum of momenta")
-	plt.ylabel("Number of events")
-        plt.savefig(filename.replace(".dat", "") + "_Ctrl_Sump.pdf",
-                    bbox_inches="tight")
+        plt.xlabel("Sum of momenta [GeV]")
+        plt.ylabel("Number of events")
+        ax = plt.gca()
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        plt.savefig(filename.replace(".dat", "") + "_Ctrl_Sump.pdf", bbox_inches="tight")
         plt.close(k)
         k += 1
 
-        plt.figure(num=k, figsize=(10, 7))
+        plt.figure(num=k, figsize=(7, 5))
         plt.hist(Ecal, bins=8)
-        plt.xlabel("Ecal")
-	plt.ylabel("Number of events")
-        plt.savefig(filename.replace(".dat", "") + "_Ecal.pdf",
-                    bbox_inches="tight")
+        plt.xlabel("Ecal [GeV]")
+        plt.ylabel("Number of events")
+        ax = plt.gca()
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        plt.savefig(filename.replace(".dat", "") + "_Ecal.pdf", bbox_inches="tight")
         plt.close(k)
         k += 1
 
-        plt.figure(num=k, figsize=(10, 7))
+        plt.figure(num=k, figsize=(7, 5))
         plt.hist(Hcal, bins=8)
-        plt.xlabel("Hcal")
-	plt.ylabel("Number of events")
-        plt.savefig(filename.replace(".dat", "") + "_Hcal.pdf",
-                    bbox_inches="tight")
+        plt.xlabel("Hcal [GeV]")
+        plt.ylabel("Number of events")
+        ax = plt.gca()
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        plt.savefig(filename.replace(".dat", "") + "_Hcal.pdf", bbox_inches="tight")
         plt.close(k)
         k += 1

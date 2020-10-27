@@ -1,9 +1,17 @@
 \clearpage
 \section{Statistical Analysis}
-\subsection{Mode selection}
-With large datasets, previous "event display" method will no longer be efficient and accurate. Thus data analysis tools are necessary. Here \verb|root| is used and three macros to apply cuts are already implemented. As before we have four sets of Monte Carlo simulated data in order to find the optimal cuts, then there are a couple of real data samples.
+With a large dataset, previous "event display" method will no longer be efficient and accurate. Thus data analysis tools are necessary. Here \verb|root| is used and three macros to apply cuts are already implemented. As before we have four sets of Monte Carlo simulated data in order to find the optimal cuts, then there are a couple of real data samples.
 
-First of all, there are a couple of general cuts. The collider energy of LEP is $\sim\SI{200}{\giga\eV}$. Thus the scalar sum of momenta should be maximally around this value. Events with even larger momenta are caused by various unphysical processes. Secondly, the data here is written such as when there are multiple outgoing positive particles, $\verb|cos_thet|=1000$. For $ee$ and $\mu\mu$ process, it should not be possible, since no hadronisation can occur and initial/final state radiation for these two only involve photons. So for these two event selections, cut $\verb|cos_thet| <= 1.0$ is applied, see figure~\ref{fig:cos_thet_cut}. After the cut(s), there are $56613$ $ee$ events, $89646$ $\mu\mu$ events, $79099$ $\tau\tau$ events, and $98100$ $qq$ events.
+For some reason, variables in \verb|root| files unfortunately have different names. Here we have the same four variable and an addition parameter~\cite{manual}
+\begin{itemize}
+	\item \verb|Ncharged|: number of charged tracks (\verb|Ctrk(N)|)
+	\item \verb|Pcharged|: total scalar sum of track momenta (\verb|Ctrk(SumP)|)
+	\item \verb|E_ecal|: total energy in electromagnetic calorimeter (\verb|Ecal(SumE)|)
+	\item \verb|E_hcal|: total energy in hadronic calorimeter (\verb|Hcal(SumE)|)
+	\item \verb|cos_thet|: cos(polar angle) between incoming positron and outgoing positive particle
+\end{itemize}
+
+\subsection{Mode selection}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{cos_thet_before.pdf}
@@ -11,9 +19,9 @@ First of all, there are a couple of general cuts. The collider energy of LEP is 
 	\cprotect\caption{Distribution of \verb|cos_thet| before and after \verb|cos_thet| cut.}%
 	\label{fig:cos_thet_cut}
 \end{figure}
+First of all, there are a couple of general cuts. The collider energy of LEP is $\sim\SI{200}{\giga\eV}$. Thus the scalar sum of momenta should be maximally around this value. Events with even larger momenta are caused by various unphysical processes. Secondly, the data here is written such as when there are multiple outgoing positive particles, $\verb|cos_thet|=1000$. For $ee$ and $\mu\mu$ process, it should not be possible, since no hadronisation can occur and initial/final state radiation for these two only involve photons. So for these two event selections, cut $\verb|cos_thet| <= 1.0$ is applied, see figure~\ref{fig:cos_thet_cut}. After the cut(s), there are $56613$ $ee$ events, $89646$ $\mu\mu$ events, $79099$ $\tau\tau$ events, and $98100$ $qq$ events.
 
-\clearpage
-In event display part, we had success using cut $\verb|Ncharged| > 7$ for $qq$ processes. We conclude that this is no longer sufficient, since there are quite many $\tau\tau$ contamination, see figure~\ref{fig:qq_Ncharged_cuts}. While roughly $5\%$ percent of $qq$ events are lost, $\tau\tau$ events are barely present and $ee$, $\mu\mu$ are completely cut. So the $5\%$ percent are considered as acceptable "casualties". After the cut for $qq$, no $ee$ or $\mu\mu$ are left, $78$ $\tau\tau$ survives and $92688$ $qq$ events remain.
+In event display part, we have success using cut $\verb|Ncharged| > 7$ for $qq$ processes. We conclude that this is no longer sufficient, since there are quite many $\tau\tau$ contamination, see figure~\ref{fig:qq_Ncharged_cuts}. While roughly $5\%$ percent of $qq$ events are lost, $\tau\tau$ events are barely present and $ee$, $\mu\mu$ are completely cut. So the $5\%$ percent are considered as acceptable "casualties". We drop the cut in \verb|E_ecal|. After the cut for $qq$, no $ee$ or $\mu\mu$ are left, $78$ $\tau\tau$ survives and $92688$ $qq$ events remain.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{N_charged_before2.pdf}
@@ -37,7 +45,7 @@ Follow the same receipt as in event display part, we try to separate $ee$ events
 \end{figure}
 
 
-For $\mu\mu$ selection, cut in \verb|Ncharged| is the same as $ee$: $\verb|Ncharged < 4|$. We have already seen in figure~\ref{fig:ee_cuts} that \verb|E_ecal| of $\mu\mu$ has a peak around $0$, so the \verb|E_ecal| cut for $ee$ gets inverted as cut for $\mu\mu$: $\verb|E_ecal| < 60$. Then remaining $\tau\tau$ events can be excluded with the help of \verb|Pcharged|, see figure~\ref{fig:mm_cuts}. $ee$ and $qq$ events are basically cut away, only unwanted events are $\tau\tau$. \verb|Pcharged| distributions of $\mu\mu$ and $\tau\tau$ are separated quite nicely, although some $\mu\mu$ events have $\verb|Pcharged| \approx 0$. A cut at $\verb|Pcharged| > 70$ will remove most of $\tau\tau$ events while preserve most of $\mu\mu$ events. After combinations of these cuts, $144$ $ee$ events, $83228$ $\mu\mu$ events, $480$ $\tau\tau$ events and zero $qq$ event survive.
+For $\mu\mu$ selection, cut in \verb|Ncharged| is the same as $ee$: $\verb|Ncharged|< 4$. We have already seen in figure~\ref{fig:ee_cuts} that \verb|E_ecal| of $\mu\mu$ has a peak around $0$, so the \verb|E_ecal| cut for $ee$ gets inverted as cut for $\mu\mu$: $\verb|E_ecal| < 60$. Then remaining $\tau\tau$ events can be excluded with the help of \verb|Pcharged|, see figure~\ref{fig:mm_cuts}. $ee$ and $qq$ events are basically cut away, only unwanted events are $\tau\tau$. \verb|Pcharged| distributions of $\mu\mu$ and $\tau\tau$ are separated quite nicely, although some $\mu\mu$ events have $\verb|Pcharged| \approx 0$. A cut at $\verb|Pcharged| > 70$ will remove most of $\tau\tau$ events while preserve most of $\mu\mu$ events. After combinations of these cuts, $144$ $ee$ events, $83228$ $\mu\mu$ events, $480$ $\tau\tau$ events and zero $qq$ event survive.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Pcharged_mm_before_pcharged_cut.pdf}
@@ -105,7 +113,7 @@ Cut efficiency can be defined as
 \begin{equation}
 	\epsilon_{ij} = \frac{N_i}{N_j}
 \end{equation}
-where a cut $i$ is applied to a process $j$. In previous sections, there are multiple cuts and MC simulation data. By applying all the cuts to all the data, a $4\times4$ efficiency matrix can be obtained.
+where a cut $i$ is applied to a process $j$. In previous sections, there are multiple cuts and MC simulation data. By applying all the cuts to all the data, a $4\times4$ efficiency matrix can be obtained
 \begin{align}
 	\mathbf{\epsilon} &= \begin{pmatrix} N_{ee, \text{cuts}}/N_{ee} & N_{ee, \text{cuts}}/N_{\mm} & N_{ee, \text{cuts}}/N_{\tta} & N_{ee, \text{cuts}}/N_{qq} \\ 
 	N_{\mm, \text{cuts}}/N_{ee} & N_{\mm, \text{cuts}}/N_{\mm} & N_{\mm, \text{cuts}}/N_{\tta} & N_{\mm, \text{cuts}}/N_{qq} \\ 
@@ -118,9 +126,9 @@ where a cut $i$ is applied to a process $j$. In previous sections, there are mul
 								\num{0.0000 +- 0.0000} & \num{0.0000 +- 0.0000} & \num{0.0010 +- 0.0001} & \num{0.9448 +- 0.0043} 
 	\end{pmatrix}\notag
 \end{align}
-Raw data can be found in appenfix~\ref{app:59}. Note that the total number of events considered here is the number \textit{after} \verb|Pcharged| and \verb|cos_thet| (including $s$-channel selection) cuts. After all, cuts efficiencies we discuss here are only the efficiencies of cuts like $ee$ cuts and so on.
+Raw data can be found in appenfix~\ref{app:59}. Note that the total number of events considered here is the number \textit{after} the general \verb|Pcharged| and \verb|cos_thet| (including $s$-channel selection) cuts. After all, cuts efficiencies we discuss here are only the efficiencies of cuts like $ee$ cuts and so on.
 
-Error is estimated using Poisson statistic and usual error propagation formula. 
+Error is estimated using Poisson statistic and usual error propagation formula
 \begin{equation*}
 	\sigma_{\epsilon_{ij}} = \sqrt{ \left(\frac{1}{N_j} \sigma_{N_i} \right)^2 + \left(\frac{N_i}{N_j^2} \sigma_{N_j}\right)^2  }  = \sqrt{ \frac{N_i}{N_j^2} + \frac{N_i^2}{N_j^3} }
 \end{equation*}
@@ -149,7 +157,7 @@ From last section, cut efficiency matrix is obtained. It describes how true numb
 \begin{equation}
 	\mathbf{M} = \epsilon \mathbf{T}
 \end{equation}
-In this compact matrix notation, $\mathbf{M}$ and $\mathbf{T}$ are vectors containing the numbers of events in a decay mode.
+In this compact matrix notation, $\mathbf{M}$ and $\mathbf{T}$ are vectors containing the numbers of events in a decay mode. Entries of $\mathbf{T}$ are listed in table~\ref{tab:510raw} in appendix.
 
 With real data in \verb|data1.root|, we have the measured numbers using the cuts defined earlier. To find out true numbers, one needs to find inverse matrix $\epsilon^{-1}$.
 \begin{equation}
@@ -165,9 +173,9 @@ and the correlation matrix of $\mathbf{T}$ is
 	\text{Cov}(T_i, T_j) = M_\alpha M_\beta \text{Cov} (\epsilon^{-1}_{i\alpha}, \epsilon^{-1}_{j\beta}) + \epsilon^{-1}_{ik} \epsilon^{-1}_{jl} \text{Cov}(M_k, M_l)
 	\label{math:CovTT}
 \end{equation}
-where $\text{Cov}(M_k, M_l)$ is covariance matrix for measured counts and generally diagonal. This a bit complicated formula should be used instead of ignoring uncertainties in $\epsilon$, since it has been tested that simplification will lead to at least $50\%$ under-estimation of the errors.
+where $\text{Cov}(M_k, M_l)$ is covariance matrix for measured counts and generally diagonal. This a bit complicated formula should be used instead of ignoring uncertainties in $\epsilon$. We have tested that simplification will lead to at least $50\%$ under-estimation of the errors.
 
-After correction for efficiency, number of events needs to be divided by integrated luminosity $L = \int\dd{t} \mathcal{L}$ to obtain partial differential cross section. To account for higher order of Feynman diagrams, radiative corrections are added to the final results. They are listed in table~\ref{tab:p_cross}
+After correction for efficiency, number of events needs to be divided by integrated luminosity $L = \int\dd{t} \mathcal{L}$ to obtain partial differential cross section (values listed in table~\ref{tab:lumi} in appendix). To account for higher order of Feynman diagrams, radiative corrections are added to the final results. They are listed in table~\ref{tab:p_cross}
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{c cccc}
@@ -192,7 +200,7 @@ Here the partial cross section is calculated with
 \end{equation}
 where $\pmb\sigma$ is vector like $\mathbf T$ and luminosity has been "promoted" to be a (diagonal) matrix $\mathbf L$. So formula~\ref{math:CovTT} can be used to calculate covariance matrix of partial cross sections. In table~\ref{tab:p_cross}, errors are propagated using only diagonal entries (variance) of the covariance matrix.
 
-Figure~\ref{fig:lepCross} shows the partial cross sections of leptonic decay channels. Three curves are quite similar. From the numerical values in table~\ref{tab:p_cross}, one can see that the leptonic partial cross sections at peak ($\sqrt{s} = \SI{91.22}{\giga\eV}$) differ from each other with $\sim 2 \sigma$'s. Leptonic universality states that except mass difference, three generations of leptonic should behave the same. At such high energy ($\sqrt{s} \approx \SI{90}{\giga\eV}$), lepton masses are negligible and the partial cross sections should be identical. Here we do see some differences. This could be caused by some systematic regarding detection of one or more of the leptonic channels.
+Figure~\ref{fig:lepCross} shows the partial cross sections of leptonic decay channels. Three curves are quite similar. From the numerical values in table~\ref{tab:p_cross}, one can see that the leptonic partial cross sections at peak ($\sqrt{s} = \SI{91.22}{\giga\eV}$) differ from each other at $\sim 2 \sigma$'s. Leptonic universality states that except mass difference, three generations of leptonic should behave the same. At such high energy ($\sqrt{s} \approx \SI{90}{\giga\eV}$), lepton masses are negligible and the partial cross sections should be identical. Here we do see some differences. This could be caused by some systematic regarding detection of one or more of the leptonic channels.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{sigma_lep.pdf}
@@ -273,14 +281,14 @@ Since we have only $7$ data points but $4$ fit parameters for one channel, we sh
 
 There are multiple $\Gamma_Z$'s and $M_Z$'s from the fitting, these values need to get averaged
 \begin{align}
-	M_Z &= \SI{91.118 +- 0.053}{\giga\eV} \\
-	\Gamma_Z &= \SI{2.537 +- 0.169}{\giga\eV}
+	M_Z &= \SI{91.118 +- 0.013}{\giga\eV} \\
+	\Gamma_Z &= \SI{2.537 +- 0.042}{\giga\eV}
 \end{align}
-where the errors are propagated to be (same for both quantities)
+where the errors are propagated to be something like quadratic mean(same for both quantities)
 \begin{equation*}
-	\sigma_{\Gamma_Z} = \sqrt{\sum \sigma_{\Gamma_{Z}, i}^2}
+	\sigma_{\Gamma_Z} = \frac{1}{N}\sqrt{\sum^N \sigma_{\Gamma_{Z}, i}^2} 
 \end{equation*}
-PDG gives $M_Z = \SI{91.1876 +- 0.0021}{\giga\eV}$ and $\Gamma_Z = \SI{2.4952 +- 0.0023}{\giga\eV}$ as their best fit~\cite{PDG}. It tells us our value of $\Gamma_Z$ is consistent with theirs (less than $1\sigma$), whereas $M_Z$ lie a bit further than $1\sigma$ from the literature values.
+PDG gives $M_Z = \SI{91.1876 +- 0.0021}{\giga\eV}$ and $\Gamma_Z = \SI{2.4952 +- 0.0023}{\giga\eV}$ as their best fit~\cite{PDG}. It tells us our value of $\Gamma_Z$ is more or less consistent with theirs, whereas $M_Z$ lie a bit further from the literature values.
 
 
 In order to test the goodness of our result, a $\chi^2$ test is performed. First of all, $\chi^2$ is computed with
@@ -332,30 +340,29 @@ Now the errors are
 \end{equation*}
 
 \begin{table}[ht]
-	\centering
-	\label{tab:Gammas}
+	\centering	
 	\begin{tabular}{ccc} 
 		\toprule
 	& measured[\si{\mega\eV}] & PDG[\si{\mega\eV}] \\
 	\midrule
-		$\Gamma_e$ & \num{80.426 +- 6.346} & \num{83.91+-0.12} \\
-		$\Gamma_\mu$ & \num{82.297 +- 13.486} & \num{83.99 +- 0.18} \\
-		$\Gamma_\tau$ & \num{73.083 +- 13.009} & \num{84.08 +- 0.22}\\
-		$\Gamma_q$ & \num{1836.996 +- 287.054} & \num{1744.4 +- 2.0} \\
+		$\Gamma_e$ & \num{80.426 +- 3.648} & \num{83.91+-0.12} \\
+		$\Gamma_\mu$ & \num{82.297 +- 6.382} & \num{83.99 +- 0.18} \\
+		$\Gamma_\tau$ & \num{73.083 +- 7.610} & \num{84.08 +- 0.22}\\
+		$\Gamma_q$ & \num{1836.996 +- 109.893} & \num{1744.4 +- 2.0} \\
 	\bottomrule
 	\end{tabular}
-	\caption{Comparison of measured partial widths and partial widths from PDG~\cite{PDG}}
+	\caption{Comparison of measured partial widths and partial widths from PDG~\cite{PDG}\label{tab:Gammas}}
 \end{table}
 
-Measured values along with values from PDG are listed in table~\ref{tab:Gammas}. They are consistent with each other. Our values have quite high uncertainties. This can be traced back to poor quality of fits and the fit parameters have high uncertainties.
+Measured values along with values from PDG are listed in table~\ref{tab:Gammas}. They are consistent with each other, except $\Tau_\tau$. Our values have quite high uncertainties. This can be traced back to poor quality of fits and the fit parameters have high uncertainties.
 
 \subsection{Generations of light neutrinos}
 From previous section, we have collected total decay width of $Z^0$ and visible partial decay width of $Z^0$. The difference is the invisible partial width, which should consists of $Z^0 \rightarrow \nu\bar\nu$ processes.
 \begin{equation}
-	\Gamma_\text{inv} = \SI{464.195 +- 142.036}{\mega\eV}
+	\Gamma_\text{inv} = \SI{464.195 +- 70.050}{\mega\eV}
 \end{equation}
 
 Assuming decay width of $Z^0$ to single generation of neutrino is exactly as the theory predicts, like in equation~\ref{math:Gammanu}. Then we have the number of neutrino generations 
 \begin{equation}
-	N_{\nu} = \num{2.799 +- 0.856}
+	N_{\nu} = \num{2.799 +- 0.422}
 \end{equation}

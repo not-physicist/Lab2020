@@ -1,133 +1,231 @@
 \clearpage
 \section{Event display}
-In this part, we focused into learning how to distinguish different channel by event display and four different variables. All channels have 20 events. 
+In this part, we focused on learning how to distinguish different channel by event display and four different variables. All channels have 20 events. 
 
 
 
 \subsection{Identification of the particle at the OPAL detector}
-To identify the particles, firstly, we divide all particle in charged and uncharged on the basis of visible trajectory.
-
-The charged hadrons and electrons are separated on the basis of their form and beginning of the shower. The electromagnetic showers caused by an electron have small lateral spread and completely situated with in the electromagnetic calorimeter (ECAL); however, hadronic showers are wider and extended up to the hadronic calorimeter(HCAL). And, muons do not produce any shower.
-
- The neutral particles are identify with the help of different parameters of showers (length, width). The neutral particle decay in to charged particles and follow V tracks.
+To identify the particles, firstly, we divide all particle in charged and uncharged on the basis of visible trajectory in proportional chamber.
+The charged hadrons and electrons are separated on the basis of their form and beginning of the shower. The electromagnetic showers caused by an electron have small lateral spread and completely situated with in the electromagnetic calorimeter (ECAL); however, hadronic showers are wider and extended up to the hadronic calorimeter (HCAL). And, muons do not produce any shower.
+The neutral particles are identified with the help of different parameters of showers (length, width). The neutral particle decay in to charged particles and follow V tracks.
  
 
-The different decay channels are identified as:
+The relevant decay channels are identified as
 \begin{enumerate}
-\item $ \text{Z}^0\rightarrow e^+e^- $\\
+\item $ {Z}^0\rightarrow e^+e^- $\\
 They create electromagnetic showers through Bremsstrahlung and deposit their energy in the electromagnetic calorimeter. 
 
-\item $ \text{Z}^0\rightarrow \mu^+\mu^- $\\ 
+\item $ {Z}^0\rightarrow \mu^+\mu^- $\\ 
 Muons are heaver than electrons, they don't show showers either Ecal nor Hcal. They penetrate the Hcal and trigger signal in the muon chambers.
 
-\item $ \text{Z}^0\rightarrow \tau^+\tau-$\\
+\item $ {Z}^0\rightarrow \tau^+\tau-$\\
 Tau particles have short life time, so they decay quickly. They can be identified by their decay product. Since they are heavier than electrons and muon and their sum of momentum is less than that electrons and muons for the same energy.
 
-\item $ \text{Z}^0\rightarrow q\bar{q}$\\
+\item $ {Z}^0\rightarrow q\bar{q}$\\
 Since quarks cannot exist freely and they form jet of hadrons via strong interaction. Hadronic events have high charge tracks, so they are easy identified.
 \end{enumerate}
-
-In this part we can measured the following variables for each event:
-\begin{itemize}
-	\item Ctrk(N): Number of charged tracks
-	\item Ctrk(SumP): Momentum of all charged tracks
-	\item Ecal(SumE): Total energy deposited in the electromagnetic calorimeter
-	\item Hcal(SumE): Total energy deposited in the hadronic calorimeter
-\end{itemize}
-The measured values for each events of channels: $ \text{Z}^0\rightarrow e^+e^- $, $ \text{Z}^0\rightarrow \mu^+\mu^- $, $ \text{Z}^0\rightarrow \tau^+\tau-$,  and $ \text{Z}^0\rightarrow  $ hadrons of $ Z^0 $ boson are, respectively, listed in Tables \ref{tab:ee}, \ref{tab:mm}, \ref{tab:tt}, and \ref{tab:qq} in the appendix.
-
-
+These events are also visually presented in figure~\ref{fig:eventsDisplay}.
 
 \begin{figure}[H]   
 	\begin{minipage}[t]{0.5\textwidth}
 		\includegraphics[width=\linewidth]{ee_1.pdf}
 		\begin{center}
-			{(a) $  \text{Z}^0\rightarrow e^+e^- $}
+			{(a) $  {Z}^0\rightarrow e^+e^- $}
 		\end{center}
 	\end{minipage} \quad
 	\begin{minipage}[t]{0.5\textwidth}
 		\includegraphics[width=\linewidth]{mm_1.pdf}
 		\begin{center}
-			{(b) $ \text{Z}^0\rightarrow \mu^+\mu^- $}
+			{(b) $ {Z}^0\rightarrow \mu^+\mu^- $}
 		\end{center}
-	\end{minipage}\\\\
-	
+	\end{minipage}\\
 	
 	\begin{minipage}[t]{0.5\textwidth}
 		\includegraphics[width=\linewidth]{tt_1.pdf}
 		\begin{center}
-			{(c) $ \text{Z}^0\rightarrow \tau^+\tau^- $}
+			{(c) $ {Z}^0\rightarrow \tau^+\tau^- $}
 		\end{center}
 	\end{minipage} \quad
 \begin{minipage}[t]{0.5\textwidth}
 		\includegraphics[width=\linewidth]{qq_1.pdf}
 		\begin{center}
-			{(d) $ \text{Z}^0\rightarrow q \bar{q}$}
+			{(d) $ {Z}^0\rightarrow q \bar{q}$}
 		\end{center}
 	\end{minipage}
-\caption{ GROPE output of four different decay modes of $ Z^0 $ boson.}
+	\caption{Four different decay modes of $ Z^0 $ boson. Here four important components of OPAL are (from inward to outward): proportional chambers, ECAL, HCAL, and muon chamber.}
 \label{fig:eventsDisplay}	
 \end{figure}
 
 \subsection{Determination of appropriate cuts for events classification}
-We plotted the histograms for different parameters of different channels and used to choose the appropriate cuts. Figure \ref{Fig:histograms} shows Histograms of different variables measured in $  \text{Z}^0\rightarrow e^+e^- $ channel. From histograms we set the cuts to optical separation of the $ \text{Z}^0 $ decays of different channels. For this we have chosen acceptance of cuts (AC) as
-\begin{equation}
-AC= \frac{\text{The events of a certain class fullfilling the cut criterion}}{\text{Total number of events of the same class}}
-\end{equation}
-Hence our taken cuts are listed in table \ref{Tab:cuts}
+In this part we have access to the following variables for each event:
+\begin{itemize}
+	\item \verb|Ctrk(N)|: Number of charged tracks
+	\item \verb|Ctrk(SumP)|: Momentum of all charged tracks
+	\item \verb|Ecal(SumE)|: Total energy deposited in the electromagnetic calorimeter
+	\item \verb|Hcal(SumE)|: Total energy deposited in the hadronic calorimeter
+\end{itemize}
 
-  
-\begin{figure}[H]   
-	\begin{minipage}[t]{0.5\textwidth}
+The measured values for each events of channels: $ {Z}^0\rightarrow e^+e^- $, $ {Z}^0\rightarrow \mu^+\mu^- $, $ {Z}^0\rightarrow \tau^+\tau-$,  and $ {Z}^0\rightarrow  $ hadrons of $ Z^0 $ boson are, respectively, listed in tables \ref{tab:ee}, \ref{tab:mm}, \ref{tab:tt}, and \ref{tab:qq} in the appendix.
+
+We plot the histograms for different parameters of different channels and use these to choose the appropriate cuts. Figure~\ref{Fig:histograms_ee} shows the histograms measured in $  {Z}^0\rightarrow e^+e^- $ channel.  
+\begin{figure}[H]  
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
 		\includegraphics[width=\linewidth]{ee_Ctrk_N.pdf}
-		\begin{center}
-			{(a) Histogram showing the number of charge tracks}
-		\end{center}
-	\end{minipage} \quad
-	\begin{minipage}[t]{0.5\textwidth}
+	\end{center}
+	\caption{Number of charge tracks}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
 		\includegraphics[width=\linewidth]{ee_Ctrl_Sump.pdf}
-		\begin{center}
-			{(b) Histogram showing the total scalar sum of track momenta}
-		\end{center}
-	\end{minipage}\\\\
+	\end{center}
+	\caption{Total scalar sum of track momenta}
+	\label{fig:}
+	\end{subfigure}
 	
-	
-	\begin{minipage}[t]{0.5\textwidth}
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
 		\includegraphics[width=\linewidth]{ee_Ecal.pdf}
-		\begin{center}
-			{(c) Histogram showing the energy deposited in the Electromagnetic Calorimeter}
-		\end{center}
-	\end{minipage} \quad
-	\begin{minipage}[t]{0.5\textwidth}
+	\end{center}
+	\caption{Energy deposited in the electromagnetic calorimeter}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
 		\includegraphics[width=\linewidth]{ee_Hcal.pdf}
-		\begin{center}
-			{(d) Histogram showing the energy deposited in the Hadronic Calorimeter}
-		\end{center}
-	\end{minipage}
-	\caption{Histograms of different variables measured in $  \text{Z}^0\rightarrow e^+e^- $ channel. Here y-axis represent the number of events in all histograms.}
-\label{Fig:histograms}	
+	\end{center}
+	\caption{Energy deposited in the hadronic calorimeter}
+	\label{fig:}
+	\end{subfigure}
+	\caption{Histograms of different variables measured in $  {Z}^0\rightarrow e^+e^- $ channel. }
+\label{Fig:histograms_ee}	
 \end{figure}
+From~\ref{Fig:histograms_ee}, it is clear that number of charged tracks is pretty low. Sometimes it can be higher than $2$ (ideal case) because of Bremsstrahlung. From this sample, we choose the cut to be $\verb|Ctrk(N)| \leq 3$. As mentioned before, in this decay mode energy deposited in ECAL is significantly large in HCAL. Thus we demand that $\verb|Ecal(SumE)| > 50$ (this will get refined anyway) and $\verb|Hcal(SumE)| < 1$. Sometimes the cuts we set here leave the variable some wiggle room to make sure good identification. There is still pattern in distribution of \verb|Ctrk(SumP)|, but for this part we think aforementioned three cuts are more than enough.
 
+\begin{figure}[H]  
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{mm_Ctrk_N.pdf}
+	\end{center}
+	\caption{Number of charge tracks}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{mm_Ctrl_Sump.pdf}
+	\end{center}
+	\caption{Total scalar sum of track momenta}
+	\label{fig:}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{mm_Ecal.pdf}
+	\end{center}
+	\caption{Energy deposited in the electromagnetic calorimeter}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{mm_Hcal.pdf}
+	\end{center}
+	\caption{Energy deposited in the hadronic calorimeter}
+	\label{fig:}
+	\end{subfigure}
+	\caption{Histograms of different variables measured in $  {Z}^0\rightarrow \mu^+\mu^- $ channel. }
+	\label{Fig:histograms_mm}
+\end{figure}
+In figure~\ref{Fig:histograms_mm}, four histograms are shown and these will be our basis for determining cuts. Similar as $ee$, number of charged track is low, thus a cut $\verb|Ctrk(N)| \leq 3$ is set. Energy of muons mostly goes to muon chamber, thus energies in ECAL and HCAl are quite low. Cuts for these two are set as $\verb|Ecal(SumE)| < 10$ and $\verb|Hcal(SumE)| < 30$. Here a cut in the momenta is set in order to differentiate $\mm$ from $\tta$: $\verb|Ctrk(SumP)| \geq 50$.
+
+\begin{figure}[H]  
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{tt_Ctrk_N.pdf}
+	\end{center}
+	\caption{Number of charge tracks}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{tt_Ctrl_Sump.pdf}
+	\end{center}
+	\caption{Total scalar sum of track momenta}
+	\label{fig:}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{tt_Ecal.pdf}
+	\end{center}
+	\caption{Energy deposited in the electromagnetic calorimeter}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{tt_Hcal.pdf}
+	\end{center}
+	\caption{Energy deposited in the hadronic calorimeter}
+	\label{fig:}
+	\end{subfigure}
+	\caption{Histograms of different variables measured in $  {Z}^0\rightarrow \tau^+\tau^- $ channel. }
+	\label{Fig:histograms_tt}
+\end{figure}
+Figure~\ref{Fig:histograms_tt} shows distributions of variables in $\tta$ channel. Again the number of charged track is low. But since $\tau$ can decay into charged hadrons also, we set the cut at $\verb|Ctrk(N)| \leq 7$. Two constraints on energy in ECAL and HCAL are set to $\verb|Ecal(SumE)| < 60$ and $\verb|Hcal(SumE)| < 30$. Compared to $\mm$ channel, $\tta$ has relatively low sum of momenta, thus $\verb|Ctrk(SumP)| < 75$. 
+
+\begin{figure}[H]  
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{qq_Ctrk_N.pdf}
+	\end{center}
+	\caption{Number of charge tracks}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{qq_Ctrl_Sump.pdf}
+	\end{center}
+	\caption{Total scalar sum of track momenta}
+	\label{fig:}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{qq_Ecal.pdf}
+	\end{center}
+	\caption{Energy deposited in the electromagnetic calorimeter}
+	\label{fig:}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{qq_Hcal.pdf}
+	\end{center}
+	\caption{Energy deposited in the hadronic calorimeter}
+	\label{fig:}
+	\end{subfigure}
+	\caption{Histograms of different variables measured in $  {Z}^0\rightarrow qq $ channel. }
+	\label{Fig:histograms_qq}
+\end{figure}
+Finally the histograms of $qq$ channel is shown in~\ref{Fig:histograms_qq}. Very obvious, number of charged track is large, thus $\verb|Ctrk(N) \geq 7|$ is set. In principle it is enough, but we introduce another cut: $\verb|Ecal(SumE)| > 30$, since we know that hadrons do deposit some energy into ECAL.
+
+We understand there are some overlaps of cuts of $\mm$ and $\tta$, but this ambiguity never shows up in the test data and cuts need to improved later anyway. There are also some events potentially cannot belong to any of these categories. It is fine, as long as the corresponding cut efficiency is good. Our cuts all together are listed in table \ref{Tab:cuts}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{ccc ccc}
 		\toprule
-		Particle & Ctrk(N) & Ctrk(Sump) & Ecal(SumE) & Hcal(SumE) \\
+		channel & \verb|Ctrk(N)| & \verb|Ctrk(Sump)| & \verb|Ecal(SumE)| & \verb|Hcal(SumE)| \\
 		\midrule
-		Electrons & $ \le $ 3 &   &    \textgreater 50  & \textless 1	\\
-		Muons &  $ \le $ 3 &  $ \ge $50  &    \textless 10  & \textless 30	\\
-		Tauon &  $ \le $ 7 & \textless 75  & \textless 60    & \textless 30	\\
-		Hadrons &  $ \ge $7 &   &  \textgreater 30    &	\\
-		
+		$ee$ & $ \le 3$  &   &    $ > 50$  & $<1$	\\
+		$\mm$ &  $ \le 3$  &  $ \ge 50$  &    $< 10$  & $< 30$	\\
+		$\tta$ &  $ \le 7$  & $< 75$  & $ < 60$    & $< 30$	\\
+		$qq$ &  $ \ge 7$ &   &  $> 30$    &	\\
 		\bottomrule
 	\end{tabular}
-	\caption{Measured Cuts for different variables of different channels.}
+	\caption{Measured Cuts for different variables of different channels. Unit for energy and momenta is as always \si{\giga\eV}.}
 	\label{Tab:cuts}
 \end{table}
 \subsection{Event classification for test sample}
 
-
 	
-To classify events from the sample test1 we used the cuts from table \ref{Tab:cuts}. To do so, firstly, we checked the  CtrkN to pick out hadrons particle from others, also we verified  Ecal number. Secondly, we check the values of Ecal and Hcal to verified electrons. Finally, we checked the value of CtrkSump as well as  Ecal and Hcal to conform the muons or tauons. The measured valued for each variables and the decay channel clasification result are given table \ref{tab:test1}.
-
+To classify events from the sample \verb|test1| we used the cuts from table \ref{Tab:cuts}. To do so, firstly, we checked the \verb|CtrkN| to pick out hadrons particle from others, also we verified \verb|Ecal| number. Secondly, we check the values of \verb|Ecal| and \verb|Hcal| to verified electrons. Finally, we checked the value of \verb|CtrkSump| as well as \verb|Ecal| and \verb|Hcal| to conform the muons or tauons. The measured valued for each variables and the decay channel classification result are given table \ref{tab:test1}.
 \input{test1.tex}
