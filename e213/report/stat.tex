@@ -147,9 +147,7 @@ This number is then multiplied to all the denominator of first column in equatio
 								\num{0.0000 +- 0.0000} & \num{0.0000 +- 0.0000} & \num{0.0010 +- 0.0001} & \num{0.9448 +- 0.0043} 
 	\end{pmatrix}
 \end{equation}
-
-
-
+This efficiency matrix is almost diagonal, which is expected if everything works fine.
 
 
 \subsection{Partial cross sections}
@@ -175,7 +173,7 @@ and the correlation matrix of $\mathbf{T}$ is
 \end{equation}
 where $\text{Cov}(M_k, M_l)$ is covariance matrix for measured counts and generally diagonal. This a bit complicated formula should be used instead of ignoring uncertainties in $\epsilon$. We have tested that simplification will lead to at least $50\%$ under-estimation of the errors.
 
-After correction for efficiency, number of events needs to be divided by integrated luminosity $L = \int\dd{t} \mathcal{L}$ to obtain partial differential cross section (values listed in table~\ref{tab:lumi} in appendix). To account for higher order of Feynman diagrams, radiative corrections are added to the final results. They are listed in table~\ref{tab:p_cross}
+After correction for efficiency, number of events needs to be divided by integrated luminosity $L = \int\dd{t} \mathcal{L}$ to obtain partial differential cross section (values listed in table~\ref{tab:lumi} in appendix). To account for higher order of Feynman diagrams, radiative corrections are added to the final results (see table~\ref{tab:rad_corr} in appendix). Determined partial cross sections are listed in table~\ref{tab:p_cross}
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{c cccc}
@@ -354,7 +352,7 @@ Now the errors are
 	\caption{Comparison of measured partial widths and partial widths from PDG~\cite{PDG}\label{tab:Gammas}}
 \end{table}
 
-Measured values along with values from PDG are listed in table~\ref{tab:Gammas}. They are consistent with each other, except $\Tau_\tau$. Our values have quite high uncertainties. This can be traced back to poor quality of fits and the fit parameters have high uncertainties.
+Measured values along with values from PDG are listed in table~\ref{tab:Gammas}. They are consistent with each other, except $\tta$. Our values have quite high uncertainties. This can be traced back to poor quality of fits and the fit parameters have high uncertainties.
 
 \subsection{Generations of light neutrinos}
 From previous section, we have collected total decay width of $Z^0$ and visible partial decay width of $Z^0$. The difference is the invisible partial width, which should consists of $Z^0 \rightarrow \nu\bar\nu$ processes.

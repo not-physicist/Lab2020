@@ -1,12 +1,9 @@
-# auxiliary file of latex
-*.log 
-*.aux
-*.bbf
-*.bcf
-*.out
-*.synctex.gz
-*.fdb_latexmk
+literature/
 *.cpt
-*.xml
+main.synctex(busy)
 __pycache__/
-.ipynb_checkpoints/
+meeting
+MP-WS20-Lab-Course-Manual.pdf
+MP-WS20-tutors-contact-details.pdf
+Plan-MP-WS20.pdf
+TN-Liste-MP-WS20.pdf
