@@ -1,1 +1,11 @@
-\section{Conclusion}
+
+\section{Conclusion}\label{sec:con}
+After two days' effort, StyX is properly setup. Calibration masks match with number of hits per straw quite well. In other word, calibration works. But in the end, the overall result is borderline satisfactory. 
+
+Distribution of events on two-dimensional plane of segment angle and track angle is a bit odd. Ideally, we have symmetric distribution even considering resolution. This likely have something to do with the reconstruction algorithm or even the geometry of the setup. Since both subjects are not main focus of this report, we will not go deep and try to speculate the exact problem(s).
+
+The goal of the experiment is to obtain the angular distribution of atmospheric muons. The distribution doesn't agree with theory. The value of $n$ deviate from the theory quite a lot ($\sim 35\sigma$ away). Statistical error can certainly be excluded. It is highly unlikely that the theory is faulty here, since some other more sophisticated and advanced experiments have $n\approx2$~\cite{BAHMANABADI20191}\cite{Shukla}. Then we only have setup or reconstruction method to blame. Again we are not familiar with the reconstruction so no further speculations. 
+
+The geometry of the detectors are certainly a factor here. Figure~\ref{fig:setup-real} shows that the trigger systems are stacked directly over and under the straw modules. One problem is that in the electronics we demand both PMT must have signals in order to record the events (coincidence). This produces a bias in the data, in the sense that once the incident angle is relatively large, the events might not get recorded. At large incidence angle, the particles could very like only fly through one PMT or even none of both PMTs (though in this case the angle must be quite large so that $\cos^2$ law is broken anyway). But particles directly from vertical direction are detected as expected. Eventually this distorts the distribution in a way that fluxes around $\theta=\ang{0}$ is untouched but the fluxes at larger angles get suppressed.
+
+A possible future improvement could be just use one PMT as a trigger or these two PMT on one side of straw modules. It will increase noise level but it can presumably improve the distorted angular distribution. 

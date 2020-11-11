@@ -1,4 +1,5 @@
-\section{setup}
+\clearpage
+\section{Setup}\label{sec:setup}
 
 \subsection{Individual components}
 \paragraph{Drift chamber}
@@ -7,15 +8,15 @@ is a type of gaseous ionization detector. As its name suggest, it detects ionizi
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.5\linewidth]{voltage-diagram.png}
-	\caption{Example diagram of number of ions versus applied voltage in a single wire gas chamber~\cite{leo}. Note that vertical axis is in logarithmic scale. }%
+	\caption{Example diagram of number of ions versus applied voltage in a single wire gas chamber (taken from~\cite{leo}). Note that vertical axis is in logarithmic scale. }%
 	\label{fig:voltage-diagram}
 \end{figure}
 An exemplar development of number of ions with increasing voltage is shown in figure~\ref{fig:voltage-diagram}. In this setup, we essentially want to saturate the gas chamber (thus to region IV in figure~\ref{fig:voltage-diagram}) so that it can reliably count the ionizing particles regardless of their energy.
 
-In this experiment, there are three drift chamber modules. In each of these, there are three layers of $88$ straws~\cite{manual}.
+In this experiment, there are three drift chamber modules, see figure~\ref{fig:setup-real}. In each of these, there are three layers of $88$ straws~\cite{manual}.
 
 \paragraph{Scintillator and PMT}
-work as external trigger here. They together are able to convert ionizing particle into relatively low energy photons (scintillator), convert photon into electrons using photoelectric effect, and finally with electric field to multiply the number of electrons to generate visible signals~\cite{wermes}. Here two such detectors are used, one on top of the drift chamber and on below~\cite{manual}.
+work as external trigger here. They together are able to convert ionizing particle into relatively low energy photons (scintillator), convert photon into electrons using photoelectric effect, and finally with electric field to multiply the number of electrons to generate visible signals~\cite{wermes}. Here two such detectors are used, one on top of the drift chamber and on below~\cite{manual}, see figure~\ref{fig:setup-real}.
 
 \paragraph{Shaper}
 A shaper is a module which turns inputs pulse into logic signals of standard levels and fixed width~\cite{leo}.
@@ -34,3 +35,12 @@ determines if two or more logic signals overlap with each other within a preset 
 	\label{fig:setup}
 \end{figure}
 Schematically the setup is like in figure~\ref{fig:setup}. The front end boards (FE-boards) are attached to the straws. The boards contain amplifiers, shapers and discriminators, so that as long as input signal pass a set threshold, a logic signal is generated. The threshold voltage can be set on an external power supply. As for the trigger part, the signal will need to pass discriminators (to filter out noises) and goes to a coincidence unit. The coincidence unit makes sure that an event is only recorded when it flies through both scintillators. In the end, signals from straw modules and scintillator units go into TRB board and to the PC~\cite{manual}.
+
+The actual setup is shown in figure~\ref{fig:setup-real}. Straw modules with FE-boards are the copper layer between the two plastic bags, which are the triggers. Several other electronics are on the rack on the right side of figure~\ref{fig:setup-real}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{setup-reallife.jpeg}
+	\caption{The actual setup}%
+	\label{fig:setup-real}
+\end{figure}

@@ -1,13 +1,18 @@
-\section{Cosmic rays}
+\section{Cosmic rays}\label{sec:theo}
 Cosmic rays are a population of elementary particles and nuclei coming from outer space with several \si{\mega\eV} to macroscopic energies ($\sim\si{\joule}$). Energy spectra of cosmic rays follow a falling power-law (albeit with several small features)~\cite{PDG}~\cite{Gaisser}
 \begin{equation*}
 	N(E) \propto E^{-\gamma}
 \end{equation*}
 
-Cosmic rays of primary origin (i.e.~directly from astrophysical sources without interactions) enter the earth atmosphere and they will produce the so-called secondary cosmic rays. Comparing the interaction lengths for hadronic and leptonic particles and atmosphere column density reveals that practically all cosmic rays at sea level are secondary~\cite{grupen}. All primary particles either interaction with air or decay depending on their energies. Essentially the atmosphere acts like a giant calorimeter and particle cascades are generated~\cite{grupen}.
+Cosmic rays of primary origin (i.e.~directly from astrophysical sources without interactions) enter the earth atmosphere and they will produce the so-called secondary cosmic rays. Comparing the interaction lengths for hadronic and leptonic particles and atmosphere column density reveals that practically all cosmic rays at sea level are secondary, even tertiary~\cite{grupen}. All primary particles either interaction with air or decay depending on their energies. Essentially the atmosphere acts like a giant calorimeter and particle cascades are generated~\cite{grupen}.
 
-Most of primary cosmic rays consist of hydrogen atoms~\cite{Gaisser}. In fact, $85\%$ are protons~\cite{grupen}. These protons produce mainly secondary pions and then kaons. In the end, at sea level most abundant particles with energy $>\SI{1}{\giga\eV}$ are muons (and corresponding neutrinos)~\cite{PDG}. There is a rather important angle dependence of muon spectra because of competition between decay and interaction. At large zenith angle, muons can travel long distance in rare parts of the atmosphere and it leads to increased decay probability~\cite{grupen}. This can be parametrized as~\cite{grupen}
+Most of primary cosmic rays consist of hydrogen atoms~\cite{Gaisser}. In fact, $85\%$ are protons~\cite{grupen}. These protons produce mainly secondary pions and then kaons. In the end, at sea level most abundant particles with energy $>\SI{1}{\giga\eV}$ are muons (and corresponding neutrinos)~\cite{PDG}. 
+
+There is a rather important angle dependence of muon spectra because of competition between decay and interaction. At sea level, the muon population is dominated by low energy muons (generally true for all particles). With low energy, it becomes easier for muons from inclined angle to decay and absorbed in atmosphere~\cite{grupen}. This can be parametrized as~\cite{grupen}
 \begin{equation}
 	I_\mu (\theta) = I_\mu (\theta = 0) \cos^n \theta
+	\label{math:cos2}
 \end{equation}
-with $n\approx 2$. Energetic particle will produce extensive shower in the atmosphere.	This makes electrons and positrons quite abundant at sea level. They usually have pretty low energy, because of production mechanisms and energy losses~\cite{grupen}.
+with $n\approx 2$. Note that this formula is valid only for small zenith angle~\cite{Shukla}. Physically, we still expect some muon flux at $\theta=\pi/2$ but equation~\ref{math:cos2} predicts zero muon flux.
+
+Energetic particle will produce extensive shower in the atmosphere.	This makes electrons and positrons quite abundant at sea level. They usually have pretty low energy, because of production mechanisms and energy losses~\cite{grupen}.

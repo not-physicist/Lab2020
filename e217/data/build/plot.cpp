@@ -4,6 +4,7 @@
 #include <TClonesArray.h>
 #include <TCanvas.h>
 #include <TLegend.h>
+#include <iostream>
 
 void plot(){	
 	TCanvas *c1 = new TCanvas("c1","c1",1000, 500);
@@ -47,11 +48,11 @@ void plot(){
 	h_TTot->SetLineColor(kBlue);
 	h_TTot->Draw("same");
 	
-	TLegend *legend = new TLegend(0.1,0.7,0.2,0.5);
-	legend->AddEntry(h_BTot, "bottom");
-	legend->AddEntry(h_TTot, "top");
+	TLegend *legend2 = new TLegend(0.1,0.7,0.2,0.5);
+	legend2->AddEntry(h_BTot, "bottom");
+	legend2->AddEntry(h_TTot, "top");
 
-	legend->Draw();
+	legend2->Draw();
 	c1->SaveAs("hitsModules.pdf");
 
 	// AngDistri
@@ -66,10 +67,10 @@ void plot(){
 	func->SetParNames("prop. const.", "power");
 	h_ang->Fit("fit", "R");
 
-	TLegend *legend = new TLegend(0.1,0.8,0.2,0.9);
-	legend->AddEntry(func, "[0]*cos(x)^[1]");
-	legend->AddEntry(h_ang, "Angle");	
-	legend->Draw();
+	TLegend *legend3 = new TLegend(0.1,0.8,0.2,0.9);
+	legend3->AddEntry(func, "[0]*cos(x)^[1]");
+	legend3->AddEntry(h_ang, "Angle");	
+	legend3->Draw();
 
 	c1->SaveAs("angDistri.pdf");
 }
