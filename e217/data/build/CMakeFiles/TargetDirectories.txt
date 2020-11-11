@@ -1,2 +1,0 @@
-/home/styx/labCourse/WS2021/P112/build/LabCourse/CMakeFiles/LabCourse.dir
-/home/styx/labCourse/WS2021/P112/build/CMakeFiles/StyxLabCourse.dir
