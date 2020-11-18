@@ -1,38 +1,34 @@
 \clearpage
 \section{Voltage determination}\label{sec:vol}
-The voltage determination is a mot important and necessary part of this experiment. Before start it, we checked the gas system. we saw bubbles every few second at window on a test tube, so we were sure that the gas system was working.
+As first thing, we check the gas system. There are bubbles coming out every few seconds at window on a test tube, it is clear that the gas system was working. Then we need to determine voltages of PMTs and discriminator. 
 
 \subsection{PMT operation voltage determination}
-To determine the PMT operation voltage we have installed three counters. The leftmost counter shows the rate for the top panel, the middle counter shows the rate of bottom panel, and the rightmost counter shows the coincidence rate \cite{manual}. Then, we started to take count rate. We started to varying the voltage for bottom panel from \num{1700} V to \num{2300} V with in step of \num{50} V. At doing so, we were aware that voltage can't exceed of \num{2400} V for precaution. We took four measurements at every \num{10} second with every step of \num{50} V and calculated their averages to reduce the statistical errors. After measuring rate, we plotted a graph between average rate vs number of counts. In figure \ref{fig:PMTvoltageBot} we can see that initially the count rate increases exponentially with raising the voltage. Then it start to distribute linearly from 2000 V and follow completely linear distribution from \num{2100} V. Therefore, we took a working point at \num{2100}.\\
+As mentioned in section~\ref{sec:drift}, behaviour of drift chamber strongly depends on voltage applied between anode and cathode. Thus to make sure PMTs are working properly, voltages need to be set accordingly. To determine the PMT operation voltages we have three counters. They show the number of events in \SI{10}{\s} interval of top PMT, bottom PMT, and coincidence of these two.
 
-Afterward, we fixed the bottom voltage at \num{2100} V, then we vary the voltage for top panel as in before step in the same range. And, we measured the coincidence rate via rightmost counter. Unfortunately, the rightmost counter has broken, so last digit of count number is not clearly readable. It could lead some statistical error. By plotting a graph between measured voltage and coincidence rate we got a plateau curve \ref{fig:PMTvoltageTop}. From figure \ref{fig:PMTvoltageTop} it is clear that coincidence rate cannot follow any fixed distribution it is literally independent with applied voltage. Initially coincidence rate is increase exponentially then it reached a peak point so-called knee of the plateau curve. Then it start to raising again with increasing voltage and reached another peak. Therefore, we choose our working point \num{2150} V between these two peaks.
+We start by varying the voltage for bottom panel from \SI{1700}{\volt} to \SI{2300}{\volt} in steps of \SI{50}{\volt}. Four measurements at every \num{10} second with every step of \SI{50}{\volt} and calculate their averages to reduce the statistical errors. After measuring rate, we plot a graph between average rate against number of counts. Errors of "count rates" are estimated using Poisson distribution. In figure \ref{fig:PMTvoltageBot} we can see that initially the count rate increases quite steeply with the voltage. Then it start to get saturated from \SI{2000}{\volt} and flattens out from \SI{2100}{V}. In the this region, a linear fit is done. We see that data points with voltages less or equal to \SI{2050}{\volt} don't follow this linear fit anymore. Therefore. According to~\cite{manual}, we took a working point at starting point of the plateau, thus \SI{2100}{\volt}.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\linewidth]{bot.pdf}
 	\end{center}
-\caption{The number of counts for bottom panel with varying voltage.}
+\caption{The number of counts for bottom panel with varying voltage. Vertical axis is in log scale. Raw data are in appendix.}
 \label{fig:PMTvoltageBot}
-	\end{figure}
-	
+\end{figure}
+
+With bottom PMT voltage at \SI{2100}{\volt}, we vary the voltage for top panel as in before step in the same range. We measure the coincidence rate via its counter. Unfortunately, the rightmost counter is slightly broken, the last digit of count number is not clearly readable. It could lead some statistical error, but in the end it is not very significant. By plotting a graph of coincidence rate over, we have again a plateau curve \ref{fig:PMTvoltageTop}. From figure \ref{fig:PMTvoltageTop} we see that initially coincidence rate increases with voltage then it has a clear plateau. \SI{2150}{\volt} is the point the curve starts to be flat and it is a good working point for the PMT.
 	
 \begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=0.6\linewidth]{top.pdf}
 		\end{center}
-	\caption{The number of counts for top panel with varying voltage.}%
+	\caption{The number of counts for top panel with varying voltage. Raw data are in appendix.}%
 	\label{fig:PMTvoltageTop}
 \end{figure}	
 	
 \subsection{Determination of the front-end threshold voltage}	
-We have to determine the the optimal voltage for the front-end chip. The voltage is adjusted using power supply \cite{manual}. The selected voltage established as threshold voltage due to FE chips and converted into detector pulses. To determine so, We processed as \verb|StyxM2C2 -N 2500 -o TS_14V.txt --all --no-clean -I /home/styx/data/etraxp114/te13085163152.hld| with data file \verb|StyxM2C2|. Here, we have taken \num{25000} events in every step of \num{0.4} V from \num{1.4} V to \num{2.6} V. Afterward, to do find good channels we made a \verb|root| file as \verb|StyxMonitor TS_14V_mon.txt|. 
+We have to determine the optimal voltage for the discriminator. The voltage is adjusted using power supply \cite{manual}. To determine its appropriate value, we processed with \verb|StyxM2C2| along with the raw data. Here, we have taken \num{25000} events in every step of \SI{0.3}{\volt} from \SI{1.4}{\volt} to \SI{2.6}{\volt}. Then to do find good channels a closer look into the \verb|root| files is necessary.  Finally, we compared the different voltage settings using \verb|StyxThresholdScane|.
 
-Finally, we compared the measurements for one TDC number and one channel number using \verb|StyxThresholdScane| by a command \verb|StyxThresholdScane 1 5 TS_14V_mon.txt TS_26V_mon.txt TS_26V_mon.txt  TS_26V_mon.txt|.\\
-
-To choose threshold voltage, first of all, we look at the rates files two of them are in fig \ref{fig:rate}, we can see that the hits in channel are decreases with increasing voltage. since, at low voltage there are some noises and at high voltage some of the signals are cut. Interestingly, hits in channel are fluctuate at different voltages in different channel; however, it is seen that at \num{20} V is fixed. therefore, we have had chosen that voltage as the threshold voltage. 
-
- 
- 
+To choose threshold voltage, first of all, we look at the rates files two of them are in fig \ref{fig:rate}. The hits in channel decreases with increasing voltage. At low voltages (low threshold) there are plenty of noises and at high voltage some of the signals are cut. So we indeed expect decreasing curves in rate files. Thus we say that roughly the optimal voltage should be in the middle. Its exact value needs still to be determined later.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{0.8\textwidth}
@@ -48,11 +44,11 @@ To choose threshold voltage, first of all, we look at the rates files two of the
 		\end{center}
 		\caption{At TDC 1 channel 5.}
 	\end{subfigure}
-	\caption{The rate file of time vs hits in TDC 1 channel 2 at different voltages.}%
+	\caption{The rate plots in TDC 1 channel 2 and TDC 1 channel 5 at different voltages.}%
 	\label{fig:rate}
 \end{figure}
 
-After that, we compared the overlay plots of different channels at different voltages. Two of them are in fig \ref{fig:Overlay}. We can see the relation between time-multiplexed of six straws with hits. The six output channels are condensed into one at the cost of having \num{1200} ns read out window per event \cite{manual}. From figure \ref{fig:Overlay},in several peaks for different straws, we can see that the noise level is too high at low voltage and heights of these peaks are quite different. The, also, peaks at \num{2.0} V seems quite same for all channels, but not at all other voltages. We want to find the lowest voltage so that the peaks seem to be of the same heights we can see it at \num{20} V. Therefore we choose the threshold voltage is \num{2.0} V.
+Now we compare the overlay plots of different channels and TDCs. Two examples are in fig \ref{fig:Overlay}. It shows number of hits in six straws at different voltages. In figure \ref{fig:Overlay}, the peaks are for different straws and horizontal axis is in time which has something to do with electronics of the setup~\cite{manual}. We see that the noise level is too high at low voltages and thus heights of these peaks are quite different. Peaks at \SI{2.0}{\volt} seems quite uniform for all straws, but not for other voltages. We want to find the lowest voltage so that the peaks seem to be of the same heights. Therefore we choose the threshold voltage is \SI{2.0}{\volt}.
 
 \begin{figure}[H]
 	\centering
