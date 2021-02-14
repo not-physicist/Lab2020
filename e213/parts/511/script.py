@@ -21,7 +21,7 @@ sigma_backward = np.sqrt(backward)
 #  print(cms, forward, backward)
 
 corr = np.genfromtxt("./cor.dat", delimiter=",", skip_header=1)
-print(corr)
+#  print(corr)
 if not (np.array_equal(corr[:, 0], cms)):
     print("Error in inputs!")
 
@@ -30,10 +30,12 @@ corr = corr[:, 1]
 asym_array, sigma_asym_array = A_FB(forward, backward,
                                     sigma_forward, sigma_backward)
 asym_array += corr
+toSave = np.array([cms, asym_array, sigma_asym_array]).T
+np.savetxt("AFB.dat", toSave, fmt="%.3f", header="CMS, AFB, sigma_AFB")
 
 sin2thetaW = (1-np.sqrt(asym_array[3]/3))/4
 sigma_sin2thetaW = sigma_asym_array[3]/np.sqrt(asym_array[3]) / (8*np.sqrt(3))
-print(sin2thetaW, "+-", sigma_sin2thetaW)
+#  print(sin2thetaW, "+-", sigma_sin2thetaW)
 
 k = 0
 plt.figure(num=k, figsize=(10, 7))
